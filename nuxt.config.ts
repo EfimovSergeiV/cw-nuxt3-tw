@@ -19,14 +19,17 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
       ]
     },
-    pageTransition: {
-      name: 'fade',
-      mode: 'out-in' // default
-    },
-    layoutTransition: {
-      name: 'slide',
-      mode: 'out-in' // default
-    }
+
+    pageTransition: { name: 'page', mode: 'out-in' },
+
+    // pageTransition: {
+    //   name: 'fade',
+    //   mode: 'out-in' // default
+    // },
+    // layoutTransition: {
+    //   name: 'slide',
+    //   mode: 'out-in' // default
+    // }
   },
 
   modules: [
@@ -54,6 +57,7 @@ export default defineNuxtConfig({
 
   css: [
     '~/assets/css/tailwind.css',
+    '~/assets/css/main.css',
     '@mdi/font/css/materialdesignicons.min.css',
   ],
 

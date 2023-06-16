@@ -3,8 +3,8 @@
     <div id="background-page" class="bg-fixed bg-no-repeat bg-[center_100px] bg-cover bg-[url('images/footer-bg.webp')] dark:bg-[url('images/footer-dark-bg.webp')] min-h-screen">
       <div class="container mx-auto">
         <AppHeader />
-        <TopSlider />
-        <AppNavbar />
+        <!-- <TopSlider />
+        <AppNavbar /> -->
         <slot />
         <AppFooter />
       </div>
