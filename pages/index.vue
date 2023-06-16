@@ -19,12 +19,11 @@
   <div class="">
     <TopSlider />
     <AppNavbar />
-  
-
-
-      <MainSection :latest="latest" :banners="banners" />
-      <MainWelder />
-      <Reviews :reviews="randomreviews" />
+    <MainSection :latest="latest" :banners="banners" />
+    <MainWelder />
+    <Reviews :reviews="randomreviews" />
+    <ESAB />
+    <Recommend :recommends="recommends" />
 
 
       <!-- <p class="text-xs text-gray-800">{{ widebanner }}</p> -->

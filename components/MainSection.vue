@@ -89,13 +89,13 @@
           }"
         >
           <SwiperSlide v-for="slide in props.banners" :key="slide.id" class="">
-
-            <img
-              style="height: 348px; width: 598px;"
-              :src="slide.image"
-              class="rounded-sm border dark:border-gray-700 shadow-md "
-            /> 
-
+            <nuxt-link :to="slide.link">
+              <img
+                style="height: 348px; width: 598px;"
+                :src="slide.image"
+                class="rounded-sm border dark:border-gray-700 shadow-md "
+              />             
+            </nuxt-link>
           </SwiperSlide>
           <div class="absolute bottom-0 right-0 z-50 p-3">
             <SwiperControls />

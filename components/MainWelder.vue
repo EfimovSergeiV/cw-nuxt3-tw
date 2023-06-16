@@ -36,7 +36,7 @@
                   <div class="flex items-center gap-4 my-2">
                     <div class=" w-20 h-20">
                       <div class="bg-white rounded-md w-full h-full">
-                        <img src="icons/esab-sm.png" class="rounded-md p-2" />
+                        <img src="/icons/esab-sm.png" class="rounded-md p-2" />
                       </div>
                     </div>
                     <div class="grid grid-cols-1 gap-2">
@@ -64,7 +64,7 @@
                     <div class=" w-20 h-20">
                       <div class="bg-white rounded-md w-full h-full">
                         <div class="">
-                          <img src="icons/mask-sm.png" class="rounded-md p-2" />
+                          <img src="/icons/mask-sm.png" class="rounded-md p-2" />
                         </div>
                       </div>
                     </div>
