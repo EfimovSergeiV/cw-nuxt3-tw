@@ -1,6 +1,11 @@
 <script setup>
 import { onMounted } from 'vue'
+
+const config = useRuntimeConfig()
 const shopStore = useShopStore()
+
+const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
+shopStore.writeShops(shops)
 
 onMounted(() => {
   if ("geolocation" in navigator) {

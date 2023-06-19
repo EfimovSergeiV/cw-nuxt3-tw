@@ -21,6 +21,7 @@
 
     qq {{ shopStore.adress }}
     qq {{ shopStore.region }}
+    qq {{ shopStore.shop }}
 
     <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 text-center">
         <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md cursor-pointer group" v-for="(city, pk) in ['Москва', 'Санкт-Петербург', 'Псков', 'Смоленск', 'Петрозаводск', 'Великие луки',]" :key="pk">
