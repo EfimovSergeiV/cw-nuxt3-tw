@@ -1,13 +1,17 @@
 <script setup>
+  const config = useRuntimeConfig()
+  // const countStore = useCountStore()
 
-  const { data: widebanners } = await useFetch('http://127.0.0.1:8000/c/widebanners/')
-  const countStore = useCountStore()
+  const { data: widebanners } = await useFetch(`${ config.public.baseURL }c/widebanners/`)
+  
 
 </script>
 
 
 <template>
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 my-4">
+
+    <!-- Pinia {{ countStore.count }} -->
     
     <Swiper
       :height="300"
