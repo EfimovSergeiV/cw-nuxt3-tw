@@ -1,16 +1,16 @@
 <script setup>
+  const config = useRuntimeConfig()
   // const colorMode = useColorMode()
   // const route = useRoute()
 
-  const { data: widebanner } = await useFetch('https://api.glsvar.ru/c/widebanners/')
-  const { data: banners } = await useFetch('https://api.glsvar.ru/c/mainbanner/')
-  const { data: brands } = await useFetch('https://api.glsvar.ru/c/brands/')
-  const { data: esab } = await useFetch('https://api.glsvar.ru/c/prods/?brnd=3')
-  const { data: latest } = await useFetch('https://api.glsvar.ru/c/neues/')
-  const { data: mpromobs } = await useFetch('https://api.glsvar.ru/c/mpromob/')
-  const { data: recommends } = await useFetch('https://api.glsvar.ru/c/recommend/')
-  const { data: mweld } = await useFetch('https://api.glsvar.ru/c/prod/1835/')
-  const { data: randomreviews } = await useFetch('https://api.glsvar.ru/c/random-reviews/')
+  const { data: widebanner } = await useFetch(`${ config.public.baseURL }c/widebanners/`)
+  const { data: banners } = await useFetch(`${ config.public.baseURL }c/mainbanner/`)
+  const { data: brands } = await useFetch(`${ config.public.baseURL }c/brands/`)
+  const { data: esab } = await useFetch(`${ config.public.baseURL }c/prods/?brnd=3`)
+  const { data: latest } = await useFetch(`${ config.public.baseURL }c/neues/`)
+  const { data: mpromobs } = await useFetch(`${ config.public.baseURL }c/mpromob/`)
+  const { data: recommends } = await useFetch(`${ config.public.baseURL }c/recommend/`)
+  const { data: randomreviews } = await useFetch(`${ config.public.baseURL }c/random-reviews/`)
   // console.log(route.params.id)
 </script>
 
@@ -24,7 +24,9 @@
     <Reviews :reviews="randomreviews" />
     <ESAB />
     <Recommend :recommends="recommends" />
+    <ShopMaps />    
     <CorouselBrands />
+
 
 
       <!-- <p class="text-xs text-gray-800">{{ widebanner }}</p> -->

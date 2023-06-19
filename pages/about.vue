@@ -18,18 +18,6 @@
   <div class="">
     <TopSlider />
     <AppNavbar />
-
-    <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8">
-
-      <p class="text-xs text-gray-800">{{ widebanner }}</p>
-      <!-- <p class="text-xs text-gray-800">{{ banners }}</p>
-      <p class="text-xs text-gray-800">{{ brands }}</p>
-      <p class="text-xs text-gray-800">{{ esab }}</p>
-      <p class="text-xs text-gray-800">{{ latest }}</p>
-      <p class="text-xs text-gray-800">{{ mpromobs }}</p>
-      <p class="text-xs text-gray-800">{{ recommends }}</p>
-      <p class="text-xs text-gray-800">{{ mweld }}</p>
-      <p class="text-xs text-gray-800">{{ randomreviews }}</p> -->
-    </div>
+    <ShopMaps />
   </div>
 </template>

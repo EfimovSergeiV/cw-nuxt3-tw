@@ -38,8 +38,8 @@
           }
         }"
       >
-        <SwiperSlide v-for="brand in filteredCarouselBrands(brands)" :key="brand.id" class="">
-          <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">
+        <SwiperSlide v-for="brand in filteredCarouselBrands(brands)" :key="brand.id">
+          <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}" class="flex items-center justify-center">
             <img
               :src="brand.image"
               class="w-14 md:w-24 lg:w-32"
