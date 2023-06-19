@@ -1,9 +1,12 @@
 import { defineStore } from 'pinia'
 
+
 export const useShopStore = defineStore('ShopStore', {
   state: () => ({
     shop: 3,
     city: 'Псков',
+    adress: [],
+    region: [],
   }),
   actions: {
     // since we rely on `this`, we cannot use an arrow function
@@ -18,6 +21,17 @@ export const useShopStore = defineStore('ShopStore', {
     },
     selectCityMaps(city: any) {
       this.city = city
+    },
+    async sendCoordinates(coordinates: any) {
+      const config = useRuntimeConfig()
+      const { data }: any = await useFetch(`${ config.public.baseURL }coordinates/`, {
+        method: 'POST',
+        body: coordinates
+      });
+      if (data.value) {
+        this.adress = data.value
+        this.region = data.value.at(-1)
+      }
     }
   },
 })

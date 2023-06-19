@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted } from 'vue'
+const shopStore = useShopStore()
 
 onMounted(() => {
-  console.log(`the component is now mounted.`)
   if ("geolocation" in navigator) {
     /* местоположение доступно */
     navigator.geolocation.getCurrentPosition(position => {
@@ -10,7 +10,9 @@ onMounted(() => {
         "latitude": position.coords.latitude, 
         "longitude": position.coords.longitude 
       }
-      console.log(location)
+
+      shopStore.sendCoordinates(location)
+
       // this.sendCoordinates(location)
     });
   } else {
