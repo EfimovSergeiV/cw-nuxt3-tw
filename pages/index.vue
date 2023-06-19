@@ -24,6 +24,7 @@
     <Reviews :reviews="randomreviews" />
     <ESAB />
     <Recommend :recommends="recommends" />
+    <CorouselBrands />
 
 
       <!-- <p class="text-xs text-gray-800">{{ widebanner }}</p> -->

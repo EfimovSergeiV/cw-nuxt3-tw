@@ -9,11 +9,9 @@
 
   const startAnimation = (image) => {
     image.show_image = image.image;
-    console.log('jasfdhj')
   }
   const stopAnimation = (image) => {
     image.show_image = image.static_image;
-    console.log('jasfdhjsdfhjksdh')
   }
 
 </script>
