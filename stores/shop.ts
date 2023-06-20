@@ -62,12 +62,15 @@ export const useProductsStore = defineStore('ProductsStore', {
       const product: Product = { ...payload}
       
       if (target === 'cart') {
-
-        
         product.quantity = 1
-        this.cart.push(product)
-
-      } 
+        const index = this.cart.findIndex((item) => item.id === product.id)
+        if (index === -1){
+          this.cart.push(product)
+        } else {
+          this.cart.splice(index, 1)
+        }
+      }
+      
       if (target === 'comp') {
         const index = this.comp.findIndex((item) => item.id === product.id)
         if (index === -1){
@@ -75,8 +78,8 @@ export const useProductsStore = defineStore('ProductsStore', {
         } else {
           this.comp.splice(index, 1)
         }
-
       }
+
       if (target === 'like') {
         const index = this.comp.findIndex((item) => item.id === product.id)
         if (index === -1){
