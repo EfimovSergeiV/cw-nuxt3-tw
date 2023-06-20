@@ -3,7 +3,6 @@
   const productsStore = useProductsStore()
   const props = defineProps(['products'])
   const route = useRoute()
-  console.log(route.query)
 
   const { data: products } = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
 
