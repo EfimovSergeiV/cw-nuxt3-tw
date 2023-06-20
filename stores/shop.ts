@@ -69,9 +69,11 @@ export const useProductsStore = defineStore('ProductsStore', {
     },
   },
   actions: {
+    /// Добавление или удаление товаров
     addProduct(target: string, payload: Product) {
       const product: Product = { ...payload}
       
+      /// Добавление или удаление товара в корзину
       if (target === 'cart') {
         product.quantity = 1
         const index = this.cart.findIndex((item) => item.id === product.id)
@@ -81,7 +83,7 @@ export const useProductsStore = defineStore('ProductsStore', {
           this.cart.splice(index, 1)
         }
       }
-      
+      /// Добавление или удаление товара в сравнение
       if (target === 'comp') {
         const index = this.comp.findIndex((item) => item.id === product.id)
         if (index === -1){
@@ -90,7 +92,7 @@ export const useProductsStore = defineStore('ProductsStore', {
           this.comp.splice(index, 1)
         }
       }
-
+      /// Добавление или удаление товара в избранные
       if (target === 'like') {
         const index = this.like.findIndex((item) => item.id === product.id)
         if (index === -1){
@@ -100,6 +102,7 @@ export const useProductsStore = defineStore('ProductsStore', {
         }
       }
     },
+    /// Изменение кол-ва товаров в корзине
     changeQuantity( id: number, quantity: number ) {
       console.log(id, quantity)
     }
