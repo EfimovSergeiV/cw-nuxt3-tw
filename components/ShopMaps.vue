@@ -19,9 +19,9 @@
 <template>
   <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 py-2">
 
-    qq {{ shopStore.adress }}
-    qq {{ shopStore.region }}
-    qq {{ shopStore.shop }}
+    <p class="">1. {{ shopStore.shop }}</p>
+    <p class="">2. {{ shopStore.shops.length }}</p>
+    <p class="">3. {{ shopStore.city }}</p>
 
     <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 text-center">
         <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md cursor-pointer group" v-for="(city, pk) in ['Москва', 'Санкт-Петербург', 'Псков', 'Смоленск', 'Петрозаводск', 'Великие луки',]" :key="pk">

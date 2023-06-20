@@ -3,20 +3,11 @@ import { defineStore } from 'pinia'
 
 export const useShopStore = defineStore('ShopStore', {
   state: () => ({
-    shop: 3,
+    shop: null,
     shops: [],
     city: 'Псков',
-    adress: [],
-    region: [],
   }),
   actions: {
-    // since we rely on `this`, we cannot use an arrow function
-    // increment() {
-    //   this.count++
-    // },
-    // randomizeCounter() {
-    //   this.count = Math.round(100 * Math.random())
-    // },
     selectShop(shop: any) {
       this.shop = shop
     },
@@ -25,6 +16,7 @@ export const useShopStore = defineStore('ShopStore', {
     },
     writeShops(shops: any) {
       this.shops = shops
+      this.shop = shops.value[0]
     },
     async sendCoordinates(coordinates: any) {
       const config = useRuntimeConfig()
@@ -33,19 +25,14 @@ export const useShopStore = defineStore('ShopStore', {
         body: coordinates
       });
       if (data.value) {
-        this.adress = data.value
-        this.region = data.value.at(-1)
+        console.log('coordinate', data.value)
+        this.city = data.value.at(-1)
 
         this.shops.forEach((el: any) => {
-          if (el.city.toLowerCase() === data.value(-1).toLowerCase()) {
+          if (el.city.toLowerCase() === this.city.toLowerCase()) {
             this.shop = el
           }
         })
-
-        // state.shops.forEach((element) => {
-        //   if (element.city.toLowerCase() === adress.at(-1).toLowerCase()) {
-        //     state.shop = element
-        //   }
       }
     }
   },
