@@ -9,8 +9,8 @@
 <template>
   <div class="">
     <div class="w-5 h-5 flex items-center justify-center border-2 border-blue-600 rounded-md cursor-pointer">
-      <transition name="fade">
-        <div v-if="true" class="">
+      <transition name="fade" mode="out-in">
+        <div v-if="productsStore.productInComp(props.product.id)" class="">
           <button @click="productsStore.addProduct('comp', props.product); notificationsStore.addToast('Товар удалён из сравнения')" class="mdi mdi-check-bold text-gray-700 dark:text-gray-300"></button>
         </div>
         <div v-else class="">

@@ -57,6 +57,17 @@ export const useProductsStore = defineStore('ProductsStore', {
     comp: [] as Product[],
     like: [] as Product[],
   }),
+  getters: {
+    productInCart: (state) => (id: number) => {
+      return state.cart.find((item) => item.id === id);
+    },
+    productInComp: (state) => (id: number) => {
+      return state.comp.find((item) => item.id === id);
+    },
+    productInLike: (state) => (id: number) => {
+      return state.like.find((item) => item.id === id);
+    },
+  },
   actions: {
     addProduct(target: string, payload: Product) {
       const product: Product = { ...payload}
@@ -81,13 +92,16 @@ export const useProductsStore = defineStore('ProductsStore', {
       }
 
       if (target === 'like') {
-        const index = this.comp.findIndex((item) => item.id === product.id)
+        const index = this.like.findIndex((item) => item.id === product.id)
         if (index === -1){
           this.like.push(product)
         } else {
-          this.comp.splice(index, 1)
+          this.like.splice(index, 1)
         }
       }
+    },
+    changeQuantity( id: number, quantity: number ) {
+      console.log(id, quantity)
     }
 
   },
