@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Главный сварщик - сварочное оборудование и всё для сварки',
+      title: 'Главный сварщик',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

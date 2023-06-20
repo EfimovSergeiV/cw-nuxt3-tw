@@ -40,7 +40,20 @@ export const useShopStore = defineStore('ShopStore', {
 })
 
 export const useProductsStore = defineStore('ProductsStore', {
-  /// Манипуляции с товарами. Сравнение, корзина, избранное
+  /// Манипуляции с товарами. Сравнение, корзина, избранное Notifications
+  state: () => ({
+    cart: null,
+    comp: null,
+    like: null,
+  }),
+  actions: {
+
+
+  },
+})
+
+export const useNotificationsStore = defineStore('NotificationsStore', {
+  /// Уведомления и всплывающие окна 
   state: () => ({
     count: 0,
   }),

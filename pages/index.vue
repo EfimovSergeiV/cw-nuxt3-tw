@@ -1,4 +1,8 @@
 <script setup>
+  useHead({
+    titleTemplate: '%s - сварочное оборудование и всё для сварки Псков, Москва, Спб'
+  })
+
   const config = useRuntimeConfig()
   // const colorMode = useColorMode()
   // const route = useRoute()

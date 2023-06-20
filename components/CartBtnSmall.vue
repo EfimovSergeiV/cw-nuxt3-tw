@@ -1,5 +1,6 @@
 <script setup>
   const props = defineProps(['product'])
+  const productsStore = useProductsStore()
 
 </script>
 
