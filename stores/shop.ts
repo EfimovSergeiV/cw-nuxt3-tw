@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 
 
 export const useShopStore = defineStore('ShopStore', {
+  /// Определение локации и магазина пользователя
   state: () => ({
     shop: null,
     shops: [],
@@ -38,17 +39,17 @@ export const useShopStore = defineStore('ShopStore', {
   },
 })
 
-// export const useCounterStore = defineStore('counter', {
-//   state: () => ({
-//     count: 0,
-//   }),
-//   actions: {
-//     // since we rely on `this`, we cannot use an arrow function
-//     increment() {
-//       this.count++
-//     },
-//     randomizeCounter() {
-//       this.count = Math.round(100 * Math.random())
-//     },
-//   },
-// })
+export const useProductsStore = defineStore('ProductsStore', {
+  /// Манипуляции с товарами. Сравнение, корзина, избранное
+  state: () => ({
+    count: 0,
+  }),
+  actions: {
+    increment() {
+      this.count++
+    },
+    randomizeCounter() {
+      this.count = Math.round(100 * Math.random())
+    },
+  },
+})

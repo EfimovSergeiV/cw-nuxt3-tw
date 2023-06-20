@@ -3,7 +3,7 @@
   const shopStore = useShopStore()
   const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 
-
+  /// Перенести карты в модели бэка
   const mapURLs = {
     "Псков" : "https://yandex.ru/map-widget/v1/?um=constructor%3A47f57d246b40670e64b17cb3f82dde8a81f3b3a825fa0ec9dc5e2a360214ec38&amp;source=constructor",
     "Москва" : "https://yandex.ru/map-widget/v1/?um=constructor%3Ae113235413b59c4ae31cb4d894caa9612e5c88e95cb5fc873f8508770800a19f&amp;source=constructor",
@@ -18,10 +18,6 @@
 
 <template>
   <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 py-2">
-
-    <p class="">1. {{ shopStore.shop }}</p>
-    <p class="">2. {{ shopStore.shops.length }}</p>
-    <p class="">3. {{ shopStore.city }}</p>
 
     <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 text-center">
         <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md cursor-pointer group" v-for="(city, pk) in ['Москва', 'Санкт-Петербург', 'Псков', 'Смоленск', 'Петрозаводск', 'Великие луки',]" :key="pk">
