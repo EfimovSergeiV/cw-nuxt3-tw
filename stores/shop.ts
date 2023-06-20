@@ -72,7 +72,7 @@ export const useProductsStore = defineStore('ProductsStore', {
       }
       if (target === 'like') {
         this.like.push(product)
-        
+
       }
     }
 
@@ -85,11 +85,8 @@ export const useNotificationsStore = defineStore('NotificationsStore', {
     count: 0,
   }),
   actions: {
-    increment() {
-      this.count++
-    },
-    randomizeCounter() {
-      this.count = Math.round(100 * Math.random())
+    addToast(msg: any) {
+      console.log('addToast')
     },
   },
 })
