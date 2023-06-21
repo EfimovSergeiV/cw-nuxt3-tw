@@ -20,13 +20,14 @@
   const { data: recommends } = await useFetch(`${ config.public.baseURL }c/recommend/`)
   const { data: breadcrumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/?ct=${product.value.category.id}`)
 
+  watch(route)
   
 </script>
 
 
 <template>
   <div class="">
-
+    {{ route }}
     <TopSlider />
     <AppNavbar />
     <BreadCrumbs :breadcrumbs="breadcrumbs" />
