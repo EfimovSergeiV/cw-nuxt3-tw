@@ -9,7 +9,7 @@
 
 <template>
   <div class="">
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 py-2">
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
