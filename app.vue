@@ -1,7 +1,7 @@
 
 <template>
   <NuxtLayout>
-    <NuxtLoadingIndicator :color="'repeating-linear-gradient(to right,#dcc600 0%,#8fdc00 50%,#04dc00 100%)'" :height="1" />
+    <NuxtLoadingIndicator :color="'repeating-linear-gradient(to right,#dcc600 0%,#0095ff 50%,#0000ff 100%)'" :height="1" />
     <NuxtPage />
   </NuxtLayout>
 </template>
