@@ -3,21 +3,26 @@
   const productsStore = useProductsStore()
   const props = defineProps(['products'])
   const route = useRoute()
+  const router = useRouter()
 
 
-  const { data: products } = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
-  const { data: breadcrumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, {params: route.query,})
+  const { data: products } = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
+  const { data: breadcrumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
 
   // const breadcrumbs = await $axios.$get(`c/breadcrumb/?ct=${product.category.id}`)
   // const breadcrumbs = await $axios.$get(`c/breadcrumb/`, { params: query })
   /// Корзина кнопки, лайки, сравнение
+  // const obj = reactive(route)
+  // router.push({ name: 'prods', query: { 'ct': 1 } })
 
+  watch(() => route.fullPath, async (fullPath) => {
 
-  const obj = reactive(route)
-  watch(
-    () => obj.fullPath,
-    (fullPath) => {
-      console.log(`count is: ${fullPath}`)
+      const { data: res }  = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
+      const { data: crumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
+
+      products.value = ( await res.value )
+      breadcrumbs.value = ( await crumbs.value )
+      
     }
   )
 
@@ -34,8 +39,6 @@
         <div id="cat-title" class="flex items-center justify-end mb-2">
           <p class="text-2xl">{{ products.meta.title }}</p>
         </div>
-
-        {{ obj }}
  
         <div v-if="products.meta.inserted" class="flex items-center justify-end">
           <div id="" class="">
