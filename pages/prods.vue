@@ -9,11 +9,7 @@
   const { data: products } = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
   const { data: breadcrumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
 
-  // const breadcrumbs = await $axios.$get(`c/breadcrumb/?ct=${product.category.id}`)
-  // const breadcrumbs = await $axios.$get(`c/breadcrumb/`, { params: query })
   /// Корзина кнопки, лайки, сравнение
-  // const obj = reactive(route)
-  // router.push({ name: 'prods', query: { 'ct': 1 } })
 
   watch(() => route.fullPath, async (fullPath) => {
 
@@ -22,7 +18,7 @@
 
       products.value = ( await res.value )
       breadcrumbs.value = ( await crumbs.value )
-      
+
     }
   )
 
