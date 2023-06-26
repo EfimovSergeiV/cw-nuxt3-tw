@@ -22,6 +22,16 @@
     }
   )
 
+  // const ct_id = ref(1)
+  // const page_id = ref(1)
+
+  // const { data: products, pending, error } = await useAsyncData(() => {
+  //   return $fetch(`${ config.public.baseURL }c/prods/`, { params: { ct: ct_id.value, page: page_id.value } })
+  // // return $fetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
+  // }, {
+  //   watch: [ct_id, page_id ]
+  // })
+
 </script>
 
 
@@ -31,6 +41,8 @@
     <AppNavbar />
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 mb-4">
+
+      <p v-if="pending">Fetching...</p>
 
       <div class="">
         <ul class="flex gap-4">
@@ -83,7 +95,7 @@
       </div>
     </div>
 
-    <div class="">
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 my-4">
       <ul class="flex gap-4">
         <li v-for="i in 10" :key="i">
           <nuxt-link :to="{ name: 'prods', query: { ct: 1, page: i}}">{{ i }}</nuxt-link>
