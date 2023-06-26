@@ -11,6 +11,16 @@
 
   /// Корзина кнопки, лайки, сравнение
 
+  const refreshing = ref(false)
+  const refreshAll = async () => {
+    refreshing.value = true
+    try {
+      await refreshNuxtData()
+    } finally {
+      refreshing.value = false
+    }
+  }
+
   watch(() => route.fullPath, async (fullPath) => {
 
       const { data: res, pending, error }  = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
@@ -41,6 +51,10 @@
     <AppNavbar />
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 mb-4">
+
+      <button :disabled="refreshing" @click="refreshAll">
+        Refetch All Data ({{ refreshing }})
+      </button>
 
       <p v-if="pending">Fetching...</p>
 
@@ -79,7 +93,7 @@
 
     <BreadCrumbs :breadcrumbs="breadcrumbs" />
 
-    <div class="">
+    <div id="products" class="">
       <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
 
         <div class="">
@@ -95,12 +109,15 @@
       </div>
     </div>
 
+
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 my-4">
+
       <ul class="flex gap-4">
         <li v-for="i in 10" :key="i">
           <nuxt-link :to="{ name: 'prods', query: { ct: 1, page: i}}">{{ i }}</nuxt-link>
         </li>
       </ul>
+
     </div>
 
 
