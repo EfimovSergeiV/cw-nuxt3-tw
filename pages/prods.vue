@@ -13,7 +13,7 @@
 
   watch(() => route.fullPath, async (fullPath) => {
 
-      const { data: res }  = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
+      const { data: res, pending, error }  = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
       const { data: crumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
 
       products.value = ( await res.value )
@@ -31,6 +31,16 @@
     <AppNavbar />
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 mb-4">
+
+      <div class="">
+        <ul class="flex gap-4">
+          <li v-for="i in 10" :key="i">
+            <nuxt-link :to="{ name: 'prods', query: { ct: 1, page: i}}">{{ i }}</nuxt-link>
+          </li>
+        </ul>
+      </div>
+
+
       <div class="">
         <div id="cat-title" class="flex items-center justify-end mb-2">
           <p class="text-2xl">{{ products.meta.title }}</p>
@@ -73,6 +83,66 @@
       </div>
     </div>
 
+    <div class="">
+      <ul class="flex gap-4">
+        <li v-for="i in 10" :key="i">
+          <nuxt-link :to="{ name: 'prods', query: { ct: 1, page: i}}">{{ i }}</nuxt-link>
+        </li>
+      </ul>
+    </div>
+
 
   </div>
 </template>
+
+
+
+<!-- <template>
+  <div>
+    
+
+    <button @click="previous()" >Previous</button>
+    <button @click="next()">Next</button>
+
+    {{ page }}
+
+    {{  cafes }}
+
+
+    <button @click="previous()" >Previous</button>
+    <button @click="next()">Next</button>
+
+  </div>
+</template>
+<script setup>
+
+const page = ref(1);
+
+const { data: cafes, error } = await useAsyncData(
+  'cafes',
+  () => $fetch( `c/prods/`, {
+    method: 'GET',
+    baseURL: 'http://127.0.0.1:8000/',
+    params: {
+      ct: 1 ,
+      page: page.value,
+    }
+  } ), {
+    watch: [
+      page,
+    ]
+  }
+);
+
+const previous = () => {
+  if( page.value != 1 ){
+    page.value = page.value -1 ;
+  }
+}
+
+const next = () => {
+
+    page.value = page.value + 1;
+
+}
+</script> -->
