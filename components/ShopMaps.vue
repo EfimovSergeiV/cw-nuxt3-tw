@@ -36,7 +36,7 @@
                   <div class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs" v-if="shop.city == shopStore.city">
                     <div class="border border-gray-200 dark:border-gray-300/30 w-2/3 p-1 transition-all duration-500 rounded-sm hover:border-gray-300/50 dark:hover:border-gray-100/50 cursor-pointer bg-white/60 dark:bg-gray-700/60 hover:bg-white/80 dark:hover:bg-gray-700/80 ">
                       <p class="mdi mdi-map-marker"> {{ shop.adress }}</p>
-                      <a :href="shop.phone"><p class="my-1 mdi mdi-phone"> {{ shop.phone }}</p></a>
+                      <a :href="`tel:${shop.phone}`"><p class="my-1 mdi mdi-phone"> {{ shop.phone }}</p></a>
                       <p class="">{{ shop.wday }}</p>
                       <p class="">{{ shop.wend }}</p>                      
                     </div>
