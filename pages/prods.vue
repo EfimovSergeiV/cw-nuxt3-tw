@@ -1,7 +1,6 @@
 <script setup>
   const config = useRuntimeConfig()
   const productsStore = useProductsStore()
-  const props = defineProps(['products'])
   const route = useRoute()
   const router = useRouter()
   
@@ -11,42 +10,16 @@
 
   /// Корзина кнопки, лайки, сравнение
 
-  const refreshing = ref(false)
-  const refreshAll = async () => {
-    refreshing.value = true
-    try {
-      await refreshNuxtData()
-    } finally {
-      refreshing.value = false
-    }
-  }
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0 })
   }
 
-  const isLoading = ref(false)
-  const showLoader = () => {
-    isLoading.value = !isLoading.value
-    console.log('show')
-  }
-
   watch(() => route.fullPath, async (fullPath) => {
-
-      const { data: test } = await useFetch(`https://api.glsvar.ru/c/prods/`, { params: route.query })
-      const { data: test1 } = await useFetch(`https://api.glsvar.ru/c/prods/`, { params: route.query })
-      const { data: test2 } = await useFetch(`https://api.glsvar.ru/c/prods/`, { params: route.query })
-      const { data: test3 } = await useFetch(`https://api.glsvar.ru/c/prods/`, { params: route.query })
-
       const { data: prods }  = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
       const { data: crumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
-
-
       products.value = ( await prods.value )
       breadcrumbs.value = ( await crumbs.value )
-
       scrollToTop()
-
     }
   )
 
@@ -69,21 +42,6 @@
     <AppNavbar />
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 mb-4">
-
-      <button @click="showLoader">
-        show loader ({{ isLoading }})
-      </button>
-
-      <p v-if="pending">Fetching...</p>
-
-      <div class="">
-        <ul class="flex gap-4">
-          <li v-for="i in 10" :key="i">
-            <nuxt-link :to="{ name: 'prods', query: { ct: 1, page: i}}">{{ i }}</nuxt-link>
-          </li>
-        </ul>
-      </div>
-
 
       <div class="">
         <div id="cat-title" class="flex items-center justify-end mb-2">
@@ -111,33 +69,41 @@
 
     <BreadCrumbs :breadcrumbs="breadcrumbs" />
 
-    <div id="products" class="">
-      <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
-
-        <div class="">
-          <div class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
-            <div class="" v-for="product in products.results" :key="product.id">
-
-              <ProductCard :product="product" />
-
-            </div>
-          </div>
-        </div>
-
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 my-4">
+      <div class="flex items-center justify-end">
+        <Pagination :count="products.count" />
       </div>
     </div>
 
+   
+      <div id="products" class="">
+        <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
+
+          <div class="">
+            <div class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+              
+              <transition-group name="fade">
+                <div class="" v-for="product in products.results" :key="product.id">
+                  <ProductCard :product="product" />
+                </div>
+              </transition-group>
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 my-4">
-
-      <ul class="flex gap-4">
-        <li v-for="i in 10" :key="i">
-          <nuxt-link :to="{ name: 'prods', query: { ct: 1, page: i}}">{{ i }}</nuxt-link>
-        </li>
-      </ul>
-
+      <div class="flex items-center justify-end">
+        <Pagination :count="products.count" />
+      </div>
     </div>
-
 
   </div>
 </template>
