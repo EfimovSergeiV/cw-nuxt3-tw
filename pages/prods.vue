@@ -4,7 +4,7 @@
   const props = defineProps(['products'])
   const route = useRoute()
   const router = useRouter()
-
+  
 
   const { data: products } = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
   const { data: breadcrumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
@@ -21,13 +21,31 @@
     }
   }
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0 })
+  }
+
+  const isLoading = ref(false)
+  const showLoader = () => {
+    isLoading.value = !isLoading.value
+    console.log('show')
+  }
+
   watch(() => route.fullPath, async (fullPath) => {
 
-      const { data: res, pending, error }  = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
+      const { data: test } = await useFetch(`https://api.glsvar.ru/c/prods/`, { params: route.query })
+      const { data: test1 } = await useFetch(`https://api.glsvar.ru/c/prods/`, { params: route.query })
+      const { data: test2 } = await useFetch(`https://api.glsvar.ru/c/prods/`, { params: route.query })
+      const { data: test3 } = await useFetch(`https://api.glsvar.ru/c/prods/`, { params: route.query })
+
+      const { data: prods }  = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
       const { data: crumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
 
-      products.value = ( await res.value )
+
+      products.value = ( await prods.value )
       breadcrumbs.value = ( await crumbs.value )
+
+      scrollToTop()
 
     }
   )
@@ -52,8 +70,8 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 mb-4">
 
-      <button :disabled="refreshing" @click="refreshAll">
-        Refetch All Data ({{ refreshing }})
+      <button @click="showLoader">
+        show loader ({{ isLoading }})
       </button>
 
       <p v-if="pending">Fetching...</p>
