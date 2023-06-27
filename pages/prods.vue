@@ -69,34 +69,34 @@
 
     <BreadCrumbs :breadcrumbs="breadcrumbs" />
 
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 my-4">
+    <div class="mx-auto px-4 my-4 lg:max-w-7xl lg:px-8">
       <div class="flex items-center justify-end">
         <Pagination :count="products.count" />
       </div>
     </div>
 
    
-      <div id="products" class="">
-        <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
+    <div id="products" class="">
+      <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-          <div class="">
-            <div class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
-              
-              <transition-group name="fade">
-                <div class="" v-for="product in products.results" :key="product.id">
-                  <ProductCard :product="product" />
-                </div>
-              </transition-group>
+        <div class="">
+          <div class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+            
+            <transition-group name="fade">
+              <div class="" v-for="product in products.results" :key="product.id">
+                <ProductCard :product="product" />
+              </div>
+            </transition-group>
 
-            </div>
           </div>
-
         </div>
+
       </div>
+    </div>
 
 
 
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 my-4">
+    <div class="mx-auto px-4 my-4 lg:max-w-7xl lg:px-8">
       <div class="flex items-center justify-end">
         <Pagination :count="products.count" />
       </div>

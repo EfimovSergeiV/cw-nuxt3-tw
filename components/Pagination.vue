@@ -4,7 +4,6 @@
 
   const current = computed(() => route.query.page || 1 )
   const pages = computed(() => {
-    console.log(Number(current.value) + 3)
     if (current.value < 7) {
       return Array.from({length: Math.ceil(props.count/36)}, (v, k) => k + 1).slice(0, 7)
     } else {
@@ -12,7 +11,6 @@
     }
     
   })
-
 
 </script>
 
