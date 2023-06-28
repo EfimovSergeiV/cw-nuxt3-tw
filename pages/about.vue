@@ -93,13 +93,13 @@
           </div>
           <div class="flex items-center gap-4">
             <div class="">
-              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
+              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="/esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
             </div>
             <div class="">
-              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="/cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
             </div>
             <div class="">
-              <img @click="cert = 'svarog.jpg'" alt="cert-3" src="svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'svarog.jpg'" alt="cert-3" src="/svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
             </div>                
           </div>
         </div>
