@@ -97,34 +97,14 @@
       });
 
       order.value = await response.value
+      productsStore.clearCartProducts()
+      clientStore.saveClientData(clientData)
 
     } else {
       console.log('message err ', phoneValidate.value ,emailValidate.value)
     }
   }
 
-
-
-  // if ( data.phone || data.email ) {
-  //         this.$axios.$post('o/order/', data).then((response) => {
-
-  //           this.$axios.$get(`o/orderinfo/${response.order}/`).then((resp) => {
-  //             this.saveOrder(resp)
-  //           })
-            
-  //           this.addToast('Ваш заказ успешно принят. Мы свяжемся с вами в ближайшее время.')
-  //           this.cleanCart()
-  //           this.$router.push({name: 'person',})            
-  //         }).catch(() => {
-  //           this.addToast('Ошибка при обработке заказа, пожайлуста свяжитесь с нами по адресу zakaz@glsvar.ru')
-  //         })
-  //       } else {
-  //         this.addToast("Введите номер телефона или адрес электронной почты")
-  //       }
-
-  //     } else {
-  //       this.addToast("Выберите адрес магазина")
-  //     }
 
 </script>
 
@@ -163,9 +143,9 @@
                       <p class="text-sm">{{ product.name }}</p>
                     </div>
                     <div class="flex justify-center w-32">
-                      <button  @click="decProductToCart(product)" class="mdi mdi-minus cursor-pointer"></button>
+                      <button  @click="productsStore.changeQuantity(product, 'del')" class="mdi mdi-minus cursor-pointer"></button>
                       <div class="mx-2"><p>{{ product.quantity }}</p></div>
-                      <button @click="incProductToCart(product)" class="mdi mdi-plus cursor-pointer"></button>
+                      <button @click="productsStore.changeQuantity(product, 'add')" class="mdi mdi-plus cursor-pointer"></button>
                     </div>
                     <div class="flex justify-center w-32">
                       <p v-if="product.status === 'stock'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>
@@ -393,8 +373,6 @@
               </div>
             </button>
           </div>
-
-          Order: {{ order }}
 
         </div>
       </div>

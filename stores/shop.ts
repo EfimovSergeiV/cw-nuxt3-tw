@@ -13,6 +13,28 @@ interface Product {
   quantity: number
 }
 
+interface Client {
+  shop_id: number
+  region_code: string
+  person:string
+  phone: string
+  email: string
+  comment: any
+  delivery:string
+  adress: string
+
+  entity: string
+  company: string
+  legaladress: string
+  inn: string
+  kpp: string
+  okpo: string
+  bankname: string
+  currentacc: string
+  corresponding: string
+  bic: string
+}
+
 
 export const useShopStore = defineStore('ShopStore', {
   /// Определение локации и магазина пользователя
@@ -103,8 +125,16 @@ export const useProductsStore = defineStore('ProductsStore', {
       }
     },
     /// Изменение кол-ва товаров в корзине
-    changeQuantity( id: number, quantity: number ) {
-      console.log(id, quantity)
+    changeQuantity( product: any, action: string ) {
+      const cartProduct = this.cart.find((item) => item.id === product.id)
+      if ( cartProduct &&  cartProduct.quantity > 1 && action === 'del' ) {
+        cartProduct.quantity--
+      } else if ( cartProduct && action === 'add') {
+        cartProduct.quantity++
+      }
+    },
+    clearCartProducts() {
+      this.cart = []
     }
 
   },
@@ -112,15 +142,14 @@ export const useProductsStore = defineStore('ProductsStore', {
 
 
 export const useClientStore = defineStore('ClientStore', {
-  /// Уведомления и всплывающие окна 
+  /// Данные клиента 
   state: () => ({
-    client: {
-
-    },
+    client: {} as Client,
   }),
   actions: {
-    addClient(msg: any) {
-      console.log('addToast')
+    saveClientData(data: any) {
+      this.client = data
+      this.client.comment = null
     },
   },
 })
