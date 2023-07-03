@@ -15,7 +15,7 @@
   }
 
   watch(() => route.fullPath, async (fullPath) => {
-      const { data: prods }  = await useFetch(`${ config.public.baseURL }c/prods/`, {params: route.query,})
+      const { data: prods }  = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
       const { data: crumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
       products.value = ( await prods.value )
       breadcrumbs.value = ( await crumbs.value )

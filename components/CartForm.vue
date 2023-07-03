@@ -1,19 +1,13 @@
 <script setup>
+
   const productsStore = useProductsStore()
   const clientStore = useClientStore()
+
+  const config = useRuntimeConfig()
   const notificationsStore = useNotificationsStore()
   const props = defineProps(['shops'])
 
-  const phoneValidate = computed(() => {
-    console.log('Validate')
-    // const re = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/
-    // if (this.client.phone) {
-    //   return this.client.phone.search(re) !== -1
-    // } else {
-    //   return false
-    // }
-  })
-  
+
   const fields = [
       { keyword:"legaladress", placeholder:"Россия, Москва, 117312, ул. Вавилова, д. 123", title:"Юридический адрес"},
       { keyword:"company", placeholder:"ООО Полное название компании", title:"Полное наименование"},
@@ -27,17 +21,15 @@
   ]
 
 
-  const clientData = ref({
+  const clientData = reactive({
     shop_id: null,
     region_code: null,
     person:null,
     phone: null,
     email: null,
     comment: null,
-    delivery: false,
-    // "delivery_adress": null,
-    // "delivery_summ": null,        
-    adress: null,
+    delivery: false,     
+    adressData: null,
     total: null,
 
     entity: false,
@@ -54,11 +46,85 @@
     client_product: null,
   })
 
+  const phoneValidate = computed(() => {
+    const re = /^(?:\+7|7|8)[-\s]?\d{3}[-\s]?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/
+    if (clientData.phone) {
+      return clientData.phone.search(re) !== -1
+    } else {
+      return false
+    }
+  })
+  
+  const emailValidate = computed(() => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (clientData.email) {
+      return clientData.email.search(re) !== -1
+    } else {
+      return false
+    }
+  })
+
+  const order = reactive({})
+
+  const sendOrder = async () => {
+    if ( (phoneValidate.value || emailValidate.value) && (clientData.adressData) ) {
+      const { data: response } = await useFetch(`${ config.public.baseURL }o/order/`, {
+        method: 'POST',
+        body: {
+          shop_id: clientData.adressData.id,
+          region_code: clientData.adressData.region_code,
+          person:clientData.person,
+          phone: clientData.phone,
+          email: clientData.email,
+          comment: clientData.comment,
+          delivery: clientData.delivery,     
+          adress: clientData.adressData.adress,
+
+          entity: clientData.entity,
+          company: clientData.company,
+          legaladress: clientData.legaladress,
+          inn: clientData.inn,
+          kpp: clientData.kpp,
+          okpo: clientData.okpo,
+          bankname: clientData.bankname,
+          currentacc: clientData.currentacc,
+          corresponding: clientData.corresponding,
+          bic: clientData.bic,
+
+          client_product: productsStore.cart,
+        }
+        
+      });
+
+      order.value = await response.value
+
+    } else {
+      console.log('message err ', phoneValidate.value ,emailValidate.value)
+    }
+  }
 
 
-  // onMounted(() => {
-  //   input.value.focus()
-  // })
+
+  // if ( data.phone || data.email ) {
+  //         this.$axios.$post('o/order/', data).then((response) => {
+
+  //           this.$axios.$get(`o/orderinfo/${response.order}/`).then((resp) => {
+  //             this.saveOrder(resp)
+  //           })
+            
+  //           this.addToast('Ваш заказ успешно принят. Мы свяжемся с вами в ближайшее время.')
+  //           this.cleanCart()
+  //           this.$router.push({name: 'person',})            
+  //         }).catch(() => {
+  //           this.addToast('Ошибка при обработке заказа, пожайлуста свяжитесь с нами по адресу zakaz@glsvar.ru')
+  //         })
+  //       } else {
+  //         this.addToast("Введите номер телефона или адрес электронной почты")
+  //       }
+
+  //     } else {
+  //       this.addToast("Выберите адрес магазина")
+  //     }
 
 </script>
 
@@ -69,7 +135,6 @@
 
     <div id="cart-set" class="">
 
-      <p class="text-xs">{{ clientData }}</p>
 
       <div v-if="(productsStore.cart.length > 0)" class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-sm p-1">
 
@@ -208,7 +273,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-email"></p>
                 </div>
-                <input v-model="clientData.phone" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
+                <input v-model="clientData.email" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
               </div>
             </div>
             <div class="">
@@ -217,7 +282,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-phone"></p>
                 </div>
-                <input v-model="clientData.email" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
+                <input v-model="clientData.phone" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
               </div> 
             </div>
 
@@ -250,7 +315,6 @@
 
 
     <div id="selected-shop" class="">
-
 
       <div class="mt-4">
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
@@ -288,20 +352,20 @@
             <div class="">
               <div class="grid lg:grid-cols-2 justify-items-stretch items-center ">
                 <div class="mx-2 my-2">
-                  <select v-model="clientData.adress" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <select v-model="clientData.adressData" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option disabled value="null">Выберие магазин</option>
-                    <option v-for="shop in shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
+                    <option v-for="shop in props.shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
                   </select>                    
                 </div>
-                <div class="justify-self-center mx-2 my-2" v-if="selectedShop">
-                  <div class="" v-if="selectedShop.phone">
+                <div class="justify-self-center mx-2 my-2" v-if="clientData.adressData">
+                  <div class="" v-if="clientData.adressData.phone">
                     <div class="flex items-center">
                       <div class="border-r">
-                        <a class="text-base md:text-2xl mx-2" :href="'tel:' + selectedShop.phone.replace(/[^+\d]/g, '')">{{ selectedShop.phone }}</a>
+                        <a class="text-base md:text-2xl mx-2" :href="'tel:' + clientData.adressData.phone.replace(/[^+\d]/g, '')">{{ clientData.adressData.phone }}</a>
                       </div>
                       <div class="mx-2">
-                        <p class="text-xs font-bold mt-1">{{ selectedShop.wday }}</p>
-                        <p class="text-xs font-bold">{{ selectedShop.wend }}</p>   
+                        <p class="text-xs font-bold mt-1">{{ clientData.adressData.wday }}</p>
+                        <p class="text-xs font-bold">{{ clientData.adressData.wend }}</p>   
                       </div>
                     </div>
                   </div>
@@ -309,13 +373,13 @@
               </div>
 
             </div>
-            <div class="" v-if="clientData.adress">
-              <iframe :src="selectedShop.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="" v-if="clientData.adressData">
+              <iframe :src="clientData.adressData.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
           <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
-          <textarea v-model="comment" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
+          <textarea v-model="clientData.comment" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
 
           <div class="flex justify-end items-center my-4">
             <button @click="sendOrder" class="">
@@ -329,6 +393,8 @@
               </div>
             </button>
           </div>
+
+          Order: {{ order }}
 
         </div>
       </div>

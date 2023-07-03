@@ -2,6 +2,11 @@
 useHead({
   titleTemplate: '%s - Ваша корзина'
 })
+  const config = useRuntimeConfig()
+  const { data: shops } = await useFetch(`${ config.public.baseURL }/c/shops/`)
+
+
+
 </script>
 
 <template>
@@ -10,7 +15,7 @@ useHead({
     <AppNavbar />
 
     
-    <CartForm />
+    <CartForm :shops="shops" />
 
 
   </div>
