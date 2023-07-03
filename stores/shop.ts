@@ -53,7 +53,7 @@ export const useShopStore = defineStore('ShopStore', {
 export const useProductsStore = defineStore('ProductsStore', {
   /// Манипуляции с товарами. Сравнение, корзина, избранное Notifications
   state: () => ({
-    cart: [] as Product[],
+    cart: [ { "id": 1335, "vcode": "0700020002", "name": "Сварочный источник Fabricator EM500i", "description": "Fabricator это серия инверторных источников питания для тяжелых условий работы, для сварки MIG/MAG и MMA (ручная дуговая сварка покрытым электродом). Его конструкция рассчитана на то, чтобы выдерживать эксплуатацию в сложных условиях, что делает его идеальным решением для промышленного использования. Идеально подходит для тяжелой промышленности, для использования сплошной и порошковой проволоки совместно с устройством подачи FabricatorFeed.", "promo": false, "discount": null, "rating": "1.9", "preview_image": "http://127.0.0.1:8000/files/img/c/preview/13978-en_ww-mainview-01.webp", "only_price_status": true, "only_price": 280570, "currency": "RUB", "status": "order", "product_comp": [], "brand": { "id": 3, "brand": "ESAB", "image": "http://127.0.0.1:8000/files/img/c/brand/esab_logo.png", "carousel": true, "description": "" }, "propstrmodel": [ { "id": 8119, "name": "Дополнительные режимы работы", "qname": "1jwq", "value": "MIG/MAG" }, { "id": 8122, "name": "КПД", "qname": "3n8e", "value": "87%" }, { "id": 8121, "name": "Степень защиты", "qname": "ahev", "value": "IP23S" }, { "id": 8120, "name": "Диаметр электрода, мм", "qname": "likf", "value": "0.8 - 1.2" }, { "id": 8118, "name": "Основной режим работы", "qname": "pa0s", "value": "MMA" }, { "id": 8117, "name": "Электропитание, В", "qname": "s7n4", "value": "342-484" } ], "quantity": 1 }, { "id": 721, "vcode": "733921", "name": "СВАРОЧНЫЙ ИНВЕРТОР ESAB LHN 250I PLUS", "description": "Конструкция аппарата LHN 250i Plus имеет высокую прочность, мощность, надежность и другие характеристики, которые облегчат вашу повседневную работу - например, цифровую панель индикации, длинные сварочные кабели и несколько ручек для переноса аппарата. И самый важный момент: большая мощность при сохранении компактности и малого веса. Модель LHN 250i Plus имеет большой рабочий цикл при 250 A с эффективностью до 60%, что дает вам возможность работать целый день.", "promo": false, "discount": null, "rating": "4.3", "preview_image": "http://127.0.0.1:8000/files/img/c/preview/screenshot_19.webp", "only_price_status": true, "only_price": 38052, "currency": "RUB", "status": "order", "product_comp": [], "brand": { "id": 3, "brand": "ESAB", "image": "http://127.0.0.1:8000/files/img/c/brand/esab_logo.png", "carousel": true, "description": "" }, "propstrmodel": [ { "id": 3941, "name": "Дополнительные режимы работы", "qname": "1jwq", "value": "TIG" }, { "id": 3936, "name": "Габаритные размеры, мм", "qname": "3b0e", "value": "170х446х330" }, { "id": 3939, "name": "Диапазон регулирования сварочного тока, А", "qname": "56np", "value": "30-250" }, { "id": 3937, "name": "Вес, кг", "qname": "7z26", "value": "11" }, { "id": 3940, "name": "Диаметр электрода, мм", "qname": "likf", "value": "1.6-4.0" }, { "id": 3938, "name": "Напряжение холостого хода, В", "qname": "n3wd", "value": "77" }, { "id": 3942, "name": "Основной режим работы", "qname": "pa0s", "value": "MMA" }, { "id": 3935, "name": "Электропитание, В", "qname": "s7n4", "value": "однофазная сеть 220 В 50 Гц" } ], "quantity": 1 }, { "id": 1855, "vcode": "0000001", "name": "ROGUE ES 200I PRO + Маска АСФ 605 + Краги сварщика", "description": "Комплект из сварочного аппарата ESAB ROGUE ES 200I PRO и МАСКИ СВАРЩИКА ХАМЕЛЕОН АСФ 605 + краги сварщика. Rogue—это надежный и долговечный источник питания для профессионального сварщика. Аппарат обеспечивает превосходныеи стабильные сварочные характеристики благодаря использованию новейшей высокопроизводительной силовой электроники и цифрового управления, обеспечивая точную, устойчивую дугу. Rogue идеален для сварки легированных и нелегированных сталей, нержавеющих сталей и чугуна.", "promo": false, "discount": null, "rating": "5.0", "preview_image": "http://127.0.0.1:8000/files/img/c/preview/1_GHQMXJ1_uH7n3CZ.webp", "only_price_status": true, "only_price": 36000, "currency": "RUB", "status": "stock", "product_comp": [], "brand": { "id": 3, "brand": "ESAB", "image": "http://127.0.0.1:8000/files/img/c/brand/esab_logo.png", "carousel": true, "description": "" }, "propstrmodel": [ { "id": 11856, "name": "Габаритные размеры, мм", "qname": null, "value": "403x153x264" }, { "id": 11857, "name": "Вес, кг", "qname": null, "value": "8,4" }, { "id": 11858, "name": "Максимальный сварочный ток, А", "qname": null, "value": "200" }, { "id": 11859, "name": "Напряжение холостого хода, В", "qname": null, "value": "78" }, { "id": 11860, "name": "Диапазон сварочного тока, А", "qname": null, "value": "10-200" }, { "id": 11861, "name": "Частота питающей сети, Гц", "qname": null, "value": "50/60" }, { "id": 11862, "name": "Фазы", "qname": null, "value": "1" }, { "id": 11863, "name": "Рабочая температура, °C", "qname": null, "value": "от -10 до +40" }, { "id": 11864, "name": "* При отсутствии маски или крагов ,последние будут заменены на аналогичные им", "qname": null, "value": "." } ], "quantity": 1 } ] as Product[],
     comp: [] as Product[],
     like: [] as Product[],
   }),
@@ -109,6 +109,22 @@ export const useProductsStore = defineStore('ProductsStore', {
 
   },
 })
+
+
+export const useClientStore = defineStore('ClientStore', {
+  /// Уведомления и всплывающие окна 
+  state: () => ({
+    client: {
+
+    },
+  }),
+  actions: {
+    addClient(msg: any) {
+      console.log('addToast')
+    },
+  },
+})
+
 
 export const useNotificationsStore = defineStore('NotificationsStore', {
   /// Уведомления и всплывающие окна 

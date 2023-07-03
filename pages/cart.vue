@@ -5,5 +5,13 @@ useHead({
 </script>
 
 <template>
-  CART
+  <div class="">
+    <TopSlider />
+    <AppNavbar />
+
+    
+    <CartForm />
+
+
+  </div>
 </template>
