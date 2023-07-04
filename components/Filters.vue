@@ -30,10 +30,16 @@
   
   onMounted(() => {
     props.props.forEach(element => {
-      filters.value[element.prop_alias] = []
+      console.log(element.prop_alias in route.query, element.prop_alias, route.query)
+      if ("brnd" in route.query) {
+        filters.value["brnd"] = route.query["brnd"]
+      }
+      if ( element.prop_alias in route.query ) {
+        filters.value[element.prop_alias] = route.query[element.prop_alias]
+      } else {
+        filters.value[element.prop_alias] = []        
+      }
     })
-    filters.value = route.query
-
   })
 
 </script>
@@ -107,7 +113,7 @@
 
     </div>
 
-    <p class="text-xs">{{ filters }}</p>
+    <p class="text-xs my-2">{{ filters }}</p>
     <p class="text-xs">{{ route.query }}</p>
     
 
