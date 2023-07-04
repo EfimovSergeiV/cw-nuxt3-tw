@@ -21,34 +21,20 @@
       },
     })
   }
+
+  const clearFilter = () => {
+    filters.value["brnd"] = []
+    props.props.forEach(element => filters.value[element.prop_alias] = [])
+    aplleFilter()
+  }
   
   onMounted(() => {
-    console.log(props)
-    props.props.forEach(element => filters.value[element.prop_alias] = []);
-  })
-  
-  // methods: {
-  //     changeForm(key, value) {
-  //       console.log()
-  //       if (key in this.filter) {
-  //         // this.filter[key].push(value.toString())
-  //       } else {
-  //         this.filter[key] = [value.toString(),]
-  //         this.filte[key] = [value.toString(),]
-  //       }
-  //     },
-  //     appFilter() {
-  //       this.show = false
-  //       this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, ...this.filte, "page": 1 } })
-  //     },
-  //     clearFilter() {
-  //       this.filte = {}
-  //       this.filter = {}
-  //       this.by = null
-  //       this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, "page": 1 } })
-  //     }
-  //   }
+    props.props.forEach(element => {
+      filters.value[element.prop_alias] = []
+    })
+    filters.value = route.query
 
+  })
 
 </script>
 
@@ -121,7 +107,9 @@
 
     </div>
 
-    {{ filters }}
+    <p class="text-xs">{{ filters }}</p>
+    <p class="text-xs">{{ route.query }}</p>
+    
 
     <div class="absolute bottom-0 right-0 w-full">
       <div class="bg-gray-300 dark:bg-gray-800">
