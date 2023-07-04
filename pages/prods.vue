@@ -1,9 +1,13 @@
 <script setup>
   const config = useRuntimeConfig()
   const productsStore = useProductsStore()
+  const notificationsStore = useNotificationsStore()
   const route = useRoute()
   const router = useRouter()
-  
+
+  const { data: brands } = await useFetch(`${ config.public.baseURL }c/ctbrand/`, { params: route.query })
+  const { data: props } = await useFetch(`${ config.public.baseURL }c/props/`, { params: route.query })
+
 
   const { data: products } = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
   const { data: breadcrumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
@@ -69,11 +73,25 @@
 
     <BreadCrumbs :breadcrumbs="breadcrumbs" />
 
+
     <div class="mx-auto px-4 my-4 lg:max-w-7xl lg:px-8">
-      <div class="flex items-center justify-end">
+      <div class="flex items-center justify-between">
+
+        <div class="flex items-center justify-end my-4">
+          <button @click="notificationsStore.statusFilterComponent">filter</button>
+        </div>
+
         <Pagination :count="products.count" />
       </div>
+
     </div>
+
+
+    <transition name="filter">
+      <div v-if="notificationsStore.filterComponent" class="fixed z-40 top-0 left-0">
+        <Filters :brands="brands" :props="props" />
+      </div>
+    </transition>
 
    
     <div id="products" class="">
@@ -96,6 +114,10 @@
 
 
 
+
+
+    
+
     <div class="mx-auto px-4 my-4 lg:max-w-7xl lg:px-8">
       <div class="flex items-center justify-end">
         <Pagination :count="products.count" />
@@ -104,55 +126,3 @@
 
   </div>
 </template>
-
-
-
-<!-- <template>
-  <div>
-    
-
-    <button @click="previous()" >Previous</button>
-    <button @click="next()">Next</button>
-
-    {{ page }}
-
-    {{  cafes }}
-
-
-    <button @click="previous()" >Previous</button>
-    <button @click="next()">Next</button>
-
-  </div>
-</template>
-<script setup>
-
-const page = ref(1);
-
-const { data: cafes, error } = await useAsyncData(
-  'cafes',
-  () => $fetch( `c/prods/`, {
-    method: 'GET',
-    baseURL: 'http://127.0.0.1:8000/',
-    params: {
-      ct: 1 ,
-      page: page.value,
-    }
-  } ), {
-    watch: [
-      page,
-    ]
-  }
-);
-
-const previous = () => {
-  if( page.value != 1 ){
-    page.value = page.value -1 ;
-  }
-}
-
-const next = () => {
-
-    page.value = page.value + 1;
-
-}
-</script> -->

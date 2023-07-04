@@ -1,0 +1,136 @@
+<script setup>
+
+  
+  const route = useRoute()
+  const router = useRouter()
+  // const config = useRuntimeConfig()
+  
+  const notificationsStore = useNotificationsStore()
+  const props = defineProps(['brands','props'])
+
+  
+  const filters = ref({ "brnd": [],})
+
+  const aplleFilter = () => {
+    notificationsStore.statusFilterComponent()
+    router.push({
+      name: 'prods',
+      query: {
+        ...route.query,
+        ...filters.value,
+      },
+    })
+  }
+  
+  onMounted(() => {
+    console.log(props)
+    props.props.forEach(element => filters.value[element.prop_alias] = []);
+  })
+  
+  // methods: {
+  //     changeForm(key, value) {
+  //       console.log()
+  //       if (key in this.filter) {
+  //         // this.filter[key].push(value.toString())
+  //       } else {
+  //         this.filter[key] = [value.toString(),]
+  //         this.filte[key] = [value.toString(),]
+  //       }
+  //     },
+  //     appFilter() {
+  //       this.show = false
+  //       this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, ...this.filte, "page": 1 } })
+  //     },
+  //     clearFilter() {
+  //       this.filte = {}
+  //       this.filter = {}
+  //       this.by = null
+  //       this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, "page": 1 } })
+  //     }
+  //   }
+
+
+</script>
+
+
+
+<template>
+
+  <div class="bg-gradient-to-br from-gray-300 to-gray-200 dark:from-gray-900 dark:to-gray-800 w-screen md:w-[420px] h-screen overflow-y-auto border-r border-gray-300 dark:border-gray-700">
+    <div class="p-4 relative">
+
+
+      <div class="flex items-center justify-between">
+        <div class=""><p class="">Фильтр по товарам</p></div>
+        <div class=""><button @click="notificationsStore.statusFilterComponent" class="mdi mdi-24px mdi-close cursor-pointer"></button></div>
+      </div>
+
+      <div class="pb-14">
+
+        <div class="py-2">
+            <div class="break-inside-avoid-column border border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600 rounded-sm p-1">
+              
+              <div id="checkbox-form my-2">
+                <p class="text-sm mb-2 m-1">Производитель</p>
+
+
+                <div class="flex flex-wrap">
+                  <div class="flex items-center mr-4 p-1" v-for="brand in props.brands" :key="brand.id">
+                    
+                    <!-- <input @change="changeForm('brnd', brand.id )" v-model="filte['brnd']" :id="brand.id" :value="brand.id" type="checkbox"  class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"> -->
+                    <input :id="brand.id" v-model="filters.brnd" :value="brand.id" type="checkbox" class="w-4 h-4 text-blue-600/0 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500/0 dark:focus:ring-gray-700/0 dark:ring-offset-gray-800/0  dark:bg-gray-700 focus:dark:bg-gray-700 dark:border-gray-600">
+                    <label :for="brand.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ brand.brand }}</label>
+                  
+                  </div>
+                
+                </div>                      
+              </div>
+
+            </div>
+          </div>
+
+
+
+        <div class="" v-for="prop in props.props" :key="prop.id">
+          
+          <div class="py-2" v-if="prop.propwidget == 'value'">
+            <div class="break-inside-avoid-column border border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600 rounded-sm p-1">
+              
+              <div id="checkbox-form my-2">
+                <p class="text-sm mb-2 m-1">{{ prop.name }}</p>
+                <div class="flex flex-wrap">
+                  <div class="flex items-center mr-4 p-1" v-for="ops in prop.prop_ops" :key="ops.id">
+                    
+                    <!-- <input @change="changeForm(prop.prop_alias, ops.opskey )" :value="ops.opskey" v-model="filte[prop.prop_alias]" :id="ops.opskey" :value="ops.opskey" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"> -->
+
+ 
+                    <input :id="ops.id" v-model="filters[prop.prop_alias]" :value="ops.opskey" type="checkbox" class="w-4 h-4 text-blue-600/0 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500/0 dark:focus:ring-gray-700/0 dark:ring-offset-gray-800/0  dark:bg-gray-700 focus:dark:bg-gray-700 dark:border-gray-600">
+                    <label :for="ops.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ ops.ops }}</label>
+
+
+                  </div>
+                
+                </div>                      
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    {{ filters }}
+
+    <div class="absolute bottom-0 right-0 w-full">
+      <div class="bg-gray-300 dark:bg-gray-800">
+        <div class="flex justify-end p-4">
+          <button @click="clearFilter" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
+          <button @click="aplleFilter" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
+        </div>                
+      </div>
+    </div>
+
+  </div>
+</template>

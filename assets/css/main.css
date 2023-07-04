@@ -6,7 +6,24 @@
   opacity: 0;
 }
 
-.absolute-left-emergence-enter,
+/* Появление фильтров товаров слева */
+.filter-enter-active {
+  transition: all 0.3s ease-out;
+}
+.filter-leave-active {
+  transition: all 0.2s ease-out;
+}
+.filter-enter-from,
+.filter-leave-to {
+  transform: translateX(-12em);
+  opacity: 0;
+}
+
+
+
+
+
+/* .absolute-left-emergence-enter,
 .absolute-left-emergence-leave-to {
   opacity: 0;
   position: absolute;
@@ -15,10 +32,10 @@
 .absolute-left-emergence-enter-active,
 .absolute-left-emergence-leave-active {
   transition: all 0.3s ease;
-}
+} */
 
 /* Исчезновение влево и стили корзины*/
-.left-emergence-enter,
+/* .left-emergence-enter,
 .left-emergence-leave-to {
   opacity: 0;
   transform: translateX(-12em);
@@ -26,10 +43,10 @@
 .left-emergence-enter-active,
 .left-emergence-leave-active {
   transition: all 0.3s ease;
-}
+} */
 
 /* Исчезновение влево и стили корзины*/
-.right-emergence-enter,
+/* .right-emergence-enter,
 .right-emergence-leave-to {
   opacity: 0;
   transform: translateX(12em);
@@ -37,7 +54,7 @@
 .right-emergence-enter-active,
 .right-emergence-leave-active {
   transition: all 0.2s ease;
-}
+} */
 
 
 /* body {
