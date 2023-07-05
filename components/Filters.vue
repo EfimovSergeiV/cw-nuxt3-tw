@@ -25,7 +25,7 @@
     props.props.forEach(element => filters.value[element.prop_alias] = [])
     aplleFilter()
   }
-  
+
   onMounted(() => {
     /// Присваиваем всем свойствам тип массива 
     /// Пробегаем по роутеру, закидываем в массивы параметры фильтров
