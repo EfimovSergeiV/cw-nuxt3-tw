@@ -38,7 +38,6 @@
     }
 
     props.props.forEach(element => {
-      console.log(element.prop_alias in route.query, element.prop_alias, route.query)
       filters.value[element.prop_alias] = []
       if ( element.prop_alias in route.query ) {
         console.log(typeof route.query[element.prop_alias])
@@ -120,11 +119,7 @@
         </div>
       </div>
 
-    </div>
-
-    <p class="text-xs my-2">f : {{ filters }}</p>
-    <p class="text-xs">r : {{ route.query }}</p>
-    
+    </div>    
 
     <div class="absolute bottom-0 right-0 w-full">
       <div class="bg-gray-300 dark:bg-gray-800">
