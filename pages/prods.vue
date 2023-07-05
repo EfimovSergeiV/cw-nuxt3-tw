@@ -75,10 +75,14 @@
 
 
     <div class="mx-auto px-4 my-4 lg:max-w-7xl lg:px-8">
-      <div class="flex items-center justify-between">
+      <div class="grid grid-cols-1 md:flex items-center justify-between">
 
-        <div class="flex items-center justify-end my-4">
-          <button @click="notificationsStore.statusFilterComponent">filter</button>
+        <div class="flex items-center gap-0.5 justify-center md:justify-end my-4">
+          <button class="px-4 h-8 text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" @click="notificationsStore.statusFilterComponent">Фильтр</button>
+          <button class="px-4 h-8 text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" @click="notificationsStore.statusFilterComponent">Новые</button>
+          <button class="px-4 h-8 text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" @click="notificationsStore.statusFilterComponent">Рейтинг</button>
+          <button class="px-4 h-8 text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" @click="notificationsStore.statusFilterComponent">Дешевле</button>
+          <button class="px-4 h-8 text-sm flex items-center justify-center text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" @click="notificationsStore.statusFilterComponent">Дороже</button>
         </div>
 
         <Pagination :count="products.count" />
