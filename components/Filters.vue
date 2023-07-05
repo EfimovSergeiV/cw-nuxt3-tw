@@ -40,7 +40,6 @@
     props.props.forEach(element => {
       filters.value[element.prop_alias] = []
       if ( element.prop_alias in route.query ) {
-        console.log(typeof route.query[element.prop_alias])
         if (typeof route.query[element.prop_alias] === 'string') {
           filters.value[element.prop_alias].push(route.query[element.prop_alias])
         } else {
