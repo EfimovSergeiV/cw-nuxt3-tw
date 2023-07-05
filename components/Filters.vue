@@ -1,6 +1,4 @@
 <script setup>
-
-  
   const route = useRoute()
   const router = useRouter()
   // const config = useRuntimeConfig()
@@ -29,15 +27,26 @@
   }
   
   onMounted(() => {
-    props.props.forEach(element => {
-      console.log(element.prop_alias in route.query, element.prop_alias, route.query)
-      if ("brnd" in route.query) {
+    /// Присваиваем всем свойствам тип массива 
+    /// Пробегаем по роутеру, закидываем в массивы параметры фильтров
+    if ("brnd" in route.query) {
+      if (typeof route.query["brnd"] === 'string') {
+        filters.value["brnd"].push(route.query["brnd"])
+      } else {
         filters.value["brnd"] = route.query["brnd"]
       }
+    }
+
+    props.props.forEach(element => {
+      console.log(element.prop_alias in route.query, element.prop_alias, route.query)
+      filters.value[element.prop_alias] = []
       if ( element.prop_alias in route.query ) {
-        filters.value[element.prop_alias] = route.query[element.prop_alias]
-      } else {
-        filters.value[element.prop_alias] = []        
+        console.log(typeof route.query[element.prop_alias])
+        if (typeof route.query[element.prop_alias] === 'string') {
+          filters.value[element.prop_alias].push(route.query[element.prop_alias])
+        } else {
+          filters.value[element.prop_alias] = route.query[element.prop_alias]
+        }
       }
     })
   })
@@ -113,8 +122,8 @@
 
     </div>
 
-    <p class="text-xs my-2">{{ filters }}</p>
-    <p class="text-xs">{{ route.query }}</p>
+    <p class="text-xs my-2">f : {{ filters }}</p>
+    <p class="text-xs">r : {{ route.query }}</p>
     
 
     <div class="absolute bottom-0 right-0 w-full">
