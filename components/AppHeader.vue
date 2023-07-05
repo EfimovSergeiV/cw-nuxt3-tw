@@ -1,13 +1,16 @@
 <script setup>
+  import cities from '@/cities.js';
+
   const colorMode = useColorMode()
+  const shopStore = useShopStore()
   // const route = useRoute()
 
-  const { data: shops } = await useFetch('https://api.glsvar.ru/c/shops/')
+  // const { data: shops } = await useFetch('https://api.glsvar.ru/c/shops/')
 </script>
 
 
 <template>
-  <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 py-2">
+  <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 py-4">
 
     <div class="flex items-center justify-between">
       
@@ -33,17 +36,17 @@
 
       </div>
 
-      <!-- <div class="grid grid-cols-1">
+      <div class="grid grid-cols-1">
 
         <ul class="flex items-center flex-row space-x-2 md:space-x-3 justify-end">
 
           <li>
-            <a :href="`tel:${shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
+            <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
           </li>
 
           <transition name="right-emergence">
-            <li v-if="shop.telegram">
-              <a class="" :href="shop.telegram" target="_blank">
+            <li v-if="shopStore.shop.telegram">
+              <a class="" :href="shopStore.shop.telegram" target="_blank">
                 <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/telegr-logo.webp" class="w-4 md:w-5" />
                 </div>
@@ -51,8 +54,8 @@
             </li>
           </transition>
           <transition name="right-emergence">
-            <li v-if="shop.whatsapp">
-              <a class="" :href="shop.whatsapp" target="_blank">
+            <li v-if="shopStore.shop.whatsapp">
+              <a class="" :href="shopStore.shop.whatsapp" target="_blank">
                 <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/WhatsApp-logo.webp" class="w-5 md:w-8" />
                 </div>
@@ -60,8 +63,8 @@
             </li>
           </transition>
           <transition name="right-emergence">
-            <li v-if="shop.viber">
-              <a class="" :href="shop.viber" target="_blank">
+            <li v-if="shopStore.shop.viber">
+              <a class="" :href="shopStore.shop.viber" target="_blank">
                 <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/viber-logo.webp" class="w-4 md:w-5" />
                 </div>
@@ -70,7 +73,49 @@
           </transition>
           </ul>
 
-      </div> -->
+          <div v-if="shopStore.shop.mobile" class="flex justify-end">
+            <a :href="`tel:${shopStore.mobile.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.mobile }}</a>
+          </div>
+
+          <ul class="flex items-center flex-row justify-end space-x-3 ">
+
+            <li class="">
+              <a :href="`mailto:${ shopStore.shop.email }`" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+            </li>
+
+            <li id="navabar-menu" class=" group">
+
+              <div class="relative">
+                <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ shopStore.city }}</p>
+                
+                <div class="absolute invisible group-hover:visible right-0 z-50">
+                  <div class="transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform">
+                    
+                    <div class="bg-white rounded-md border border-gray-500/50 px-4 py-4">
+                      <div class="flex items-center justify-center gap-1">
+                        <div class="text-gray-700">
+
+                          <p class="">
+                            Выбор города
+                          </p>
+
+
+
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+
+      </div>
+
+      <!-- <p class="text-xs">{{ shopStore.shop.phone }}</p> -->
+      <!-- <p class="text-xs">{{ shopStore.city }}</p> -->
 
     </div>
 
@@ -83,7 +128,9 @@
         />      
       </nuxt-link>
   
-
+      <div class="">
+        Search
+      </div>
 
 
 
