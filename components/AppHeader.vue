@@ -1,11 +1,32 @@
 <script setup>
-  import cities from '@/cities.js';
+  import cities from '~/cities.ts';
 
   const colorMode = useColorMode()
   const shopStore = useShopStore()
   // const route = useRoute()
 
   // const { data: shops } = await useFetch('https://api.glsvar.ru/c/shops/')
+  
+  const searchProduct = ref('')
+  const searchCity = ref('')
+  const searchCountries = computed(() => {
+    if (searchCity.value === '') {
+      return []
+    }
+
+    let matches = 0
+    return cities.filter(city => {
+      if (
+        city.toLowerCase().includes(searchCity.value.toLowerCase())
+        && matches < 10
+      ) {
+        matches++
+        return city
+      }
+    })
+
+  })
+
 </script>
 
 
@@ -95,10 +116,25 @@
                       <div class="flex items-center justify-center gap-1">
                         <div class="text-gray-700">
 
-                          <p class="">
-                            Выбор города
-                          </p>
-
+                          <input
+                            type="text"
+                            id="search"
+                            placeholder="Type here..."
+                            v-model="searchCity"
+                          >
+                          {{ typeof searchCountries }}
+                          {{ searchCountries.length }}
+                          <ul v-if="searchCountries.length">
+                            <!-- <li>
+                              Showing {{ searchCountries.length }} of {{ countries.length }} results
+                            </li> -->
+                            <li
+                              v-for="(country, pk) in searchCountries"
+                              :key="pk"
+                            >
+                              {{ country }}
+                            </li>
+                          </ul>
 
 
                         </div>
@@ -119,21 +155,23 @@
 
     </div>
 
-    <div class="flex items-center justify-between">
-      <nuxt-link :to="{ name: 'index'}">
+    <div class="grid grid-cols-1 gap-4 md:flex items-end justify-center md:justify-between">
+      <nuxt-link :to="{ name: 'index'}" class="">
         <img
-          class=" h-18 md:h-16 select-none"
+          class=" h-12 md:h-16 select-none"
           width=""
           src="/images/blue-svar.webp"
         />      
       </nuxt-link>
   
-      <div class="">
-        Search
-      </div>
-
-
-
+      <!-- <div class="">
+        <div class="relative md:w-[360px] lg:w-[600px]">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <p class="mdi mdi-24px mdi-store-search-outline"></p>
+          </div>
+          <input v-model="searchProduct" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
+        </div> 
+      </div> -->
 
     </div>
 
