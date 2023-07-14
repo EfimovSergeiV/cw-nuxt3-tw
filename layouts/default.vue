@@ -5,6 +5,8 @@ const config = useRuntimeConfig()
 const shopStore = useShopStore()
 
 const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
+const { data: cts } = await useFetch(`${ config.public.baseURL }c/ct/`)
+
 shopStore.writeShops(shops)
 
 onMounted(() => {
@@ -40,9 +42,9 @@ onMounted(() => {
           <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
             
             
-            <div class="flex justify-between gap-4">
+            <div class="flex justify-between gap-4 relative">
               
-              <div class="w-full grid grid-cols-1 gap-4 rounded-sm bg-gray-800 border border-gray-100 dark:border-gray-700">
+              <div class="w-full grid grid-cols-1 rounded-sm bg-gray-800">
 
                 <!-- <div class="flex items-center justify-center px-4">
                   <nuxt-link :to="{ name: 'index'}" class="">
@@ -64,43 +66,66 @@ onMounted(() => {
                   </div>
                 </div> -->
 
-                <div class="py-1">
+                <div class="border-t border-l border-r border-gray-100 dark:border-gray-700 h-full">
+                  <div class="py-1">
 
-                  <div class="flex gap-4 items-center justify-end px-4 -mb-2">
-                    <button class="">
-                      <p class="">Санкт-Петербург</p>
-                    </button>
-                  </div>
-
-                  <div class="flex items-center justify-center px-4">
-
-                    <nuxt-link :to="{ name: 'index'}" class="">
-                      <img
-                        class=" w-full select-none"
-                        width=""
-                        src="/images/blue-svar.webp"
-                      />      
-                    </nuxt-link>                  
-                  </div>
-
-                  <div class="mt-1">
-                    <div class="flex items-center justify-end px-4">
-                      <p class="text-xl">+7 (8112) 60 60 05</p>
+                    <div class="flex gap-4 items-center justify-end px-4 -mb-2">
+                      <button class="">
+                        <p class="">Санкт-Петербург</p>
+                      </button>
                     </div>
 
-                    <div class="flex items-center justify-end px-4">
-                      <p class="text-sm">zakaz@glsvar.ru</p>
-                    </div>
-                  </div>
+                    <div class="flex items-center justify-center px-4">
 
+                      <nuxt-link :to="{ name: 'index'}" class="">
+                        <img
+                          class=" w-full select-none"
+                          width=""
+                          src="/images/blue-svar.webp"
+                        />      
+                      </nuxt-link>                  
+                    </div>
+
+                    <div class="mt-1">
+                      <div class="flex items-center justify-end px-4">
+                        <p class="text-xl">+7 (8112) 60 60 05</p>
+                      </div>
+
+                      <div class="flex items-center justify-end px-4">
+                        <p class="text-sm">zakaz@glsvar.ru</p>
+                      </div>
+                    </div>
+
+                  </div>                  
                 </div>
 
 
-                <button class="bg-gray-600 py-2 border-t border-gray-400">
-                  <div class="flex items-center justify-center">                    
-                    <p class="text-lg">Открыть каталог</p>
+
+                <div class="bg-gray-600 border-t border-gray-400 ">
+                  
+                  <button class="flex items-center justify-center h-full w-full">
+                    <div class="">
+                      <p class="text-lg">Открыть каталог</p>
+                    </div>
+                  </button> 
+
+
+                  <div class="absolute w-full z-40 hi dden">
+                    <div class="bg-gray-600 ">
+                      
+                      <div class="">
+                        
+                        <div v-for="i in 15" :key="i">
+                          <p>akslkdkjsdlakj</p>
+                        </div>
+                        
+                      </div>
+                      <!-- {{ cts }} -->
+                      
+                    </div>  
                   </div>
-                </button>
+
+                </div>
 
 
               </div>

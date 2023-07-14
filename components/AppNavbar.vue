@@ -1,5 +1,5 @@
 <script setup>
-  const { data: cts } = await useFetch('http://127.0.0.1:8000/c/ct/')
+  // const { data: cts } = await useFetch('http://127.0.0.1:8000/c/ct/')
 
 </script>
 
