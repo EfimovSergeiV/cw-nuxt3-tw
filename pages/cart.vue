@@ -5,8 +5,6 @@ useHead({
   const config = useRuntimeConfig()
   const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 
-
-
 </script>
 
 <template>
