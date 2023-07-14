@@ -64,9 +64,9 @@ onMounted(() => {
                   </div>
                 </div> -->
 
-                <div class="py-2">
+                <div class="py-1">
 
-                  <div class="flex gap-4 items-center justify-end px-4">
+                  <div class="flex gap-4 items-center justify-end px-4 -mb-2">
                     <button class="">
                       <p class="">Санкт-Петербург</p>
                     </button>
@@ -83,7 +83,7 @@ onMounted(() => {
                     </nuxt-link>                  
                   </div>
 
-                  <div class="">
+                  <div class="mt-1">
                     <div class="flex items-center justify-end px-4">
                       <p class="text-xl">+7 (8112) 60 60 05</p>
                     </div>
@@ -96,7 +96,7 @@ onMounted(() => {
                 </div>
 
 
-                <button class="bg-gray-600 py-2">
+                <button class="bg-gray-600 py-2 border-t border-gray-400">
                   <div class="flex items-center justify-center">                    
                     <p class="text-lg">Открыть каталог</p>
                   </div>
