@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Play-Regular';
+  src: url('./fonts/Play/Play-Regular.ttf') format('woff2');
+}
+
+/* @font-face {
+  font-family: 'Ruslan-Display';
+  src: url('./fonts/Ruslan-Display/RuslanDisplay-Regular.ttf') format('woff2');
+} */
+
+
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s;

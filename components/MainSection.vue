@@ -30,7 +30,7 @@
                             onerror="this.src='../../noimage-235-177.png'"
                             :alt="product.name"
                             loading=lazy
-                            class="h-16 md:h-28"
+                            class="h-16 md:h-20"
                           />                            
                         </div>
                       </div>
@@ -48,7 +48,7 @@
                       </div>
                       <div class="absolute bottom-0 left-0 w-full">
                         <div class="flex items-center justify-center p-1 h-10 rounded-sm">
-                          <p class="text-gray-900 text-xs text-center">{{ product.name }}</p>
+                          <p class="text-gray-800 text-xs font-semibold text-center">{{ product.name }}</p>
                         </div>
                       </div>
                     </div>

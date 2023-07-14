@@ -50,14 +50,65 @@
         </div>
 
         <div class="flex items-center justify-center transition-all duration-600 gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-2 h-8 rounded-2xl">
-          <nuxt-link :to="{ name: 'person' }" class="mdi mdi-account text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-          <nuxt-link :to="{ name: 'compare' }" class="mdi mdi-compare text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-          <nuxt-link :to="{ name: 'person' }" class="mdi mdi-heart-outline text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
+          <nuxt-link :to="{ name: 'person' }" class="mdi mdi-account px-2 text-sm cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Войти</nuxt-link>
+          <!-- <nuxt-link :to="{ name: 'compare' }" class="mdi mdi-compare text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
+          <nuxt-link :to="{ name: 'person' }" class="mdi mdi-heart-outline text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link> -->
         </div>
 
       </div>
 
-      <div class="grid grid-cols-1">
+
+      <div class="grid grid-cols-1 gap-2">
+
+
+        <!-- <ul class="flex items-center flex-row justify-end space-x-3 ">
+
+          <li class="">
+            <a :href="`mailto:${ shopStore.shop.email }`" class=" mdi mdi-email-open-outline text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+          </li>
+
+          <li id="navabar-menu" class=" group">
+
+            <div class="relative">
+              <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ shopStore.city }}</p>
+              
+              <div class="absolute invisible group-hover:visible right-0 z-50">
+                <div class="transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform">
+                  
+                  <div class="bg-white rounded-md border border-gray-500/50 px-4 py-4">
+                    <div class="flex items-center justify-center gap-1">
+                      <div class="text-gray-700">
+
+                        <input
+                          type="text"
+                          id="search"
+                          placeholder="Type here..."
+                          v-model="searchCity"
+                        >
+                        {{ typeof searchCountries }}
+                        {{ searchCountries.length }}
+                        <ul v-if="searchCountries.length">
+                          <li
+                            v-for="(country, pk) in searchCountries"
+                            :key="pk"
+                          >
+                            {{ country }}
+                          </li>
+                        </ul>
+
+
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+            </div>
+          </li>
+        </ul> -->
+
+
 
         <ul class="flex items-center flex-row space-x-2 md:space-x-3 justify-end">
 
@@ -92,61 +143,11 @@
               </a>
             </li>
           </transition>
-          </ul>
+        </ul>
 
           <div v-if="shopStore.shop.mobile" class="flex justify-end">
             <a :href="`tel:${shopStore.mobile.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.mobile }}</a>
           </div>
-
-          <ul class="flex items-center flex-row justify-end space-x-3 ">
-
-            <li class="">
-              <a :href="`mailto:${ shopStore.shop.email }`" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
-            </li>
-
-            <li id="navabar-menu" class=" group">
-
-              <div class="relative">
-                <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ shopStore.city }}</p>
-                
-                <div class="absolute invisible group-hover:visible right-0 z-50">
-                  <div class="transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform">
-                    
-                    <div class="bg-white rounded-md border border-gray-500/50 px-4 py-4">
-                      <div class="flex items-center justify-center gap-1">
-                        <div class="text-gray-700">
-
-                          <input
-                            type="text"
-                            id="search"
-                            placeholder="Type here..."
-                            v-model="searchCity"
-                          >
-                          {{ typeof searchCountries }}
-                          {{ searchCountries.length }}
-                          <ul v-if="searchCountries.length">
-                            <!-- <li>
-                              Showing {{ searchCountries.length }} of {{ countries.length }} results
-                            </li> -->
-                            <li
-                              v-for="(country, pk) in searchCountries"
-                              :key="pk"
-                            >
-                              {{ country }}
-                            </li>
-                          </ul>
-
-
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-
-              </div>
-            </li>
-          </ul>
 
       </div>
 
@@ -156,13 +157,13 @@
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:flex items-end justify-center md:justify-between">
-      <nuxt-link :to="{ name: 'index'}" class="">
+      <!-- <nuxt-link :to="{ name: 'index'}" class="">
         <img
           class=" h-12 md:h-16 select-none"
           width=""
           src="/images/blue-svar.webp"
         />      
-      </nuxt-link>
+      </nuxt-link> -->
   
       <!-- <div class="">
         <div class="relative md:w-[360px] lg:w-[600px]">

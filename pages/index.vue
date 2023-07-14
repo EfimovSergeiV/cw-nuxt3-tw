@@ -21,8 +21,8 @@
 <template>
 
   <div class="">
-    <TopSlider />
-    <AppNavbar />
+    <!-- <TopSlider />
+    <AppNavbar /> -->
     <MainSection :latest="latest" :banners="banners" />
     <MainWelder />
     <Reviews :reviews="randomreviews" />

@@ -3,7 +3,7 @@ useHead({
   titleTemplate: '%s - Ваша корзина'
 })
   const config = useRuntimeConfig()
-  const { data: shops } = await useFetch(`${ config.public.baseURL }/c/shops/`)
+  const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 
 
 
@@ -11,8 +11,8 @@ useHead({
 
 <template>
   <div class="">
-    <TopSlider />
-    <AppNavbar />
+    <!-- <TopSlider />
+    <AppNavbar /> -->
 
     
     <CartForm :shops="shops" />

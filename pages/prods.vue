@@ -43,7 +43,7 @@
 
 <template>
   <div>
-    <AppNavbar />
+    <!-- <AppNavbar /> -->
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 mb-4">
 

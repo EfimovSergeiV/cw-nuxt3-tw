@@ -22,8 +22,8 @@
 
 <template>
   <div class="">
-    <TopSlider />
-    <AppNavbar />
+    <!-- <TopSlider />
+    <AppNavbar /> -->
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 

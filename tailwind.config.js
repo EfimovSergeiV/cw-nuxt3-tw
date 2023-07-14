@@ -23,6 +23,20 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    fontFamily: {
+      // 'sans': ['Play-Regular', 'Helvetica', 'Arial', 'sans-serif' ],
+      // 'serif': ['ui-serif', 'Georgia',],
+      // 'mono': ['ui-monospace', 'SFMono-Regular',],
+      // 'display': ['Oswald',],
+      // 'body': ['"Open Sans"',],
+
+      'sans': ['Play-Regular',],
+      'serif': ['Play-Regular',],
+      'mono': ['Play-Regular',],
+      'display': ['Play-Regular',],
+      'body': ['Play-Regular',],
+
+    },
     extend: {
       screens: {
         sm: '520px',

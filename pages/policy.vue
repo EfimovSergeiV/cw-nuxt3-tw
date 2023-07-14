@@ -1,7 +1,7 @@
 <template>
   <div class="">
     
-    <TopSlider />
+    <!-- <TopSlider /> -->
 
     <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 

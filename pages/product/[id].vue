@@ -26,8 +26,8 @@
 <template>
   <div class="">
 
-    <TopSlider />
-    <AppNavbar />
+    <!-- <TopSlider /> -->
+    <!-- <AppNavbar /> -->
     <BreadCrumbs :breadcrumbs="breadcrumbs" />
     <ProductDetail :product="product" :related="related" :analogue="analogue.slice(0, 2)" />
     <Recommend :recommends="recommends" />

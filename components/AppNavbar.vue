@@ -8,105 +8,73 @@
   <div class="container">
     <div class="mx-auto my-4 px-4 lg:max-w-7xl lg:px-8">
 
-      <nav class="">
-        <div class="
-          from-white
-          via-gray-100
-          to-white
-          border-gray-200
-
-
-          border rounded-sm
-          dark:border-gray-700
-          py-4 md:px-4 relative
-          bg-gradient-to-r
-          dark:from-gray-800
-          dark:via-gray-700
-          dark:to-gray-800
-          background-animate
-          ">
-
-          <div id="mobile" class="md:hidden">
-            <div class="flex justify-center md:justify-end text-sm">
-              <nuxt-link :to="{ name: 'index' }" class="mx-2 mdi mdi-home"> Главная</nuxt-link>
-              <nuxt-link :to="{ name: 'cts' }" class="mx-2 mdi mdi-book-open-page-variant md:hidden"> Каталог</nuxt-link>
-              <nuxt-link :to="{ name: 'cart' }" class="mx-2 mdi mdi-cart"> Корзина</nuxt-link>
-              <nuxt-link :to="{ name: 'about' }" class="mx-2 mdi mdi-store-marker"> Магазины</nuxt-link>
+      <div class="flex items-center gap-2">
+        
+        
+        <div class="w-full">
+          <div class="relative w-full">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <p class="mdi mdi-24px mdi-magnify"></p>
             </div>
-          </div>
-
-          <div class="grid justify-items-end mx-auto max-w-screen-xl">
-
-            <div id="mega-menu-full" class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
-              <ul class="flex flex-col mt-4 text-sm md:flex-row md:space-x-4 md:mt-0">
-
-                <li>
-                  <nuxt-link :to="{ name: 'index' }" class="block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-base" aria-current="page"> Главная</nuxt-link>
-                </li>
-
-
-                <li id="navabar-menu" class=" group">
-
-                  <nuxt-link :to="{ name: 'cts' }" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-book-open-page-variant text-base"> Каталог</nuxt-link>
-
-                  <div class="absolute top-0 left-0 transition group-hover:translate-y-7 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
-
-                    <div class="menu-section pt-7">
-                      <div id="mega-menu-full-dropdown" class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
-
-                        <div class="columns-3 lg:columns-4">
-                          <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
-                            <div class="">
-
-
-                              <div class="p-2">
-                                <div class="mb-1">
-                                  <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class="font-bold text-gray-700 dark:text-gray-300 text-base">{{ ct.name }}</nuxt-link>              
-                                </div>
-
-                                <div>
-                                  <ul>
-                                    <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-3 my-1">
-                                      <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
-                                    </li>
-                                  </ul>
-                                </div>              
-                              </div>
-
-
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div class="px-10 py-4">
-                          <nuxt-link to="/cts" class="text-right">
-                            <h3>Перейти в каталог</h3>
-                          </nuxt-link>
-                        </div> 
-                      </div>
-                    </div>
-                    
-                  </div>
-                </li>
-
-                <li class="relative px-2">
-                    <nuxt-link :to="{ name: 'cart' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-cart text-base"> Корзина</nuxt-link>
-                    <!-- <div v-if="cart.length > 0" class="absolute top-0 right-0">
-                      <span class="flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
-                      </span>
-                    </div> -->
-                    
-                </li>
-                <li>
-                    <nuxt-link :to="{ name: 'about' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-store-marker text-base"> Магазины</nuxt-link>
-                </li>
-              </ul>
-            </div>
-          </div>
+            <input v-model="searchProduct" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
+          </div> 
         </div>
-      </nav>
+
+        <div class="flex px-6 py-2.5 gap-6 items-center bg-gray-700 rounded-sm h-full border border-gray-300 dark:border-gray-600">
+          <nuxt-link :to="{ name: 'index' }" class="">
+            <div class="">
+              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-sm"> Избранное</p>
+            </div>
+          </nuxt-link>
+
+          <nuxt-link :to="{ name: 'index' }" class="">
+            <div class="">
+              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-sm"> Сравнение</p>
+            </div>
+          </nuxt-link>
+
+          <nuxt-link :to="{ name: 'cart' }" class="">
+            <div class="">
+              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi mdi-cart text-sm"> Корзина</p>
+            </div>
+          </nuxt-link>
+
+          <nuxt-link :to="{ name: 'about' }" class="">
+            <div class="">
+              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-store-marker text-sm"> Магазины</p>
+            </div>
+          </nuxt-link>
+        </div>
+
+
+
+        <!-- <nav class="">
+          <div class="">
+            <div class="grid justify-items-end mx-auto max-w-screen-xl ">
+              <div id="mega-menu-full" class="">
+                <ul class="flex  bg-gray-700">
+                  <li class="w-28  ">
+                    <nuxt-link :to="{ name: 'index' }" class=" block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-base" aria-current="page"> Избранное</nuxt-link>
+                  </li>
+                  <li class="w-28 ">
+                    <nuxt-link :to="{ name: 'index' }" class=" block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-base" aria-current="page"> Сравнение</nuxt-link>
+                  </li>
+                  <li class="relative w-28">
+                    <nuxt-link :to="{ name: 'cart' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-cart text-base"> Корзина</nuxt-link>
+                  </li>
+                  <li class="w-28">
+                    <nuxt-link :to="{ name: 'about' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-store-marker text-base"> Магазины</nuxt-link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </nav> -->
+
+
+
+      </div>
     </div>
   </div>
 </template>
