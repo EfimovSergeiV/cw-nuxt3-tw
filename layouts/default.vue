@@ -113,14 +113,34 @@ onMounted(() => {
                   <div class="absolute w-full z-40 hi dden">
                     <div class="bg-gray-600 ">
                       
-                      <div class="">
+                      <div class="px-4 py-2">
                         
-                        <div v-for="i in 15" :key="i">
-                          <p>akslkdkjsdlakj</p>
+                        <div class="columns-3 lg:columns-4">
+                          <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
+                            <div class="">
+
+
+                              <div class="p-2">
+                                <div class="mb-1">
+                                  <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class="font-bold text-gray-700 dark:text-gray-300 text-base">{{ ct.name }}</nuxt-link>              
+                                </div>
+
+                                <div>
+                                  <ul>
+                                    <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-3 my-1">
+                                      <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
+                                    </li>
+                                  </ul>
+                                </div>              
+                              </div>
+
+
+                            </div>
+                          </div>
                         </div>
                         
                       </div>
-                      <!-- {{ cts }} -->
+
                       
                     </div>  
                   </div>
