@@ -21,8 +21,51 @@
       </div>
 
 
-      <div v-else  class="columns-1 md:columns-3 lg:columns-4">
-        <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
+      <div v-else  class="">
+
+        <div class="">
+          <div class="">
+            
+            <div class="px-2 py-3">
+              
+              <div class="columns-3 lg:columns-4">
+                <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
+                  <div class="">
+
+
+                    <div class="py-2 ">
+                      
+                      <div class="bg-gray-700/60 border border-gray-500 rounded-md py-4 px-2">
+                        <div class="">
+                          <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base">{{ ct.name }}</nuxt-link>              
+                        </div>
+
+                        <div>
+                          <ul>
+                            <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block ">
+                              <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 mr-3 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
+                            </li>
+                          </ul>
+                        </div>                                  
+                      </div>
+
+
+
+
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+            
+          </div>  
+        </div>
+        <!-- <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
           <div class="p-2">
             <div class="mb-1">
               <nuxt-link :to="{ name: 'prods', query: {ct: ct.id}}" class="font-bold text-gray-700 dark:text-gray-300 text-base">{{ ct.name }}</nuxt-link>              
@@ -50,7 +93,7 @@
 
             </div>              
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 

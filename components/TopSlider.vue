@@ -34,7 +34,7 @@
       }"
     >
       <SwiperSlide v-for="slide in widebanners" :key="slide.id" class="relative border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-sm">
-        <div>
+        <div class="rounded-sm">
 
           <img
             :src="slide.image"

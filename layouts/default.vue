@@ -67,7 +67,7 @@ onMounted(() => {
                   </div>
                 </div> -->
 
-                <div class="border-t border-l border-r border-gray-100 dark:border-gray-700 h-full">
+                <div class="border-t border-l border-r border-gray-100 dark:border-gray-700 rounded-sm h-full">
                   <div class="py-1">
 
                     <div class="flex gap-4 items-center justify-end px-4 -mb-2">
@@ -77,7 +77,6 @@ onMounted(() => {
                     </div>
 
                     <div class="flex items-center justify-center px-4">
-
                       <nuxt-link :to="{ name: 'index'}" class="">
                         <img
                           class=" w-full select-none"
@@ -91,7 +90,6 @@ onMounted(() => {
                       <div class="flex items-center justify-end px-4">
                         <p class="text-xl">+7 (8112) 60 60 05</p>
                       </div>
-
                       <div class="flex items-center justify-end px-4">
                         <p class="text-sm">zakaz@glsvar.ru</p>
                       </div>
@@ -102,7 +100,7 @@ onMounted(() => {
 
 
 
-                <div class="bg-gray-600 border-t border-gray-400 group">
+                <div class="bg-gray-700 border-t border-gray-500 group ">
                   
                   <nuxt-link :to="{ name: 'cts' }" class="flex items-center justify-center h-full w-full">
                     <div class="">
@@ -110,9 +108,8 @@ onMounted(() => {
                     </div>
                   </nuxt-link> 
 
-
-                  <div v-if=" route.path !== '/cts'" class="absolute w-full z-40 invisible group-hover:visible">
-                    <div class="bg-gray-700/90 border-b border-l border-r border-gray-600 backdrop-blur-md rounded-b-2xl">
+                  <div v-if=" route.path !== '/cts'" class="absolute w-full z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
+                    <div class="bg-gray-700/90 border border-gray-600 backdrop-blur-md rounded-b-2xl">
                       
                       <div class="px-2 py-3">
                         
@@ -125,7 +122,7 @@ onMounted(() => {
                                 
                                 <div class="bg-gray-800/80 border border-gray-500 rounded-md py-4 px-2">
                                   <div class="">
-                                    <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class="font-bold text-gray-700 dark:text-gray-300 text-base">{{ ct.name }}</nuxt-link>              
+                                    <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base">{{ ct.name }}</nuxt-link>              
                                   </div>
 
                                   <div>
@@ -156,8 +153,9 @@ onMounted(() => {
 
                 </div>
 
-
               </div>
+
+
               <div class="lg:w-[700px] xl:w-[800px]">
                 <TopSlider />
               </div>
