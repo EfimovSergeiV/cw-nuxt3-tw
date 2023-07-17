@@ -50,9 +50,9 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="">
-        <div id="cat-title" class="flex items-center justify-end mb-2">
+        <!-- <div id="cat-title" class="flex items-center justify-end mb-2">
           <p class="text-2xl">{{ products.meta.title }}</p>
-        </div>
+        </div> -->
  
         <div v-if="products.meta.inserted" class="flex items-center justify-end">
           <div id="" class="">

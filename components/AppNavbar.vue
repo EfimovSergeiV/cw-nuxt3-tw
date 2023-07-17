@@ -1,5 +1,7 @@
 <script setup>
-  // const { data: cts } = await useFetch('http://127.0.0.1:8000/c/ct/')
+
+  const config = useRuntimeConfig()
+  const { data: products } = await useFetch(`${ config.public.baseURL }c/neues/`)
 
 </script>
 
@@ -10,6 +12,7 @@
 
       <div class="flex items-center gap-2">
         
+
         
         <div class="w-full">
           <div class="relative w-full">
@@ -17,8 +20,37 @@
               <p class="mdi mdi-24px mdi-magnify"></p>
             </div>
             <input v-model="searchProduct" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
+          
+            <div class="absolute z-30 w-full">
+              <div class="dark:bg-gray-700 border dark:border-gray-600 rounded-sm my-1 min-h-[80px]">
+                
+                <div class="px-2 h-96 overflow-y-auto my-2">
+                  <div class="px-2 py-2 my-1 bg-gray-800/80 border border-gray-500 rounded-md" v-for="product in products" :key="product.id">
+                    <div class="">
+                      <div class="flex gap-4">
+                        <div class="">
+                          <img class="bg-white w-20 p-1 rounded-md" :src="product.preview_image" />
+                        </div>
+                        <div class="">
+                          <p class="">{{ product.name }}</p>
+                          <p class="">{{ product.only_price.toLocaleString() }} <span class="text-xs">руб.</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+          
+          
           </div> 
         </div>
+
+
 
         <div class="flex px-6 py-2.5 gap-6 items-center bg-gray-700 rounded-sm h-full border border-gray-300 dark:border-gray-600">
           <nuxt-link :to="{ name: 'index' }" class="">
