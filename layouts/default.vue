@@ -45,7 +45,7 @@ onMounted(() => {
             
             <div class="flex justify-between gap-4 relative">
               
-              <div class="w-full grid grid-cols-1 rounded-sm bg-gray-800">
+              <div class="w-full grid grid-cols-1 rounded-sm bg-white dark:bg-gray-800">
 
                 <!-- <div class="flex items-center justify-center px-4">
                   <nuxt-link :to="{ name: 'index'}" class="">
@@ -68,13 +68,8 @@ onMounted(() => {
                 </div> -->
 
                 <div class="border-t border-l border-r border-gray-100 dark:border-gray-700 rounded-sm h-full">
-                  <div class="py-1">
+                  <div class="">
 
-                    <div class="flex gap-4 items-center justify-end px-4 my-1">
-                      <button class="">
-                        <p class="text-sm">Санкт-Петербург</p>
-                      </button>
-                    </div>
 
                     <div class="flex items-center justify-center px-4">
                       <nuxt-link :to="{ name: 'index'}" class="">
@@ -86,6 +81,11 @@ onMounted(() => {
                       </nuxt-link>                  
                     </div>
 
+                    <div class="flex gap-4 items-center justify-end px-4 my-1">
+                      <button class="">
+                        <p class="text-xl">Санкт-Петербург</p>
+                      </button>
+                    </div>
                     <div class="my-2">
                       <div class="flex items-center justify-end px-4">
                         <p class="text-sm">+7 (8112) 60 60 05</p>
@@ -100,7 +100,7 @@ onMounted(() => {
 
 
 
-                <div class="bg-gray-700 border-t border-gray-500 group ">
+                <div class="bg-gray-100 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-500 group ">
                   
                   <nuxt-link :to="{ name: 'cts' }" class="flex items-center justify-center h-full w-full">
                     <div class="">
@@ -109,7 +109,7 @@ onMounted(() => {
                   </nuxt-link> 
 
                   <div v-if=" route.path !== '/cts'" class="absolute w-full z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
-                    <div class="bg-gray-700/90 border border-gray-600 backdrop-blur-md rounded-b-2xl">
+                    <div class="bg-white/90 dark:bg-gray-700/90 border border-gray-100 dark:border-gray-600 backdrop-blur-md rounded-b-2xl">
                       
                       <div class="px-2 py-3">
                         
@@ -120,15 +120,15 @@ onMounted(() => {
 
                               <div class="py-2 ">
                                 
-                                <div class="bg-gray-800/80 border border-gray-500 rounded-md py-4 px-2">
+                                <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-4 px-2">
                                   <div class="">
-                                    <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base">{{ ct.name }}</nuxt-link>              
+                                    <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
                                   </div>
 
                                   <div>
                                     <ul>
                                       <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block ">
-                                        <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 mr-3 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
+                                        <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 mr-3 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">{{ sct.name }}</nuxt-link>
                                       </li>
                                     </ul>
                                   </div>                                  

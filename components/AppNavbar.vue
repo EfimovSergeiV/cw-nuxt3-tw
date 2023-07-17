@@ -41,7 +41,7 @@
             <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
               <p class="mdi mdi-24px mdi-magnify"></p>
             </div>
-            <input v-model="search" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
+            <input v-model="search" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-gray-300 focus:border-gray-300 block w-full pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
           
             <div class="absolute z-30 w-full invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
               <div class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-sm my-1 min-h-[80px]">
@@ -85,28 +85,28 @@
 
 
 
-        <div class="flex px-6 py-2.5 gap-6 items-center bg-gray-700 rounded-sm h-full border border-gray-300 dark:border-gray-600">
+        <div class="flex px-6 py-2.5 gap-6 items-center bg-white dark:bg-gray-700 rounded-sm h-full border border-gray-300 dark:border-gray-600">
           <nuxt-link :to="{ name: 'index' }" class="">
             <div class="">
-              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-sm"> Избранное</p>
+              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi-home text-sm"> Избранное</p>
             </div>
           </nuxt-link>
 
           <nuxt-link :to="{ name: 'index' }" class="">
             <div class="">
-              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-sm"> Сравнение</p>
+              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi-home text-sm"> Сравнение</p>
             </div>
           </nuxt-link>
 
           <nuxt-link :to="{ name: 'cart' }" class="">
             <div class="">
-              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi mdi-cart text-sm"> Корзина</p>
+              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi mdi-cart text-sm"> Корзина</p>
             </div>
           </nuxt-link>
 
           <nuxt-link :to="{ name: 'about' }" class="">
             <div class="">
-              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-store-marker text-sm"> Магазины</p>
+              <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi-store-marker text-sm"> Магазины</p>
             </div>
           </nuxt-link>
         </div>
