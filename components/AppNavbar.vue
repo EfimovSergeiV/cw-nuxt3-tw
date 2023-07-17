@@ -3,22 +3,26 @@
 
 
   const config = useRuntimeConfig()
-  const { data: products } = await useFetch(`${ config.public.baseURL }c/neues/`)
-
-
-  const debouncedHandler = debounce(async query => {
-    console.log('Debounced')
-    // const res = await getSearchData(query, params).then(res => res.data.features)
-    // const data = res.map(formatPlaceData)
-    // result.value = removeDuplicatesByObjKeys(data, ['label', 'address'])
-  }, 300);
+  // const { data: products } = await useFetch(`${ config.public.baseURL }c/neues/`)
 
   const search = ref('')
+  const products = ref([])
+
+  const debouncedHandler = debounce(async query => {
+    const { data: prods }  = await useFetch(`${ config.public.baseURL }c/search/`, {
+      method: 'POST',
+      body: {
+        name: search
+      }
+    })
+
+    products.value = ( await prods.value )
+
+  }, 300);
+
   watch(search, (searchRequest) => {
-    console.log(`x is ${searchRequest}`)
     debouncedHandler()
   })
-
 
 
 </script>
@@ -45,7 +49,13 @@
                 <div class="px-2 h-96 overflow-y-auto my-2">
                   <p class="text-xs">{{ search }}</p>
 
+                  <div v-if="search.length > 3 && products.length === 0" class="">
+                    <p class="">Ничего не найдено</p>
+                  </div>
 
+                  <div v-if="search.length === 0" class="">
+                    <p class="">Введите запрос</p>
+                  </div>
 
                   <div class="px-2 py-2 my-1 bg-gray-800/80 border border-gray-500 rounded-md" v-for="product in products" :key="product.id">
                     <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="">
@@ -59,9 +69,11 @@
                         </div>
                       </div>
                     </nuxt-link>
-                    
-                  
                   </div>
+
+
+
+
                 </div>
                 
               </div>
