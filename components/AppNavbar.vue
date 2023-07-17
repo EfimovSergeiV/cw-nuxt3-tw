@@ -43,7 +43,7 @@
             </div>
             <input v-model="search" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-gray-300 focus:border-gray-300 block w-full pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
           
-            <div class="absolute z-30 w-full invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
+            <div v-if="search.length > 1" class="absolute z-30 w-full invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
               <div class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-sm my-1 min-h-[80px]">
                 
                 <div class="px-2 h-96 overflow-y-auto my-2">
