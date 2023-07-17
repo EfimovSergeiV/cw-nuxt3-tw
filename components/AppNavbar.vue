@@ -1,7 +1,25 @@
 <script setup>
+  import debounce from "lodash.debounce";
+
 
   const config = useRuntimeConfig()
   const { data: products } = await useFetch(`${ config.public.baseURL }c/neues/`)
+
+
+  const debouncedHandler = debounce(async query => {
+    console.log('Debounced')
+    // const res = await getSearchData(query, params).then(res => res.data.features)
+    // const data = res.map(formatPlaceData)
+    // result.value = removeDuplicatesByObjKeys(data, ['label', 'address'])
+  }, 300);
+
+  const search = ref('')
+  watch(search, (searchRequest) => {
+    console.log(`x is ${searchRequest}`)
+    debouncedHandler()
+  })
+
+
 
 </script>
 
@@ -19,14 +37,18 @@
             <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
               <p class="mdi mdi-24px mdi-magnify"></p>
             </div>
-            <input v-model="searchProduct" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
+            <input v-model="search" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-14 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
           
-            <div class="absolute z-30 w-full">
+            <div class="absolute z-30 w-full hid den">
               <div class="dark:bg-gray-700 border dark:border-gray-600 rounded-sm my-1 min-h-[80px]">
                 
                 <div class="px-2 h-96 overflow-y-auto my-2">
+                  <p class="text-xs">{{ search }}</p>
+
+
+
                   <div class="px-2 py-2 my-1 bg-gray-800/80 border border-gray-500 rounded-md" v-for="product in products" :key="product.id">
-                    <div class="">
+                    <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="">
                       <div class="flex gap-4">
                         <div class="">
                           <img class="bg-white w-20 p-1 rounded-md" :src="product.preview_image" />
@@ -36,7 +58,7 @@
                           <p class="">{{ product.only_price.toLocaleString() }} <span class="text-xs">руб.</span></p>
                         </div>
                       </div>
-                    </div>
+                    </nuxt-link>
                     
                   
                   </div>
@@ -107,6 +129,10 @@
 
 
       </div>
+
+
+
+
     </div>
   </div>
 </template>
