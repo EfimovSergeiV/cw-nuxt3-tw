@@ -45,7 +45,7 @@ onMounted(() => {
             
             <div class="flex justify-between gap-4 relative">
               
-              <div class="w-full grid grid-cols-1 rounded-sm bg-white dark:bg-gray-800">
+              <div class="w-full grid grid-cols-1 bg-white dark:bg-gray-800 rounded-sm border-t border-gray-100 dark:border-gray-700">
 
                 <!-- <div class="flex items-center justify-center px-4">
                   <nuxt-link :to="{ name: 'index'}" class="">
@@ -67,7 +67,7 @@ onMounted(() => {
                   </div>
                 </div> -->
 
-                <div class="border-t border-l border-r border-gray-100 dark:border-gray-700 rounded-sm h-full">
+                <div class=" h-full">
                   <div class="">
 
 
@@ -100,7 +100,7 @@ onMounted(() => {
 
 
 
-                <div class="bg-gray-100 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-500 group ">
+                <div class="bg-gray-200 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-500 group ">
                   
                   <nuxt-link :to="{ name: 'cts' }" class="flex items-center justify-center h-full w-full">
                     <div class="">
@@ -108,10 +108,10 @@ onMounted(() => {
                     </div>
                   </nuxt-link> 
 
-                  <div v-if=" route.path !== '/cts'" class="absolute w-full z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
+                  <div v-if=" route.path !== '/cts'" class="py-1 absolute w-full z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
                     <div class="bg-white/90 dark:bg-gray-700/90 border border-gray-100 dark:border-gray-600 backdrop-blur-md rounded-b-2xl">
                       
-                      <div class="px-2 py-3">
+                      <div class="px-2 py-2">
                         
                         <div class="columns-3 lg:columns-4">
                           <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
