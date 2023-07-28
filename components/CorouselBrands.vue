@@ -42,7 +42,7 @@
           <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}" class="flex items-center justify-center">
             <img
               :src="brand.image"
-              class="w-14 md:w-24 lg:w-32"
+              class="w-14 md:w-20 lg:w-24"
             />                 
           </nuxt-link>
         </SwiperSlide>
