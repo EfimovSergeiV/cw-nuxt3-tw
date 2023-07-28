@@ -3,11 +3,6 @@
 
   const { data: reviews } = await useFetch(`${ config.public.baseURL }c/reviews/`)
 
-  const myMethod = () => {
-    // Логика метода
-    console.log('Вызван метод');
-  };
-
 
   const startAnimation = (image) => {
     image.show_image = image.image;
