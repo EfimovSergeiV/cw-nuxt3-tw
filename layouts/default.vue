@@ -43,7 +43,7 @@ onMounted(() => {
           <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
             
             
-            <div class="flex justify-between gap-4 relative">
+            <div class="flex justify-between  relative">
               
               <div class="w-full grid grid-cols-1 bg-white dark:bg-gray-800 rounded-sm border-t border-gray-100 dark:border-gray-700">
 
@@ -74,7 +74,7 @@ onMounted(() => {
                     <div class="flex items-center justify-center px-4">
                       <nuxt-link :to="{ name: 'index'}" class="">
                         <img
-                          class=" w-full select-none"
+                          class=" h-16 select-none"
                           width=""
                           src="/images/blue-svar.webp"
                         />      
@@ -83,17 +83,10 @@ onMounted(() => {
 
                     <div class="flex gap-4 items-center justify-end px-4 my-1">
                       <button class="">
-                        <p class="text-xl">Санкт-Петербург</p>
+                        <p class="text-lg px-2"> Санкт-Петербург</p>
                       </button>
                     </div>
-                    <div class="my-2">
-                      <div class="flex items-center justify-end px-4">
-                        <p class="text-sm">+7 (8112) 60 60 05</p>
-                      </div>
-                      <div class="flex items-center justify-end px-4">
-                        <p class="text-sm">zakaz@glsvar.ru</p>
-                      </div>
-                    </div>
+                    <div class="my-12"></div>
 
                   </div>                  
                 </div>
@@ -104,7 +97,7 @@ onMounted(() => {
                   
                   <nuxt-link :to="{ name: 'cts' }" class="flex items-center justify-center h-full w-full">
                     <div class="">
-                      <p class="text-lg">Открыть каталог</p>
+                      <p class="text-base font-semibold uppercase mdi mdi-menu"> Открыть каталог</p>
                     </div>
                   </nuxt-link> 
 
