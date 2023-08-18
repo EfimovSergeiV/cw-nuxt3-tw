@@ -32,7 +32,7 @@
   <div class="container">
     <div class="mx-auto my-4 px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="flex items-center gap-2">
+      <div class="grid grid-cols-2 gap-4">
         
 
         
@@ -85,7 +85,7 @@
 
 
 
-        <div class="flex px-6 py-2.5 gap-6 items-center bg-white dark:bg-gray-700 rounded-sm h-full border border-gray-300 dark:border-gray-600">
+        <div class="flex px-6 py-2.5 gap-8 items-center justify-center bg-white dark:bg-gray-700 rounded-sm h-full border border-gray-300 dark:border-gray-600">
           <nuxt-link :to="{ name: 'index' }" class="">
             <div class="">
               <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi-star text-sm"> Избранное</p>
