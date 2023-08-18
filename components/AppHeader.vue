@@ -33,7 +33,7 @@
 <template>
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 py-2">
 
-    <div class="flex items-center justify-between py-2">
+    <div class="flex items-center justify-between">
 
       
       <!-- <div class="">
@@ -162,13 +162,25 @@
 
       </div>
 
-      <div class="grid grid-cols-1">
-        <div class="flex gap-4">
-          <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
-          <!-- <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a> -->
+      <div class="flex gap-2">
+        <div class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all">
+          <div class="grid grid-cols-1 px-10 py-1">
+            <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-base font-semibold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
+          </div>        
         </div>
-        <a href="#" class="text-sm text-right">zakaz@glsvar.ru</a>
+        <div class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all">
+          <div class="grid grid-cols-1 px-10 py-1">
+            <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-base font-semibold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
+          </div>        
+        </div>
+        <div class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all">
+          <div class="grid grid-cols-1 px-10 py-1">
+            <a href="#" class="text-base">zakaz@glsvar.ru</a>
+          </div>        
+        </div>
       </div>
+
+
     </div>
 
 
