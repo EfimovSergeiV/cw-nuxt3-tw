@@ -35,9 +35,18 @@
 
     <div class="flex items-center justify-between">
       
-      <div id="color-mode" class="flex gap-2">
+      <div class="">
+        <div class="flex items-center justify-center">
+          <nuxt-link :to="{ name: 'index'}" class="">
+            <img
+              class=" h-16 select-none"
+              width=""
+              src="/images/blue-svar.webp"
+            />      
+          </nuxt-link>                  
+        </div>
 
-        <div>
+        <!-- <div>
           <div v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer w-8 h-8 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-full flex items-center justify-center transition-all">
             <p class="text-base mdi mdi-laptop"></p>
           </div>
@@ -51,9 +60,7 @@
 
         <div class="flex items-center justify-center transition-all duration-600 gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-2 h-8 rounded-full">
           <nuxt-link :to="{ name: 'person' }" class="mdi mdi-account px-2 text-sm cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Войти</nuxt-link>
-          <!-- <nuxt-link :to="{ name: 'compare' }" class="mdi mdi-compare text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-          <nuxt-link :to="{ name: 'person' }" class="mdi mdi-heart-outline text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link> -->
-        </div>
+        </div> -->
 
       </div>
 
@@ -110,7 +117,8 @@
 
 
 
-        <ul class="flex items-center bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-8 py-0.5 rounded-md flex-row space-x-2 md:space-x-3 justify-end transition-all">
+        <!-- <ul class="flex items-center bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-8 py-0.5 rounded-md flex-row space-x-2 md:space-x-3 justify-end transition-all"> -->
+        <ul class="flex items-center rounded-md flex-row space-x-2 md:space-x-3 justify-end transition-all">
 
           <li>
             <div class="grid grid-cols-1">
