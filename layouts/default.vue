@@ -160,23 +160,23 @@ onMounted(() => {
               <div class=" w-full grid grid-cols-1 content-between">
                 <div class="">
                   <div class="grid grid-cols-2 gap-4 ">
-                    <div class="py-4 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
-                      <div class="flex items-center justify-center">
-                        <p class="text-sm px-2 mdi mdi-theme-light-dark"> Ночной режим</p>                        
-                      </div>
-                    </div>
-                    <div class="py-4 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                    <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
                       <div class="flex items-center justify-center">
                         <p class="text-sm px-2 mdi mdi-map-marker-radius"> Санкт-Петербург</p>
                       </div>
                     </div>
-                    <div class="py-4 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                    <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                      <div class="flex items-center justify-center">
+                        <p class="text-sm px-2 mdi mdi-theme-light-dark"> Ночной режим</p>                        
+                      </div>
+                    </div>
+                    <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
                       <div class="flex items-center justify-center">
                         <p class="text-sm px-2 mdi mdi-account"> Личный кабинет</p>
                         <p class="text-sm px-2 mdi mdi-map-marker-radius hidden"> Регистрация</p>
                       </div>
                     </div>
-                    <div class="py-4 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                    <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
                       <div class="flex items-center justify-center">
                         <p class="text-sm px-2 mdi mdi-login-variant"> Выйти</p>
                         <p class="text-sm px-2 mdi mdi-login-variant hidden"> Войти</p>
@@ -184,10 +184,31 @@ onMounted(() => {
                     </div>
                   </div>
                 </div>
+
+
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="">
+                    <div class="py-1 px-0.5 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-full transition-all duration-500">
+                      <div class="flex items-center justify-center">
+                        <p class="text-xs">Cварочное оборудование</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="py-1 px-0.5 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-full transition-all duration-500">
+                      <div class="flex items-center justify-center">
+                        <p class="text-xs">Расходные материалы</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
                 <div class="">
                   <div class="group">
                   
-                    <div class="py-4 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all">
+                    <div class="py-2 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all">
                       <div class="mdi mdi-24px mdi-menu flex items-center justify-center">
                         <p class="text-lg px-2 "> Открыть каталог</p>
                       </div>
