@@ -157,7 +157,79 @@ onMounted(() => {
                 <TopSlider />
               </div>
 
-              <div class="flex h-full w-full items-end">
+              <div class=" w-full grid grid-cols-1 content-between">
+                <div class="">
+                  <div class="grid grid-cols-2 gap-4 ">
+                    <div class="py-4 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                      <div class="flex items-center justify-center">
+                        <p class="text-sm px-2 mdi mdi-theme-light-dark"> Ночной режим</p>                        
+                      </div>
+                    </div>
+                    <div class="py-4 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                      <div class="flex items-center justify-center">
+                        <p class="text-sm px-2 mdi mdi-map-marker-radius"> Санкт-Петербург</p>
+                      </div>
+                    </div>
+                    <div class="py-4 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                      <div class="flex items-center justify-center">
+                        <p class="text-sm px-2 mdi mdi-account"> Личный кабинет</p>
+                        <p class="text-sm px-2 mdi mdi-map-marker-radius hidden"> Регистрация</p>
+                      </div>
+                    </div>
+                    <div class="py-4 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                      <div class="flex items-center justify-center">
+                        <p class="text-sm px-2 mdi mdi-login-variant"> Выйти</p>
+                        <p class="text-sm px-2 mdi mdi-login-variant hidden"> Войти</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                  <div class="group">
+                  
+                    <div class="py-4 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all">
+                      <div class="mdi mdi-24px mdi-menu flex items-center justify-center">
+                        <p class="text-lg px-2 "> Открыть каталог</p>
+                      </div>
+                    </div>
+
+                    <div v-if=" route.path !== '/cts'" class="py-1 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
+                      <div class="bg-white/90 dark:bg-gray-700/90 border border-gray-100 dark:border-gray-600 backdrop-blur-md rounded-b-2xl">
+                        
+                        <div class="px-2 py-2">
+                          
+                          <div class="columns-3 lg:columns-4">
+                            <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
+                              <div class="">
+
+
+                                <div class="py-2 ">
+                                  
+                                  <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-4 px-2">
+                                    <div class="">
+                                      <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
+                                    </div>
+
+                                    <div>
+                                      <ul>
+                                        <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block ">
+                                          <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 mr-3 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">{{ sct.name }}</nuxt-link>
+                                        </li>
+                                      </ul>
+                                    </div>                                  
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="flex h-full w-full items-end">
                 <div class="flex-row space-y-4 w-full ">
                   
                   <div class="grid grid-cols-2 gap-4 ">
@@ -225,12 +297,9 @@ onMounted(() => {
                         </div>
                       </div>  
                     </div>
-
                   </div>
-
                 </div>
-              
-              </div>
+              </div> -->
 
 
 
