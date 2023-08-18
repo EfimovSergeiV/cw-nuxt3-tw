@@ -33,9 +33,10 @@
 <template>
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 py-2">
 
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between py-2">
+
       
-      <div class="">
+      <!-- <div class="">
         <div class="flex items-center justify-center">
           <nuxt-link :to="{ name: 'index'}" class="">
             <img
@@ -46,7 +47,7 @@
           </nuxt-link>                  
         </div>
 
-        <!-- <div>
+        <div>
           <div v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer w-8 h-8 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-full flex items-center justify-center transition-all">
             <p class="text-base mdi mdi-laptop"></p>
           </div>
@@ -60,9 +61,9 @@
 
         <div class="flex items-center justify-center transition-all duration-600 gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-2 h-8 rounded-full">
           <nuxt-link :to="{ name: 'person' }" class="mdi mdi-account px-2 text-sm cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Войти</nuxt-link>
-        </div> -->
+        </div>
 
-      </div>
+      </div> -->
 
 
       <div class="grid grid-cols-1 gap-2">
@@ -120,15 +121,6 @@
         <!-- <ul class="flex items-center bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-8 py-0.5 rounded-md flex-row space-x-2 md:space-x-3 justify-end transition-all"> -->
         <ul class="flex items-center rounded-md flex-row space-x-2 md:space-x-3 justify-end transition-all">
 
-          <li>
-            <div class="grid grid-cols-1">
-              <div class="flex gap-4">
-                <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
-                <!-- <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a> -->
-              </div>
-              <a href="#" class="text-sm text-right">zakaz@glsvar.ru</a>
-            </div>
-          </li>
 
           <transition name="right-emergence">
             <li v-if="shopStore.shop.telegram">
@@ -159,36 +151,47 @@
           </transition>
         </ul>
 
-          <div v-if="shopStore.shop.mobile" class="flex justify-end">
-            <a :href="`tel:${shopStore.mobile.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.mobile }}</a>
-          </div>
+        <div v-if="shopStore.shop.mobile" class="flex justify-end">
+          <a :href="`tel:${shopStore.mobile.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.mobile }}</a>
+        </div>
+
+
+
+
+
 
       </div>
 
-      <!-- <p class="text-xs">{{ shopStore.shop.phone }}</p> -->
-      <!-- <p class="text-xs">{{ shopStore.city }}</p> -->
-
+      <div class="grid grid-cols-1">
+        <div class="flex gap-4">
+          <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
+          <!-- <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a> -->
+        </div>
+        <a href="#" class="text-sm text-right">zakaz@glsvar.ru</a>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-4 md:flex items-end justify-center md:justify-between">
-      <!-- <nuxt-link :to="{ name: 'index'}" class="">
+
+
+    <!-- <div class="grid grid-cols-1 gap-4 md:flex items-end justify-center md:justify-between">
+      <nuxt-link :to="{ name: 'index'}" class="">
         <img
           class=" h-12 md:h-16 select-none"
           width=""
           src="/images/blue-svar.webp"
         />      
-      </nuxt-link> -->
+      </nuxt-link>
   
-      <!-- <div class="">
+      <div class="">
         <div class="relative md:w-[360px] lg:w-[600px]">
           <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
             <p class="mdi mdi-24px mdi-store-search-outline"></p>
           </div>
           <input v-model="searchProduct" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
         </div> 
-      </div> -->
+      </div>
 
-    </div>
+    </div> -->
 
 
 
