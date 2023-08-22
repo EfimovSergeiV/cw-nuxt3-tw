@@ -38,7 +38,7 @@
                 <div class="flex items-center bg-gray-800/80">
                   <div class="p-1">
                     <nuxt-link :to="{ name: 'prods', query: { brnd: 3, page: 1 } }">
-                      <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" loading=lazy width="140px" />
+                      <img src="/esab-logo.jpg" loading=lazy width="140px" />
                     </nuxt-link>
                   </div>
                   <div class="p-1 text-gray-300">

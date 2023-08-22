@@ -168,7 +168,7 @@ onMounted(() => {
                   </nuxt-link>                  
                 </div>
 
-                <div class="border bg-white  dark:bg-gray-700 border-gray-200 dark:border-gray-600 p-0.5 rounded-md">
+                <div class="border bg-white  dark:bg-gray-700 border-gray-200 dark:border-gray-600 p-0.5 rounded-sm">
                   <div class="grid grid-cols-2 gap-0.5">
                     <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500">
                       <div class="flex items-center justify-center">
@@ -241,7 +241,7 @@ onMounted(() => {
                 <div class="">
                   <div class="group">
                   
-                    <div class="py-1 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all">
+                    <div class="py-1 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-sm transition-all">
                       <div class="mdi mdi-24px mdi-menu flex items-center justify-center">
                         <p class="text-lg px-2 "> Открыть каталог</p>
                       </div>
