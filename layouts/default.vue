@@ -5,6 +5,7 @@ const config = useRuntimeConfig()
 const shopStore = useShopStore()
 const route = useRoute()
 const colorMode = useColorMode()
+const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
 
 const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 const { data: cts } = await useFetch(`${ config.public.baseURL }c/ct/`)
@@ -181,16 +182,33 @@ onMounted(() => {
                     </div>
                     <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500">
                       <div class="flex items-center justify-center">
-                        <p class="text-sm px-2 mdi mdi-account"> Личный кабинет</p>
-                        <p class="text-sm px-2 mdi mdi-map-marker-radius hidden"> Регистрация</p>
+                        <p class="text-sm px-2 mdi mdi-account hidden"> Личный кабинет</p>
+                        <p class="text-sm px-2 mdi mdi-map-marker-radius"> Регистрация</p>
                       </div>
                     </div>
-                    <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500">
-                      <div class="flex items-center justify-center">
-                        <p class="text-sm px-2 mdi mdi-login-variant"> Выйти</p>
-                        <p class="text-sm px-2 mdi mdi-login-variant hidden"> Войти</p>
-                      </div>
+                    <div class="flex items-center justify-center w-full h-full">
+                      <nuxt-link v-if="status === 'unauthenticated'" :to="{ name: 'login' }" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <p class="text-sm">
+                          Войти
+                        </p>
+                      </nuxt-link>
+                      <button v-else @click="signOut()" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <p class="text-sm">
+                          Выйти
+                        </p>
+                      </button>
+                      <!-- <nuxt-link :to="{ name: 'login' }" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                        <div class="flex items-center justify-center">
+                          <p class="text-sm mdi mdi-login-variant"> Войти</p>
+                        </div>
+                      </nuxt-link> -->
+                      <!-- <div class=" hidden py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                        <div class="flex items-center justify-center">
+                          <p class="text-sm px-2 mdi mdi-login-variant"> Выйти</p>
+                        </div>
+                      </div>                       -->
                     </div>
+
                   </div>
                 </div>
 

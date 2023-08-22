@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { definePageMeta, useAuth } from '#imports'
+// import { ref } from 'vue'
+// import { definePageMeta, useAuth } from '#imports'
 
 const { signIn, token, data, status, lastRefreshedAt } = useAuth()
 
