@@ -155,7 +155,7 @@ onMounted(() => {
 
 
 
-              <div class=" w-full grid grid-cols-1 content-between">
+              <div class="w-[360px] grid grid-cols-1 content-between">
 
                 <div class="flex items-center justify-center -mt-4">
                   <nuxt-link :to="{ name: 'index'}" class="">

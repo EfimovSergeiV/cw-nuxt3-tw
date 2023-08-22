@@ -35,13 +35,56 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    // '@sidebase/nuxt-auth',
+    '@sidebase/nuxt-auth',
     'nuxt-lodash',
     'nuxt-gtag',
     '@artmizu/yandex-metrika-nuxt',
     '@pinia/nuxt',
     'nuxt-swiper',
   ],
+
+
+
+  // Auth module
+  build: {
+    transpile: ['jsonwebtoken']
+  },
+  auth: {
+    baseURL: 'http://127.0.0.1:8000/',
+    provider: {
+      type: 'local',
+      // endpoints: {
+      //   getSession: { path: '/user' }
+      // },
+      
+      endpoints: {
+        
+        signIn: { path: 'auth/', method: 'post' },
+        signOut: { path: 'logout/', method: 'post' },
+        signUp: { path: 'register/', method: 'post' },
+        getSession: { path: 'u/profile/', method: 'get' }
+      },
+
+      // pages: {
+      //   login: '/'
+      // },
+      // token: {
+      //   signInResponseTokenPointer: '/token/accessToken'
+      // },
+      sessionDataType: { id: 'string', email: 'string', name: 'string', role: 'admin | guest | account', subscriptions: "{ id: number, status: 'ACTIVE' | 'INACTIVE' }[]" }
+    },
+    session: {
+      // Whether to refresh the session every time the browser window is refocused.
+      enableRefreshOnWindowFocus: true,
+
+      // Whether to refresh the session every `X` milliseconds. Set this to `false` to turn it off. The session will only be refreshed if a session already exists.
+      enableRefreshPeriodically: 5000
+    },
+    globalAppMiddleware: {
+      isEnabled: false
+    }
+  },
+
 
   pinia: {
     autoImports: [
