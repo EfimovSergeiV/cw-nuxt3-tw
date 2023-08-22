@@ -183,7 +183,7 @@ onMounted(() => {
                         <p class="text-sm mdi mdi-weather-night"> Ночной режим</p>
                       </button>
                       <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500 w-full h-full flex items-center justify-center">
-                        <p class="text-sm mdi mdi-white-balance-sunny"> Ночной режим</p>
+                        <p class="text-sm mdi mdi-white-balance-sunny"> Дневной режим</p>
                       </button>
                     </div>
 
