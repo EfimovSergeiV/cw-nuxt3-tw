@@ -1,13 +1,13 @@
 // import { NuxtAuthHandler } from '#auth'
-// import GithubProvider from 'next-auth/providers/github'
+// import GoogleProvider from "next-auth/providers/google"
+
 // export default NuxtAuthHandler({
-//     providers: [
-//         // @ts-expect-error You need to use .default here for it to work during SSR. May be fixed via Vite at some point
-//         GithubProvider.default({
-//            clientId: 'enter-your-client-id-here',
-//            clientSecret: 'enter-your-client-secret-here'
-//         })
-//     ]
+//   providers: [
+//     GoogleProvider({
+//       clientId: '1092381049103-nrh2muiaea242nh3h447ro2dfuurjae8.apps.googleusercontent.com',
+//       clientSecret: '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'
+//     })
+//   ]
 // })
 
 
