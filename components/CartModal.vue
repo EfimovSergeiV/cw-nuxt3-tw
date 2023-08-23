@@ -1,11 +1,17 @@
 <script setup>
   const config = useRuntimeConfig()
+  const router = useRouter()
+
   const productsStore = useProductsStore()
   // const notificationsStore = useNotificationsStore()
 
 
   const goCart = () => {
-    console.log('Go cart')
+    productsStore.showCartModal()
+    setTimeout(() => {
+      console.log('go cart')
+      router.push({ name: 'cart' })
+    }, 500)
   }
 
 </script>
