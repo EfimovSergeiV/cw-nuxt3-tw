@@ -110,7 +110,7 @@ export const useProductsStore = defineStore('ProductsStore', {
           if (!this.cartAlertBlock) {
             setTimeout(() => {
               this.cartAlert = !this.cartAlert
-            }, 600);
+            }, 800);
           }
 
         } else {
