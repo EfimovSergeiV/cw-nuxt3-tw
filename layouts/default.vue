@@ -1,52 +1,52 @@
 <script setup>
-import { onMounted } from 'vue'
+  import { onMounted } from 'vue'
 
-const config = useRuntimeConfig()
-const shopStore = useShopStore()
-const route = useRoute()
-const colorMode = useColorMode()
-const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
+  const config = useRuntimeConfig()
+  const shopStore = useShopStore()
+  const route = useRoute()
+  const colorMode = useColorMode()
 
-const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
-const { data: cts } = await useFetch(`${ config.public.baseURL }c/ct/`)
+  const productsStore = useProductsStore()
+  const notificationsStore = useNotificationsStore()
 
-shopStore.writeShops(shops)
+  const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
+  const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
+  const { data: cts } = await useFetch(`${ config.public.baseURL }c/ct/`)
 
-onMounted(() => {
-  if ("geolocation" in navigator) {
-    /* местоположение доступно */
-    navigator.geolocation.getCurrentPosition(position => {
-      let location = {
-        "latitude": position.coords.latitude, 
-        "longitude": position.coords.longitude 
-      }
+  shopStore.writeShops(shops)
 
-      shopStore.sendCoordinates(location)
+  onMounted(() => {
+    if ("geolocation" in navigator) {
+      /* местоположение доступно */
+      navigator.geolocation.getCurrentPosition(position => {
+        let location = {
+          "latitude": position.coords.latitude, 
+          "longitude": position.coords.longitude 
+        }
 
-      // this.sendCoordinates(location)
-    });
-  } else {
-    /* местоположение НЕ доступно */
-  }
+        shopStore.sendCoordinates(location)
 
-})
+        // this.sendCoordinates(location)
+      });
+    } else {
+      /* местоположение НЕ доступно */
+    }
+
+  })
 
 </script>
 
 <template>
-
-<!-- Эту логику на появление модальки для скрытия скролла? -->
-  <div class="h-screen overflow-hidden pr-1">
+  <div class="">
 
 
-    <div class="absolute z-50 w-full h-full bg-gray-500/50 backdrop-blur-sm">
-      <div class="flex items-center justify-center h-full">
-        <div class="h-full w-full flex items-center justify-center">
-          <p class="text-red-500 font-semibold text-6xl">This modal message</p>
-        </div>        
+    <transition name="fade" mode="in-out">
+      <div v-if="productsStore.cartAlert" class="">
+        <CartModal />
       </div>
-    </div>
-
+      
+    </transition>
+    
 
     <div class="bg-gradient-to-r from-gray-300 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-700 dark:text-gray-300">
       <div id="background-page" class="bg-fixed bg-no-repeat bg-[center_100px] bg-cover bg-[url('images/footer-bg.webp')] dark:bg-[url('images/footer-dark-bg.webp')] min-h-screen">
@@ -386,7 +386,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- <transition name="fade" mode="out-in"></transition> -->
+      
 
 
 

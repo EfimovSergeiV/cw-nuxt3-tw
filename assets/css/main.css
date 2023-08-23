@@ -47,7 +47,7 @@
 } */
 
 /* Исчезновение влево и стили корзины*/
-/* .left-emergence-enter,
+.left-emergence-enter,
 .left-emergence-leave-to {
   opacity: 0;
   transform: translateX(-12em);
@@ -55,7 +55,7 @@
 .left-emergence-enter-active,
 .left-emergence-leave-active {
   transition: all 0.3s ease;
-} */
+}
 
 /* Исчезновение влево и стили корзины*/
 /* .right-emergence-enter,
