@@ -45,7 +45,7 @@
                 <div class="overflow-x-auto w-full">
                   <div class="">
 
-                    <div class="grid gap-2 px-2 py-4">
+                    <div class="grid gap-2 px-2 py-2 border-b border-gray-300 dark:border-gray-600">
                       <div class="flex text-gray-600 dark:text-gray-100">
                         <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
                         <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
@@ -56,15 +56,15 @@
                       </div>
                     </div>
 
-                    <div class="grid gap-2 px-1 text-gray-700 dark:text-gray-300">
+                    <div class="grid gap-2 text-gray-700 dark:text-gray-300">
                       <transition-group tag="div" name="left-emergence">
-                        <div v-for="product in productsStore.cart" :key="product.id" class="my-4">
+                        <div v-for="product in productsStore.cart" :key="product.id" class="my-4 border-t border-gray-300 dark:border-gray-600">
                           <div class="flex items-center gap-2">
                             <div class="flex justify-center items-center w-24 bg-white rounded-sm">
                               <img :src="product.preview_image" :alt="product.name" width="235px" height="177px" class="rounded-sm w-20" />
                             </div>
                             <div class="flex justify-center w-1/2">
-                              <p class="text-sm">{{ product.name }}</p>
+                              <p class="text-sm text-center">{{ product.name }}</p>
                             </div>
                             <div class="flex justify-center w-32">
                               <button  @click="productsStore.changeQuantity(product, 'del')" class="mdi mdi-minus cursor-pointer"></button>
