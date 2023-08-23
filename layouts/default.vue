@@ -41,10 +41,10 @@
 
 
     <transition name="fade" mode="in-out">
-      <div v-if="productsStore.cartAlert" class="">
-        <CartModal />
-      </div>
-      
+      <CartModal v-if="productsStore.cartAlert" />
+    </transition>
+    <transition name="fade" mode="in-out">
+      <RequestPrice v-if="productsStore.requestPrice" />
     </transition>
     
 

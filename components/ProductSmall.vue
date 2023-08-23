@@ -1,5 +1,6 @@
 <script setup>
   const props = defineProps(['product'])
+  const productsStore = useProductsStore()
 
 </script>
 
@@ -20,7 +21,7 @@
     </nuxt-link>
     <div class="flex items-center gap-4">
       <div class="">
-        <button @click="requestPriceProduct(product)" v-if="product.only_price === 0" class="">
+        <button @click="productsStore.addRequestPrice(product)" v-if="product.only_price === 0" class="">
           <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
             <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
               <p class="text-white text-sm w-36 md:w-24 py-1.5">Запросить</p>

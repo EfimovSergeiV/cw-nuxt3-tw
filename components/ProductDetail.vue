@@ -76,7 +76,7 @@
                 </div>
                 <div class="grid grid-cols-1 gap-4">
                   <div class="flex items-center justify-end">
-                    <button @click="requestPriceProduct(product)" v-if="props.product.only_price === 0" class="">
+                    <button @click="productsStore.addRequestPrice(product)" v-if="props.product.only_price === 0" class="">
                       <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                         <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
                           <p class="text-white text-base w-32 md:w-52 py-2.5">Запросить</p>

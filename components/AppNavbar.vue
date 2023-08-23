@@ -112,38 +112,7 @@
         </div>
 
 
-
-        <!-- <nav class="">
-          <div class="">
-            <div class="grid justify-items-end mx-auto max-w-screen-xl ">
-              <div id="mega-menu-full" class="">
-                <ul class="flex  bg-gray-700">
-                  <li class="w-28  ">
-                    <nuxt-link :to="{ name: 'index' }" class=" block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-base" aria-current="page"> Избранное</nuxt-link>
-                  </li>
-                  <li class="w-28 ">
-                    <nuxt-link :to="{ name: 'index' }" class=" block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home text-base" aria-current="page"> Сравнение</nuxt-link>
-                  </li>
-                  <li class="relative w-28">
-                    <nuxt-link :to="{ name: 'cart' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-cart text-base"> Корзина</nuxt-link>
-                  </li>
-                  <li class="w-28">
-                    <nuxt-link :to="{ name: 'about' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-store-marker text-base"> Магазины</nuxt-link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </nav> -->
-
-
-
       </div>
-
-
-
-
     </div>
   </div>
 </template>
