@@ -175,7 +175,10 @@ export const useNotificationsStore = defineStore('NotificationsStore', {
   state: () => ({
     filterComponent: false,
     toasts: [
-      { id: 1, type: 'success', text: 'Товар был добавлен в сравнение'}
+      { id: 1, type: 'success', text: 'Товар был добавлен в сравнение'},
+      { id: 2, type: 'warning', text: 'Товар был добавлен в сравнение'},
+      { id: 3, type: 'danger', text: 'Товар не был добавлен в сравнение'},
+      { id: 4, type: 'info', text: 'Товар был добавлен в сравнение'},
     ]
   }),
   actions: {
