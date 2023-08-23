@@ -253,9 +253,11 @@
                     <div class="group">
                     
                       <div class="py-1 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-sm transition-all">
-                        <div class="mdi mdi-24px mdi-menu flex items-center justify-center">
-                          <p class="text-lg px-2 "> Открыть каталог</p>
-                        </div>
+                        <nuxt-link :to="{ name: 'cts' }">
+                          <div class="mdi mdi-24px mdi-menu flex items-center justify-center">
+                            <p class="text-lg px-2 "> Открыть каталог</p>
+                          </div>                        
+                        </nuxt-link>
                       </div>
 
                       <div v-if=" route.path !== '/cts'" class="py-1 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
@@ -272,13 +274,13 @@
                                     
                                     <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-4 px-2">
                                       <div class="">
-                                        <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
+                                        <nuxt-link :to="{ name: 'prods', query: { ct: ct.id }, hash: '#breadcrumbs' }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
                                       </div>
 
                                       <div>
                                         <ul>
                                           <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block ">
-                                            <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 mr-3 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">{{ sct.name }}</nuxt-link>
+                                            <nuxt-link :to="{ name: 'prods', query: { ct: sct.id }, hash: '#breadcrumbs' }" class="text-gray-700 mr-3 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">{{ sct.name }}</nuxt-link>
                                           </li>
                                         </ul>
                                       </div>                                  

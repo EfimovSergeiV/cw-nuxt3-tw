@@ -174,10 +174,16 @@ export const useNotificationsStore = defineStore('NotificationsStore', {
   /// Уведомления и всплывающие окна 
   state: () => ({
     filterComponent: false,
+    toasts: [
+      { id: 1, type: 'success', text: 'Товар был добавлен в сравнение'}
+    ]
   }),
   actions: {
     statusFilterComponent() {
       this.filterComponent = !this.filterComponent
     },
+    addToast() {
+      console.log('ADD TOAST')
+    }
   },
 })
