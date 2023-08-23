@@ -30,7 +30,7 @@
             <div class="">
 
               <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
                   Товар добавлен в корзину
                 </h3>
                 <button @click="productsStore.showCartModal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
@@ -46,7 +46,7 @@
                   <div class="">
 
                     <div class="grid gap-2 px-2 py-4">
-                      <div class="flex dark:text-gray-100">
+                      <div class="flex text-gray-600 dark:text-gray-100">
                         <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
                         <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
                         <div class="flex justify-center w-32"><p class="text-sm">Количество</p></div>
@@ -56,7 +56,7 @@
                       </div>
                     </div>
 
-                    <div class="grid gap-2 px-1 dark:text-gray-300">
+                    <div class="grid gap-2 px-1 text-gray-700 dark:text-gray-300">
                       <transition-group tag="div" name="left-emergence">
                         <div v-for="product in productsStore.cart" :key="product.id" class="my-4">
                           <div class="flex items-center gap-2">
@@ -92,7 +92,7 @@
                 <div class="">
                   <div class="flex items-center mb-4">
                     <input id="default-checkbox" type="checkbox" v-model="productsStore.cartAlertBlock" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Не показывать больше</label>
+                    <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer">Не показывать больше</label>
                   </div>
                 </div>
                 <div class="flex justify-center gap-2 w-full md:justify-end">
