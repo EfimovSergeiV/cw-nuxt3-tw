@@ -390,6 +390,27 @@
 
       
 
+      <div class="absolute">
+        <div class="relative">
+          <div class="fixed bottom-60 md:bottom-48 right-20 hover:right-24 transition-all duration-500">
+            <div class="relative">
+              <div class="absolute z-50">
+                <div class="-rotate-90 bg-blue-700 px-4 pb-12 group rounded-md w-44 cursor-pointer">
+                  <div class="flex items-center justify-center group-hover:text-gray-100 text-gray-300 font-bold transition-all duration-500">
+                    <div class="">
+                      <p class="text-sm mx-2">Напишите нам</p>
+                    </div>
+                    <div class="rotate-90">
+                      <p class="mdi mdi-24px mdi-message-text-outline"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
 
