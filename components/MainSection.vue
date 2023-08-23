@@ -12,7 +12,7 @@
     <div class="grid grid-cols-1 lg:flex gap-4">
 
 
-      <div class="bg-white rounded-sm border border-gray-100 dark:border-gray-700 dark:bg-gray-800 p-1 shadow-md w-full">
+      <div class="w-full">
         <div class="grid grid-cols-2 gap-4">
           <div v-for="product in latest.slice(0, 4)" :key="product.id">
 

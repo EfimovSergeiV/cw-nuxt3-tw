@@ -179,38 +179,38 @@
                     </nuxt-link>                  
                   </div>
 
-                  <div class="border bg-white  dark:bg-gray-700 border-gray-200 dark:border-gray-600 p-0.5 rounded-sm">
-                    <div class="grid grid-cols-2 gap-0.5">
-                      <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                  <div class="">
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-lg transition-all duration-500">
                         <div class="flex items-center justify-center">
                           <p class="text-sm px-2 mdi mdi-map-marker-radius"> Санкт-Петербург</p>
                         </div>
                       </div>
                       <div id="color-mode">
-                        <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-lg transition-all duration-500 w-full h-full flex items-center justify-center">
                           <p class="text-sm mdi mdi-laptop"> Авто режим</p>
                         </button>
-                        <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-lg transition-all duration-500 w-full h-full flex items-center justify-center">
                           <p class="text-sm mdi mdi-weather-night"> Ночной режим</p>
                         </button>
-                        <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-lg transition-all duration-500 w-full h-full flex items-center justify-center">
                           <p class="text-sm mdi mdi-white-balance-sunny"> Дневной режим</p>
                         </button>
                       </div>
 
-                      <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500">
+                      <div class="py-2 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-lg transition-all duration-500">
                         <div class="flex items-center justify-center">
                           <p class="text-sm px-2 mdi mdi-account hidden"> Личный кабинет</p>
                           <p class="text-sm px-2 mdi mdi-account-plus"> Регистрация</p>
                         </div>
                       </div>
                       <div class="flex items-center justify-center w-full h-full">
-                        <nuxt-link v-if="status === 'unauthenticated'" :to="{ name: 'login' }" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <nuxt-link v-if="status === 'unauthenticated'" :to="{ name: 'login' }" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-lg transition-all duration-500 w-full h-full flex items-center justify-center">
                           <p class="text-sm mdi mdi-login-variant">
                             Войти
                           </p>
                         </nuxt-link>
-                        <button v-else @click="signOut()" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-md transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <button v-else @click="signOut()" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-lg transition-all duration-500 w-full h-full flex items-center justify-center">
                           <p class="text-sm mdi mdi-login-variant">
                             Выйти
                           </p>
@@ -252,7 +252,7 @@
                   <div class="">
                     <div class="group">
                     
-                      <div class="py-1 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-sm transition-all">
+                      <div class="py-1 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all">
                         <nuxt-link :to="{ name: 'cts' }">
                           <div class="mdi mdi-24px mdi-menu flex items-center justify-center">
                             <p class="text-lg px-2 "> Открыть каталог</p>
