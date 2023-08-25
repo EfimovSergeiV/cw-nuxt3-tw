@@ -13,10 +13,37 @@
 
 
       <div class="w-full">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-4 h-full content-stretch">
           <div v-for="product in latest.slice(0, 4)" :key="product.id">
 
-            <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800">
+            <div class="bg-white w-full h-full rounded-sm">
+ 
+              <div class="grid grid-cols-1 content-between h-full px-2">
+                <div class="flex items-center justify-start">
+                  
+                  <div class="text-red-700 flex items-center gap-1">
+                    <span class="mdi mdi-24px mdi-new-box"></span>
+                    <p class="text-xs font-semibold ">Новинка</p>
+                  </div>
+                  
+                </div>
+                <div class="flex gap-2">
+                  <img :src="product.preview_image" class="h-16" />
+                  <div class="flex items-center justify-start w-full">
+                    <p v-if="product.only_price === 0" class="text-gray-700 font-bold text-xs">По запросу</p>
+                    <p v-else class="text-gray-700 font-bold text-base">{{ product.only_price.toLocaleString() }} <span class="text-xs">руб.</span></p>                    
+                  </div>
+
+                </div>
+                             
+                <div class="flex items-center justify-end pb-1">
+                  <p class="text-xs font-semibold text-gray-700 text-right">{{ product.name }}</p>
+                </div>                
+              </div>
+
+            </div>
+
+            <!-- <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800">
               <div class="h-36 lg:h-40">
 
                 <nuxt-link :to="{ name: 'product-id', params: { id: product.id } }">
@@ -56,7 +83,7 @@
                 </nuxt-link>
 
               </div>
-            </div>
+            </div> -->
 
 
           </div>
@@ -68,8 +95,7 @@
 
       <div class="hidden lg:block">
         <Swiper
-          class="rounded-sm relative"
-          style="height: 348px; width: 598px;"
+          class="rounded-sm relative w-[34rem]"
           :modules="[SwiperAutoplay, SwiperEffectCreative]"
           :slides-per-view="1"
           :loop="true"
@@ -91,9 +117,9 @@
           <SwiperSlide v-for="slide in props.banners" :key="slide.id" class="">
             <nuxt-link :to="slide.link">
               <img
-                style="height: 348px; width: 598px;"
+
                 :src="slide.image"
-                class="rounded-sm border dark:border-gray-700 shadow-md "
+                class="rounded-sm border dark:border-gray-700 shadow-md w-[34rem]"
               />             
             </nuxt-link>
           </SwiperSlide>
@@ -102,9 +128,6 @@
           </div>
         </Swiper>
       </div>
-
-
-
 
 
     </div>
