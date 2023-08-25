@@ -116,13 +116,21 @@
                   <div class="">
                     <div class="group">
                     
-                      <div class="py-1 px-1 group cursor-pointer h-full bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all">
-                        <nuxt-link :to="{ name: 'cts' }">
-                          <div class="mdi mdi-24px mdi-menu flex items-center justify-center">
-                            <p class="text-lg px-2 "> Открыть каталог</p>
-                          </div>                        
-                        </nuxt-link>
+
+
+
+                      <div class=" group cursor-pointer h-full text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                        <div class="bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg py-3">
+                          <nuxt-link :to="{ name: 'cts' }">
+                            <div class="mdi mdi-24px mdi- menu flex items-center justify-center">
+                              <p class="text-lg px-2 uppercase "> Открыть каталог</p>
+                            </div>                        
+                          </nuxt-link>                          
+                        </div>
                       </div>
+
+
+
 
                       <div v-if=" route.path !== '/cts'" class="py-1 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
                         <div class="bg-white/90 dark:bg-gray-700/90 border border-gray-100 dark:border-gray-600 backdrop-blur-md rounded-b-2xl">
