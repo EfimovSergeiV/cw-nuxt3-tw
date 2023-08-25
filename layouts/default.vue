@@ -73,36 +73,49 @@
 
                   <div class="">
                     <div class="grid grid-cols-2 gap-x-1 gap-y-1">
-                      <div class="py-1 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500">
-                        <div class="flex items-center justify-center">
-                          <p class="text-sm px-2 mdi mdi-map-marker-radius"> Санкт-Петербург</p>
+                      <div class="py-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500">
+                        <div class="flex items-center">
+                          <span class="px-2 mdi mdi-map-marker-radius"></span>
+                          <p class="text-sm "> Санкт-Петербург</p>
                         </div>
                       </div>
+
                       <div id="color-mode">
-                        <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center justify-center">
-                          <p class="text-sm mdi mdi-laptop"> Авто режим</p>
+                        <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
+                          <div class="">
+                            <p class="text-sm mdi mdi-laptop"> Авто режим</p>
+                          </div>
                         </button>
-                        <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center justify-center">
-                          <p class="text-sm mdi mdi-weather-night"> Ночной режим</p>
+                        <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
+                          <div class="flex items-center">
+                            <span class="px-2 mdi mdi-weather-night"></span>
+                            <p class="text-sm "> Ночной режим</p>
+                          </div>
                         </button>
-                        <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
                           <p class="text-sm mdi mdi-white-balance-sunny"> Дневной режим</p>
                         </button>
                       </div>
 
-                      <div class="py-1 px-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500">
-                        <div class="flex items-center justify-center">
-                          <p class="text-sm px-2 mdi mdi-account hidden"> Личный кабинет</p>
-                          <p class="text-sm px-2 mdi mdi-account-plus"> Регистрация</p>
+                      <div class="py-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500">
+
+                        <p class="text-sm mdi mdi-account hidden"> Личный кабинет</p>
+                        <div class="flex items-center">
+                          <span class="px-2 mdi mdi-account-plus"></span>
+                          <p class="text-sm "> Регистрация</p>
                         </div>
+
                       </div>
-                      <div class="flex items-center justify-center w-full h-full">
-                        <nuxt-link v-if="status === 'unauthenticated'" :to="{ name: 'login' }" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center justify-center">
-                          <p class="text-sm mdi mdi-login-variant">
-                            Войти
-                          </p>
+
+                      <div class="py-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500">
+                        <nuxt-link v-if="status === 'unauthenticated'" :to="{ name: 'login' }" class="">
+                          <div class="flex items-center">
+                            <span class="px-2 mdi mdi-login-variant"></span>
+                            <p class="text-sm "> Войти</p>
+                          </div>
+                          
                         </nuxt-link>
-                        <button v-else @click="signOut()" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center justify-center">
+                        <button v-else @click="signOut()" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full">
                           <p class="text-sm mdi mdi-login-variant">
                             Выйти
                           </p>
@@ -144,8 +157,8 @@
 
                                   <div class="py-2 ">
                                     
-                                    <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-4 px-2">
-                                      <div class="">
+                                    <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-2 px-2">
+                                      <div class="py-2">
                                         <nuxt-link :to="{ name: 'prods', query: { ct: ct.id }, hash: '#breadcrumbs' }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
                                       </div>
 
