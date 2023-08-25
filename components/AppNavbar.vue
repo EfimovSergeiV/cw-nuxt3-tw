@@ -39,7 +39,7 @@
         <div class="w-full">
           <div class="relative w-full group">
             <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-              <p class="mdi mdi-24px mdi-store-search text-gray-300"></p>
+              <p class="mdi mdi-24px mdi-store-search text-gray-600 dark:text-gray-300"></p>
             </div>
             <input v-model="search" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-gray-300 focus:border-gray-300 block w-full pl-14 p-1.5  dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 ring-0 dark:focus:ring-gray-600 dark:focus:border-gray-600" placeholder="Поиск по товарам">
           
@@ -86,25 +86,25 @@
 
 
         <div class="flex items-center gap-2 ">
-          <nuxt-link :to="{ name: 'index' }" class="dark:bg-gray-800 h-full w-full flex items-center justify-center border dark:border-gray-600 rounded-sm">
+          <nuxt-link :to="{ name: 'index' }" class="bg-white dark:bg-gray-800 h-full w-full flex items-center justify-center border dark:border-gray-600 rounded-sm">
             <div class="">
               <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi-star text-sm"> Избранное</p>
             </div>
           </nuxt-link>
 
-          <nuxt-link :to="{ name: 'index' }" class="dark:bg-gray-800 h-full w-full flex items-center justify-center border dark:border-gray-600 rounded-sm">
+          <nuxt-link :to="{ name: 'index' }" class="bg-white dark:bg-gray-800 h-full w-full flex items-center justify-center border dark:border-gray-600 rounded-sm">
             <div class="">
               <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi-align-horizontal-right text-sm"> Сравнение</p>
             </div>
           </nuxt-link>
 
-          <nuxt-link :to="{ name: 'cart' }" class="dark:bg-gray-800 h-full w-full flex items-center justify-center border dark:border-gray-600 rounded-sm">
+          <nuxt-link :to="{ name: 'cart' }" class="bg-white dark:bg-gray-800 h-full w-full flex items-center justify-center border dark:border-gray-600 rounded-sm">
             <div class="">
               <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi mdi-cart text-sm"> Корзина</p>
             </div>
           </nuxt-link>
 
-          <nuxt-link :to="{ name: 'about' }" class="dark:bg-gray-800 h-full w-full flex items-center justify-center border dark:border-gray-600 rounded-sm">
+          <nuxt-link :to="{ name: 'about' }" class="bg-white dark:bg-gray-800 h-full w-full flex items-center justify-center border dark:border-gray-600 rounded-sm">
             <div class="">
               <p class="flex items-center gap-1 text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-gray-900  md:dark:hover:bg-transparent dark:border-gray-700 transition-all mdi mdi-store-marker text-sm"> Магазины</p>
             </div>

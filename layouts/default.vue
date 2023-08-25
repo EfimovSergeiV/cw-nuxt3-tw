@@ -82,8 +82,9 @@
 
                       <div id="color-mode">
                         <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
-                          <div class="">
-                            <p class="text-sm mdi mdi-laptop"> Авто режим</p>
+                          <div class="flex items-center">
+                            <span class="px-2 mdi mdi-laptop"></span>
+                            <p class="text-sm "> Авто режим</p>
                           </div>
                         </button>
                         <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
@@ -93,7 +94,10 @@
                           </div>
                         </button>
                         <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
-                          <p class="text-sm mdi mdi-white-balance-sunny"> Дневной режим</p>
+                          <div class="flex items-center">
+                            <span class="px-2 mdi mdi-white-balance-sunny"></span>
+                            <p class="text-sm "> Дневной режим</p>
+                          </div>
                         </button>
                       </div>
 

@@ -22,7 +22,7 @@
                 <div class="flex items-center justify-start">
                   
                   <div class="text-red-700 flex items-center gap-1">
-                    <span class="mdi mdi-24px mdi-new-box"></span>
+                    <span class="mdi mdi-18px mdi-alert-decagram"></span>
                     <p class="text-xs font-semibold ">Новинка</p>
                   </div>
                   
@@ -37,7 +37,7 @@
                 </div>
                              
                 <div class="flex items-center justify-end pb-1">
-                  <p class="text-xs font-semibold text-gray-700 text-right">{{ product.name }}</p>
+                  <p class="text-xs font-semibold text-gray-600 dark:text-gray-700 text-right">{{ product.name }}</p>
                 </div>                
               </div>
 
