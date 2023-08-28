@@ -87,28 +87,28 @@
 
         <div class="flex items-center gap-2 ">
           <nuxt-link :to="{ name: 'index' }" class="bg-white dark:bg-gray-800 h-full w-full flex items-center  border dark:border-gray-600 rounded-sm">
-            <div class="flex items-center gap-1">
+            <div class="flex items-center gap-2">
               <span class="px-2 mdi mdi-star border-r border-gray-700"></span>
               <p class="text-sm "> Избранное</p>
             </div>
           </nuxt-link>
 
           <nuxt-link :to="{ name: 'compare' }" class="bg-white dark:bg-gray-800 h-full w-full flex items-center border dark:border-gray-600 rounded-sm">
-            <div class="flex items-center gap-1">
+            <div class="flex items-center gap-2">
               <span class="px-2 mdi mdi-align-horizontal-right border-r border-gray-700"></span>
               <p class="text-sm "> Сравнение</p>
             </div>
           </nuxt-link>
 
           <nuxt-link :to="{ name: 'cart' }" class="bg-white dark:bg-gray-800 h-full w-full flex items-center border dark:border-gray-600 rounded-sm">
-            <div class="flex items-center gap-1">
+            <div class="flex items-center gap-2">
               <span class="px-2 mdi mdi mdi-cart border-r border-gray-700"></span>
               <p class="text-sm "> Корзина</p>
             </div>
           </nuxt-link>
 
           <nuxt-link :to="{ name: 'about' }" class="bg-white dark:bg-gray-800 h-full w-full flex items-center border dark:border-gray-600 rounded-sm">
-            <div class="flex items-center gap-1">
+            <div class="flex items-center gap-2">
               <span class="px-2 mdi mdi-store-marker border-r border-gray-700"></span>
               <p class="text-sm "> Магазины</p>
             </div>

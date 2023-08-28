@@ -80,7 +80,7 @@
                   <div class="">
                     <div class="grid grid-cols-2 gap-x-1 gap-y-1">
                       <div class="py-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500">
-                        <div class="flex items-center gap-1">
+                        <div class="flex items-center gap-2">
                           <span class="px-2 mdi mdi-map-marker-radius border-r border-gray-700"></span>
                           <p class="text-sm "> Санкт-Петербург</p>
                         </div>
@@ -88,19 +88,19 @@
 
                       <div id="color-mode">
                         <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
-                          <div class="flex items-center gap-1">
+                          <div class="flex items-center gap-2">
                             <span class="px-2 mdi mdi-laptop border-r border-gray-700"></span>
                             <p class="text-sm "> Сменить тему</p>
                           </div>
                         </button>
                         <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
-                          <div class="flex items-center gap-1">
+                          <div class="flex items-center gap-2">
                             <span class="px-2 mdi mdi-weather-night border-r border-gray-700"></span>
                             <p class="text-sm "> Ночной режим</p>
                           </div>
                         </button>
                         <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500 w-full h-full flex items-center">
-                          <div class="flex items-center gap-1">
+                          <div class="flex items-center gap-2">
                             <span class="px-2 mdi mdi-white-balance-sunny border-r border-gray-700"></span>
                             <p class="text-sm "> Дневной режим</p>
                           </div>
@@ -110,7 +110,7 @@
                       <div class="py-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500">
 
                         <p class="text-sm mdi mdi-account hidden"> Личный кабинет</p>
-                        <div class="flex items-center gap-1">
+                        <div class="flex items-center gap-2">
                           <span class="px-2 mdi mdi-account-plus border-r border-gray-700"></span>
                           <p class="text-sm "> Регистрация</p>
                         </div>
@@ -119,7 +119,7 @@
 
                       <div class="py-1 cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-600 hover:dark:border-gray-600 rounded-sm transition-all duration-500">
                         <nuxt-link v-if="status === 'unauthenticated'" :to="{ name: 'login' }" class="">
-                          <div class="flex items-center gap-1">
+                          <div class="flex items-center gap-2">
                             <span class="px-2 mdi mdi-login-variant border-r border-gray-700"></span>
                             <p class="text-sm "> Войти</p>
                           </div>
