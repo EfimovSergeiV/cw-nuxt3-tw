@@ -47,7 +47,7 @@ export const useShopStore = defineStore('ShopStore', {
     shop: null,
     shops: [],
     city: 'Псков',
-    writeUsModal: true
+    writeUsModal: false
   }),
   actions: {
     selectShop(shop: any) {
@@ -180,7 +180,27 @@ export const useProductsStore = defineStore('ProductsStore', {
 export const useClientStore = defineStore('ClientStore', {
   /// Данные клиента 
   state: () => ({
-    client: {} as Client,
+    client: {
+      shop_id: null,
+      region_code: null,
+      person: null,
+      phone: null,
+      email: null,
+      comment: null,
+      delivery:null,
+      adress: null,
+    
+      entity: null,
+      company: null,
+      legaladress: null,
+      inn: null,
+      kpp: null,
+      okpo: null,
+      bankname: null,
+      currentacc: null,
+      corresponding: null,
+      bic: null,
+    } as Client,
   }),
   actions: {
     saveClientData(data: any) {

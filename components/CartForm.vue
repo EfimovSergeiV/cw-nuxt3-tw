@@ -245,7 +245,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-account"></p>
                 </div>
-                <input v-model="clientData.person" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
+                <input v-model="clientStore.client.person" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
               </div>
             </div>
             <div class="">
@@ -254,7 +254,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-email"></p>
                 </div>
-                <input v-model="clientData.email" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
+                <input v-model="clientStore.client.email" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
               </div>
             </div>
             <div class="">
@@ -263,7 +263,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-phone"></p>
                 </div>
-                <input v-model="clientData.phone" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
+                <input v-model="clientStore.client.phone" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
               </div> 
             </div>
 
@@ -284,7 +284,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-phone"></p>
                 </div>
-                <input v-model="clientData[field.keyword]" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" :placeholder="field.placeholder">
+                <input v-model="clientStore.client[field.keyword]" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" :placeholder="field.placeholder">
               </div> 
             </div>
           </div>
@@ -307,7 +307,7 @@
             <div class="flex justify-end gap-4">
               <ul class="flex justify-end items-center gap-4 w-full md:grid-cols-2">
                 <li>
-                  <input type="radio" id="pickup" name="delivery" v-model="clientData.delivery" :value="false" class="hidden peer" required>
+                  <input type="radio" id="pickup" name="delivery" v-model="clientStore.client.delivery" :value="false" class="hidden peer" required>
                   <label for="pickup" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">                           
                     <div class="block">
                       <div class="w-full">Самовывоз из магазина</div>
@@ -315,7 +315,7 @@
                   </label>
                 </li>
                 <li>
-                  <input disabled type="radio" id="delivery" name="delivery" v-model="clientData.delivery" :value="true" class="hidden peer">
+                  <input disabled type="radio" id="delivery" name="delivery" v-model="clientStore.client.delivery" :value="true" class="hidden peer">
                   <label for="delivery" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-not-allowed inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">
                     <div class="block">
                       <div class="w-full">Доставка ТК</div>
@@ -333,20 +333,20 @@
             <div class="">
               <div class="grid lg:grid-cols-2 justify-items-stretch items-center ">
                 <div class="mx-2 my-2">
-                  <select v-model="clientData.adressData" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <select v-model="clientStore.client.adressData" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option disabled value="null">Выберие магазин</option>
                     <option v-for="shop in props.shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
                   </select>                    
                 </div>
                 <div class="justify-self-center mx-2 my-2" v-if="clientData.adressData">
-                  <div class="" v-if="clientData.adressData.phone">
+                  <div class="" v-if="clientStore.client.adressData.phone">
                     <div class="flex items-center">
                       <div class="border-r">
                         <a class="text-base md:text-2xl mx-2" :href="'tel:' + clientData.adressData.phone.replace(/[^+\d]/g, '')">{{ clientData.adressData.phone }}</a>
                       </div>
                       <div class="mx-2">
-                        <p class="text-xs font-bold mt-1">{{ clientData.adressData.wday }}</p>
-                        <p class="text-xs font-bold">{{ clientData.adressData.wend }}</p>   
+                        <p class="text-xs font-bold mt-1">{{ clientStore.client.adressData.wday }}</p>
+                        <p class="text-xs font-bold">{{ clientStore.client.adressData.wend }}</p>   
                       </div>
                     </div>
                   </div>
@@ -354,13 +354,15 @@
               </div>
 
             </div>
-            <div class="" v-if="clientData.adressData">
-              <iframe :src="clientData.adressData.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="" v-if="clientStore.client.adressData">
+              <iframe :src="clientStore.client.adressData.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
           <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
-          <textarea v-model="clientData.comment" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
+          <textarea v-model="clientStore.client.comment" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
+
+          <p class="text-xs">{{ clientStore.client }}</p>
 
           <div class="flex justify-end items-center my-4">
             <button @click="sendOrder" class="">
