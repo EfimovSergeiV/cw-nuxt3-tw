@@ -148,8 +148,9 @@
                       <button @click="productsStore.changeQuantity(product, 'add')" class="mdi mdi-plus cursor-pointer"></button>
                     </div>
                     <div class="flex justify-center w-32">
-                      <p v-if="product.status === 'stock'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>
                       <p v-if="product.status === 'order'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">под заказ</p>
+                      <p v-else class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>
+                      
                     </div>
                     <div class="flex justify-center w-32"><p class="text-sm">{{ product.only_price.toLocaleString() }} руб/шт</p></div>
                     <div class="flex justify-center w-20">
