@@ -36,6 +36,10 @@ interface Client {
   bic: string
 }
 
+interface ProductImages {
+  id: number,
+  image: string,
+}
 
 export const useShopStore = defineStore('ShopStore', {
   /// Определение локации и магазина пользователя
@@ -76,12 +80,13 @@ export const useShopStore = defineStore('ShopStore', {
 export const useProductsStore = defineStore('ProductsStore', {
   /// Манипуляции с товарами. Сравнение, корзина, избранное Notifications
   state: () => ({
-    cart: [] as Product[],
-    comp: [] as Product[],
-    like: [] as Product[],
-    requestPrice: null as Product | null,
-    cartAlert: false,
-    cartAlertBlock: false,
+    cart: [] as Product[],  /// Товары в корзине
+    comp: [] as Product[],  /// Товары в сравнении
+    like: [] as Product[],  /// Товары в избраннном
+    requestPrice: null as Product | null, /// Модальное на запрос стоимости товара
+    cartAlert: false, /// Уведомление о добавленном товаре (модальное окно)
+    cartAlertBlock: false,  /// Уведомление о добавленном товаре (модальное окно)
+    productImages: null as ProductImages[] | null, /// Отображение изображений товаров
   }),
   getters: {
     productInCart: (state) => (id: number) => {
@@ -156,6 +161,13 @@ export const useProductsStore = defineStore('ProductsStore', {
     },
     clearRequestPrice() {
       this.requestPrice = null
+    },
+    showProductImages(images: any) {
+      this.productImages = images
+      
+    },
+    clearProductImages() {
+      this.productImages = null
     }
   },
 })

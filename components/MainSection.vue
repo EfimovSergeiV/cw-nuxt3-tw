@@ -9,7 +9,7 @@
   <div  class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8">
 
 
-    <div class="grid grid-cols-1 lg:flex gap-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
 
       <div class="w-full">
@@ -95,7 +95,7 @@
 
       <div class="hidden lg:block">
         <Swiper
-          class="rounded-sm relative w-[34rem]"
+          class="rounded-sm relative w-full"
           :modules="[SwiperAutoplay, SwiperEffectCreative]"
           :slides-per-view="1"
           :loop="true"
@@ -119,7 +119,7 @@
               <img
 
                 :src="slide.image"
-                class="rounded-sm border dark:border-gray-700 shadow-md w-[34rem]"
+                class="rounded-sm border dark:border-gray-700 shadow-md w-full"
               />             
             </nuxt-link>
           </SwiperSlide>
