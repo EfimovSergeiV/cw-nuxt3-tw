@@ -64,7 +64,7 @@
                         />             
                       </nuxt-link>
                     </SwiperSlide>
-                    <div class="absolute bottom-0 right-0 z-50 p-3">
+                    <div v-if="productsStore.productImages.length > 1" class="absolute bottom-0 right-0 z-50 p-3">
                       <SwiperControls />
                     </div>
                   </Swiper>

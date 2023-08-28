@@ -108,7 +108,12 @@
               <div class="grid grid-cols-2 lg:grid-cols-4 items-center gap-4">
                 <div v-for="product in productsStore.comp.slice(0, 4)" :key="product.id">
                   <div class="px-4 my-2">
-                    <p class="text-sm dark:text-gray-100">{{ getPropValue(product.propstrmodel, prop.name) }}</p>
+                    <div v-if="getPropValue(product.propstrmodel, prop.name)">
+                      <p class="text-sm dark:text-gray-100">{{ getPropValue(product.propstrmodel, prop.name) }}</p>
+                    </div>
+                    <div v-else>
+                      <p class="text-sm dark:text-gray-100 mdi mdi-minus"></p>
+                    </div>
                   </div>
                   
                 </div>            
