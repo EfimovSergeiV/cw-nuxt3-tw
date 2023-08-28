@@ -20,10 +20,10 @@
         
 
         <div class="container mx-auto px-4 lg:max-w-4xl lg:px-8">
-          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <div class="relative bg-white rounded-lg shadow">
             <div class="">
 
-              <div class="flex justify-between items-start px-4 py-2 rounded-t border-b dark:border-gray-600">
+              <div class="flex justify-between items-start px-4 py-2 rounded-t border-b border-gray-200">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
                   <!-- Запросить стоимость товара -->
                 </h3>
@@ -72,10 +72,10 @@
               </div>
 
 
-              <div class="grid grid-cols-1 items-end justify-between px-6 py-2 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+              <div class="grid grid-cols-1 items-end justify-between px-6 py-2 space-x-2 rounded-b border-t border-gray-200">
                 <div class="flex justify-center gap-2 w-full md:justify-end">
                                     
-                  <button @click="productsStore.clearProductImages" data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Закрыть окно</button>
+                  <button @click="productsStore.clearProductImages" data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Закрыть окно</button>
                 </div>
               </div>
 
