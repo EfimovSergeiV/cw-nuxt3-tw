@@ -15,25 +15,25 @@ interface Product {
 }
 
 interface Client {
-  shop_id: number
-  region_code: string
-  person:string
-  phone: string
-  email: string
-  comment: any
-  delivery:string
-  adress: string
+  shop_id: number | null
+  region_code: string | null
+  person:string | null
+  phone: string | null
+  email: string | null
+  comment: any | null
+  delivery:string | null
+  adress: string | null
 
-  entity: string
-  company: string
-  legaladress: string
-  inn: string
-  kpp: string
-  okpo: string
-  bankname: string
-  currentacc: string
-  corresponding: string
-  bic: string
+  entity: string | null
+  company: string | null
+  legaladress: string | null
+  inn: string | null
+  kpp: string | null
+  okpo: string | null
+  bankname: string | null
+  currentacc: string | null
+  corresponding: string | null
+  bic: string | null
 }
 
 interface ProductImages {
@@ -47,6 +47,7 @@ export const useShopStore = defineStore('ShopStore', {
     shop: null,
     shops: [],
     city: 'Псков',
+    writeUsModal: true
   }),
   actions: {
     selectShop(shop: any) {
@@ -58,6 +59,9 @@ export const useShopStore = defineStore('ShopStore', {
     writeShops(shops: any) {
       this.shops = shops
       this.shop = shops.value[0]
+    },
+    showWriteUsModal() {
+      this.writeUsModal = !this.writeUsModal
     },
     async sendCoordinates(coordinates: any) {
       const config = useRuntimeConfig()
@@ -81,8 +85,7 @@ export const useProductsStore = defineStore('ProductsStore', {
   /// Манипуляции с товарами. Сравнение, корзина, избранное Notifications
   state: () => ({
     cart: [] as Product[],  /// Товары в корзине
-    // comp: [] as Product[],  /// Товары в сравнении
-    comp: [ { "id": 170, "vcode": "0460300880", "name": "Сварочный инвертор ESAB Caddy Arc 251i, A32", "description": "Аппарат Caddy оснащен большими разъемами ОКС 50 дпя выдерживания больших нагрузок. Благодаря компактной конструкции и поглощающему удары полимерному корпусу он отличается легкостью и удобством транспортировки. Большой блок охлаждения и тщательно выполненная конструкция обеспечивают длительный срок службы и позволяют работать даже в самых сложных условиях. Новый контроллер ArcPlus дополнительно оптимизирует процесс сварки, уменьшает разбрызгивание и улучшает повторное возбуждение дуги.", "promo": false, "discount": null, "rating": "1.9", "preview_image": "https://api.glsvar.ru/files/img/c/preview/251i.webp", "only_price_status": true, "only_price": 280790, "currency": "RUB", "status": "order", "product_comp": [], "brand": { "id": 3, "brand": "ESAB", "image": "https://api.glsvar.ru/files/img/c/brand/esab_logo.png", "carousel": true, "description": "" }, "propstrmodel": [ { "id": 9898, "name": "Габаритные размеры, мм", "qname": "3b0e", "value": "418x188x208" }, { "id": 855, "name": "Максимальный сварочный ток, А", "qname": "jnzs", "value": "250" }, { "id": 9899, "name": "Напряжение холостого хода, В", "qname": "n3wd", "value": "65" }, { "id": 854, "name": "Основной режим работы", "qname": "pa0s", "value": "MMA" }, { "id": 853, "name": "Электропитание, В", "qname": "s7n4", "value": "трехфазная сеть 380 В 50 Гц" }, { "id": 9900, "name": "Частота питающей сети, Гц", "qname": null, "value": "50/60" }, { "id": 9901, "name": "Потребляемая мощность, В", "qname": null, "value": "400" } ] }, { "id": 164, "vcode": "0465350882", "name": "Источник питания ESAB WARRIOR 400i CC/CV", "description": "Сварочный полуавтомат для промышленного применения на 400/500 ампер с возможность сварки ММА и TIG, а так же предусмотрено использование строжки. Сварочные полуавтоматы для промышленного применения. Надежное многофункциональное сварочное оборудование, рассчитанное на применение в тяжелой промышленности.", "promo": false, "discount": null, "rating": "3.6", "preview_image": "https://api.glsvar.ru/files/img/c/preview/400ii.webp", "only_price_status": true, "only_price": 444190, "currency": "RUB", "status": "order", "product_comp": [], "brand": { "id": 3, "brand": "ESAB", "image": "https://api.glsvar.ru/files/img/c/brand/esab_logo.png", "carousel": true, "description": "" }, "propstrmodel": [ { "id": 829, "name": "Габаритные размеры, мм", "qname": "3b0e", "value": "712x325x470" }, { "id": 830, "name": "Вес, кг", "qname": "7z26", "value": "59" }, { "id": 827, "name": "Максимальный сварочный ток, А", "qname": "jnzs", "value": "500" }, { "id": 9878, "name": "Напряжение холостого хода, В", "qname": "n3wd", "value": "54" }, { "id": 828, "name": "Диаметр сварочной проволоки, мм", "qname": "q3vl", "value": "0.8-1.6" }, { "id": 826, "name": "Электропитание, В", "qname": "s7n4", "value": "трехфазная сеть 380 В 50 Гц" }, { "id": 9879, "name": "Частота питающей сети, Гц", "qname": null, "value": "50/60" } ] } ] as Product[],  /// Товары в сравнении
+    comp: [] as Product[],  /// Товары в сравнении
     like: [] as Product[],  /// Товары в избраннном
     requestPrice: null as Product | null, /// Модальное на запрос стоимости товара
     cartAlert: false, /// Уведомление о добавленном товаре (модальное окно)

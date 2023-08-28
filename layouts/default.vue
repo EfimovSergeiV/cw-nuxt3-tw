@@ -2,10 +2,10 @@
   import { onMounted } from 'vue'
 
   const config = useRuntimeConfig()
-  const shopStore = useShopStore()
   const route = useRoute()
   const colorMode = useColorMode()
 
+  const shopStore = useShopStore()
   const productsStore = useProductsStore()
   const notificationsStore = useNotificationsStore()
 
@@ -48,6 +48,9 @@
     </transition>
     <transition name="fade" mode="in-out">
       <ProductImageModal v-if="productsStore.productImages" />
+    </transition>
+    <transition name="fade" mode="in-out">
+      <WriteUsModal v-if="shopStore.writeUsModal" />
     </transition>
     
 
@@ -214,7 +217,7 @@
           <div class="fixed bottom-60 md:bottom-48 right-20 hover:right-24 transition-all duration-500">
             <div class="relative">
               <div class="absolute z-50">
-                <div class="-rotate-90 bg-blue-700 px-4 pb-12 group rounded-md w-44 cursor-pointer">
+                <div class="-rotate-90 bg-blue-700 px-4 pb-12 group rounded-md w-44 cursor-pointer" @click="shopStore.showWriteUsModal">
                   <div class="flex items-center justify-center group-hover:text-gray-100 text-gray-300 font-bold transition-all duration-500">
                     <div class="">
                       <p class="text-sm mx-2">Напишите нам</p>
