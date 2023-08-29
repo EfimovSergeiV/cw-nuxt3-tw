@@ -20,32 +20,6 @@
       { keyword:"bic", placeholder:"123456789", title:"БИК (необязательно)" },
   ]
 
-
-  // const clientData = reactive({
-  //   shop_id: null,
-  //   region_code: null,
-  //   person:null,
-  //   phone: null,
-  //   email: null,
-  //   comment: null,
-  //   delivery: false,     
-  //   adressData: null,
-  //   total: null,
-
-  //   entity: false,
-  //   company: null,
-  //   legaladress: null,
-  //   inn: null,
-  //   kpp: null,
-  //   okpo: null,
-  //   bankname: null,
-  //   currentacc: null,
-  //   corresponding: null,
-  //   bic: null,
-
-  //   client_product: null,
-  // })
-
   const phoneValidate = computed(() => {
     const re = /^(?:\+7|7|8)[-\s]?\d{3}[-\s]?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/
     if (clientStore.client.phone) {
@@ -77,7 +51,7 @@
           phone: clientStore.client.phone,
           email: clientStore.client.email,
           comment: clientStore.client.comment,
-          delivery: clientStore.client.delivery,     
+          delivery: clientStore.client.delivery,    
           adress: clientStore.client.adress.adress,
 
           entity: clientStore.client.entity,

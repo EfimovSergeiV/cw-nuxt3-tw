@@ -24,6 +24,9 @@ interface Client {
   comment: any | null
   delivery: boolean
   adress: string | null
+  
+  city: string | null
+  contact: string | null
 
   entity: boolean
   company: string | null
@@ -190,6 +193,9 @@ export const useClientStore = defineStore('ClientStore', {
       comment: null,
       delivery: false,
       adress: null,
+
+      city: null,
+      contact: null,
     
       entity: false,
       company: null,
