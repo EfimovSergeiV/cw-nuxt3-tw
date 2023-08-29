@@ -1,3 +1,4 @@
+import { type } from 'os'
 import { defineStore } from 'pinia'
 
 
@@ -211,23 +212,32 @@ export const useClientStore = defineStore('ClientStore', {
 })
 
 
+
+interface Toasts {
+  id: number
+  type: string
+  text: string
+}
+
 export const useNotificationsStore = defineStore('NotificationsStore', {
   /// Уведомления и всплывающие окна 
   state: () => ({
     filterComponent: false,
-    toasts: [
-      { id: 1, type: 'success', text: 'Товар был добавлен в сравнение'},
-      { id: 2, type: 'warning', text: 'Товар был добавлен в сравнение'},
-      { id: 3, type: 'danger', text: 'Товар не был добавлен в сравнение'},
-      { id: 4, type: 'info', text: 'Товар был добавлен в сравнение'},
-    ]
+    toasts: [] as Toasts[],
   }),
   actions: {
     statusFilterComponent() {
       this.filterComponent = !this.filterComponent
     },
-    addToast() {
-      console.log('ADD TOAST')
+    pushToast(toast: any) {
+      this.toasts.push(toast)
+      setTimeout(() => {
+        this.toasts.shift()
+      }, 5000 )
+    },
+    removeToast(id: number) {
+      const toast = this.toasts.findIndex((item) => item.id === id)
+      this.toasts.splice(toast, 1)
     }
   },
 })

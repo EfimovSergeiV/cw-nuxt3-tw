@@ -52,6 +52,9 @@
     <transition name="fade" mode="in-out">
       <WriteUsModal v-if="shopStore.writeUsModal" />
     </transition>
+    <transition name="fade" mode="in-out">
+      <Toasts />
+    </transition>
     
 
     <div class="bg-gradient-to-r from-gray-300 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-700 dark:text-gray-300">

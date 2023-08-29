@@ -34,8 +34,6 @@
 
 
 
-
-
 /* .absolute-left-emergence-enter,
 .absolute-left-emergence-leave-to {
   opacity: 0;
@@ -47,7 +45,7 @@
   transition: all 0.3s ease;
 } */
 
-/* Исчезновение влево и стили корзины*/
+/* Исчезновение влево и стили корзины !!!НЕРАБОЧИЙ СТАРТ */
 .left-emergence-enter,
 .left-emergence-leave-to {
   opacity: 0;
@@ -58,16 +56,20 @@
   transition: all 0.3s ease;
 }
 
-/* Исчезновение влево и стили корзины*/
-/* .right-emergence-enter,
-.right-emergence-leave-to {
-  opacity: 0;
-  transform: translateX(12em);
+
+/* Исчезновение уведомлений*/
+.right-emergence-enter-active {
+  transition: all 0.3s ease-out;
 }
-.right-emergence-enter-active,
 .right-emergence-leave-active {
-  transition: all 0.2s ease;
-} */
+  transition: all 0.2s ease-out;
+}
+.right-emergence-enter-from,
+.right-emergence-leave-to {
+  transform: translateX(12em);
+  opacity: 0;
+}
+
 
 
 /* body {
