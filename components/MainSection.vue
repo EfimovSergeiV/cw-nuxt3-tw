@@ -32,7 +32,7 @@
                     <img :src="product.preview_image" class="h-16" />
                     <div class="flex items-center justify-start w-full">
                       <p v-if="product.only_price === 0" class="text-gray-700 font-bold text-xs">По запросу</p>
-                      <p v-else class="text-gray-700 font-bold text-xl">{{ product.only_price.toLocaleString() }} <span class="text-xs">руб.</span></p>                    
+                      <p v-else class="text-gray-600 font-bold text-xl">{{ product.only_price.toLocaleString() }} <span class="text-xs">руб.</span></p>                    
                     </div>
 
                   </div>
