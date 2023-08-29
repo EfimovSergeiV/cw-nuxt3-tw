@@ -21,35 +21,35 @@
   ]
 
 
-  const clientData = reactive({
-    shop_id: null,
-    region_code: null,
-    person:null,
-    phone: null,
-    email: null,
-    comment: null,
-    delivery: false,     
-    adressData: null,
-    total: null,
+  // const clientData = reactive({
+  //   shop_id: null,
+  //   region_code: null,
+  //   person:null,
+  //   phone: null,
+  //   email: null,
+  //   comment: null,
+  //   delivery: false,     
+  //   adressData: null,
+  //   total: null,
 
-    entity: false,
-    company: null,
-    legaladress: null,
-    inn: null,
-    kpp: null,
-    okpo: null,
-    bankname: null,
-    currentacc: null,
-    corresponding: null,
-    bic: null,
+  //   entity: false,
+  //   company: null,
+  //   legaladress: null,
+  //   inn: null,
+  //   kpp: null,
+  //   okpo: null,
+  //   bankname: null,
+  //   currentacc: null,
+  //   corresponding: null,
+  //   bic: null,
 
-    client_product: null,
-  })
+  //   client_product: null,
+  // })
 
   const phoneValidate = computed(() => {
     const re = /^(?:\+7|7|8)[-\s]?\d{3}[-\s]?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/
-    if (clientData.phone) {
-      return clientData.phone.search(re) !== -1
+    if (clientStore.client.phone) {
+      return clientStore.client.phone.search(re) !== -1
     } else {
       return false
     }
@@ -57,8 +57,8 @@
   
   const emailValidate = computed(() => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    if (clientData.email) {
-      return clientData.email.search(re) !== -1
+    if (clientStore.client.email) {
+      return clientStore.client.email.search(re) !== -1
     } else {
       return false
     }
@@ -67,29 +67,29 @@
   const order = reactive({})
 
   const sendOrder = async () => {
-    if ( (phoneValidate.value || emailValidate.value) && (clientData.adressData) ) {
+    if ( (phoneValidate.value || emailValidate.value) && (clientStore.client.adress) ) {
       const { data: response } = await useFetch(`${ config.public.baseURL }o/order/`, {
         method: 'POST',
         body: {
-          shop_id: clientData.adressData.id,
-          region_code: clientData.adressData.region_code,
-          person:clientData.person,
-          phone: clientData.phone,
-          email: clientData.email,
-          comment: clientData.comment,
-          delivery: clientData.delivery,     
-          adress: clientData.adressData.adress,
+          shop_id: clientStore.client.id,
+          region_code: clientStore.client.adress.region_code,
+          person: clientStore.client.person,
+          phone: clientStore.client.phone,
+          email: clientStore.client.email,
+          comment: clientStore.client.comment,
+          delivery: clientStore.client.delivery,     
+          adress: clientStore.client.adress.adress,
 
-          entity: clientData.entity,
-          company: clientData.company,
-          legaladress: clientData.legaladress,
-          inn: clientData.inn,
-          kpp: clientData.kpp,
-          okpo: clientData.okpo,
-          bankname: clientData.bankname,
-          currentacc: clientData.currentacc,
-          corresponding: clientData.corresponding,
-          bic: clientData.bic,
+          entity: clientStore.client.entity,
+          company: clientStore.client.company,
+          legaladress: clientStore.client.legaladress,
+          inn: clientStore.client.inn,
+          kpp: clientStore.client.kpp,
+          okpo: clientStore.client.okpo,
+          bankname: clientStore.client.bankname,
+          currentacc: clientStore.client.currentacc,
+          corresponding: clientStore.client.corresponding,
+          bic: clientStore.client.bic,
 
           client_product: productsStore.cart,
         }
@@ -98,7 +98,7 @@
 
       order.value = await response.value
       productsStore.clearCartProducts()
-      clientStore.saveClientData(clientData)
+      // clientStore.saveClientData(clientData)
 
     } else {
       console.log('message err ', phoneValidate.value ,emailValidate.value)
@@ -217,7 +217,7 @@
 
               <ul class="grid gap-6 w-full md:grid-cols-2">
                 <li>
-                  <input type="radio" id="hosting-small" name="person" v-model="clientData.entity" :value="false" class="hidden peer" required>
+                  <input type="radio" id="hosting-small" name="person" v-model="clientStore.client.entity" :value="false" class="hidden peer" required>
                   <label for="hosting-small" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">                           
                     <div class="block">
                       <div class="w-full">Физическое лицо</div>
@@ -225,7 +225,7 @@
                   </label>
                 </li>
                 <li>
-                  <input type="radio" id="hosting-big" name="person" v-model="clientData.entity" :value="true" class="hidden peer">
+                  <input type="radio" id="hosting-big" name="person" v-model="clientStore.client.entity" :value="true" class="hidden peer">
                   <label for="hosting-big" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">
                     <div class="block">
                       <div class="w-full">Юридическое лицо</div>
@@ -273,7 +273,7 @@
         </div>
       </div>
 
-      <div v-if="clientData.entity" class="mt-4">
+      <div v-if="clientStore.client.entity" class="mt-4">
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm transition-all duration-300">
           <p class="">Дополнительные поля для юр.лиц:</p>
           
@@ -333,20 +333,25 @@
             <div class="">
               <div class="grid lg:grid-cols-2 justify-items-stretch items-center ">
                 <div class="mx-2 my-2">
-                  <select v-model="clientStore.client.adressData" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <select v-model="clientStore.client.adress" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option disabled value="null">Выберие магазин</option>
                     <option v-for="shop in props.shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
                   </select>                    
                 </div>
-                <div class="justify-self-center mx-2 my-2" v-if="clientData.adressData">
-                  <div class="" v-if="clientStore.client.adressData.phone">
+
+                <!-- <div class="">
+                  <p class="text-xs">{{  }}</p>
+                </div> -->
+
+                <div class="justify-self-center mx-2 my-2" v-if="clientStore.client.adress">
+                  <div class="" v-if="clientStore.client.adress.phone">
                     <div class="flex items-center">
                       <div class="border-r">
-                        <a class="text-base md:text-2xl mx-2" :href="'tel:' + clientData.adressData.phone.replace(/[^+\d]/g, '')">{{ clientData.adressData.phone }}</a>
+                        <a class="text-base md:text-2xl mx-2" :href="'tel:' + clientStore.client.adress.phone.replace(/[^+\d]/g, '')">{{ clientStore.client.adress.phone }}</a>
                       </div>
                       <div class="mx-2">
-                        <p class="text-xs font-bold mt-1">{{ clientStore.client.adressData.wday }}</p>
-                        <p class="text-xs font-bold">{{ clientStore.client.adressData.wend }}</p>   
+                        <p class="text-xs font-bold mt-1">{{ clientStore.client.adress.wday }}</p>
+                        <p class="text-xs font-bold">{{ clientStore.client.adress.wend }}</p>   
                       </div>
                     </div>
                   </div>
@@ -354,15 +359,13 @@
               </div>
 
             </div>
-            <div class="" v-if="clientStore.client.adressData">
-              <iframe :src="clientStore.client.adressData.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="" v-if="clientStore.client.adress">
+              <iframe :src="clientStore.client.adress.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
           <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
           <textarea v-model="clientStore.client.comment" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
-
-          <p class="text-xs">{{ clientStore.client }}</p>
 
           <div class="flex justify-end items-center my-4">
             <button @click="sendOrder" class="">

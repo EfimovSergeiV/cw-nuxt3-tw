@@ -96,7 +96,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      baseURL: process.env.BASE_URL || 'https://api.glsvar.ru/',///'https://api.glsvar.ru/',
+      baseURL: process.env.BASE_URL || 'http://127.0.0.1:8000/',///'https://api.glsvar.ru/',
     },
   },
 

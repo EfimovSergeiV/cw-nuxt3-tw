@@ -22,10 +22,10 @@ interface Client {
   phone: string | null
   email: string | null
   comment: any | null
-  delivery:string | null
+  delivery: boolean
   adress: string | null
 
-  entity: string | null
+  entity: boolean
   company: string | null
   legaladress: string | null
   inn: string | null
@@ -188,10 +188,10 @@ export const useClientStore = defineStore('ClientStore', {
       phone: null,
       email: null,
       comment: null,
-      delivery:null,
+      delivery: false,
       adress: null,
     
-      entity: null,
+      entity: false,
       company: null,
       legaladress: null,
       inn: null,
