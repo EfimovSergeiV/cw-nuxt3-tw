@@ -1,9 +1,9 @@
 <script setup>
+  const config = useRuntimeConfig()
+  const router = useRouter()
 
   const productsStore = useProductsStore()
-  const clientStore = useClientStore()
-
-  const config = useRuntimeConfig()
+  const clientStore = useClientStore()  
   const notificationsStore = useNotificationsStore()
   const props = defineProps(['shops'])
 
@@ -38,7 +38,8 @@
     }
   })
 
-  const order = reactive({})
+  const order = ref(null)
+  const errorMsg = ref(null)
 
   const sendOrder = async () => {
     if ( (phoneValidate.value || emailValidate.value) && (clientStore.client.adress) ) {
@@ -70,12 +71,14 @@
         
       });
 
-      order.value = await response.value
+      // order.value = await response.value
       productsStore.clearCartProducts()
-      // clientStore.saveClientData(clientData)
+      // clientStore.saveClientData() /// Реализовать сохранение данных клиента
 
+      await router.push({ name: 'order', hash: `#${ response.value.order }` })
     } else {
-      console.log('message err ', phoneValidate.value ,emailValidate.value)
+      errorMsg.value = 'Ошибка: Укажите как с вами связаться и выберите магазин.'
+      notificationsStore.pushToast({ id: 1, type: 'error', text: 'Ошибка: Проверте правильно ли заполнены обязательные поля.' })
     }
   }
 
@@ -85,7 +88,7 @@
 
 
 <template>
-  <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+  <div class="container mx-auto px-4 lg:max-w-7xl lg:px-8">
 
     <div id="cart-set" class="">
 
@@ -341,6 +344,10 @@
           <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
           <textarea v-model="clientStore.client.comment" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
 
+          <div class="flex justify-end items-center my-2">
+            <p class="text-xs text-red-600 dark:text-red-500">{{ errorMsg }}</p>
+          </div>
+
           <div class="flex justify-end items-center my-4">
             <button @click="sendOrder" class="">
               <!-- <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -351,13 +358,16 @@
                   <p class="text-white text-base w-52 py-1.5">Сделать заказ</p>
                 </div>
               </div>
-            </button>
+            </button>              
           </div>
 
         </div>
       </div>
 
     </div>
+
+
+    
 
 
   </div>

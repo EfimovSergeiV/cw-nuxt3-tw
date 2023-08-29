@@ -28,7 +28,7 @@
       // clientStore.saveClientData(clientData)
 
     } else {
-      console.log('message err ', phoneValidate.value ,emailValidate.value)
+      errorMsg.value = 'Ошибка: Для отправки запроса заполните все поля.'
     }
   }
 
@@ -112,7 +112,7 @@
               </div>
 
 
-              <div class="grid grid-cols-1 gap-4 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+              <div class="grid grid-cols-1 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                 
                 <div class="grid grid-cols-2 gap-4">
                   <div class="">
@@ -125,8 +125,13 @@
                   </div>
                 </div>
 
+                <div class="min-h-[28px] flex items-center justify-end">
+                  <p class="text-sm dark:text-red-500">{{ errorMsg }}</p>
+                </div>
 
                 <div class="flex justify-center gap-2 w-full md:justify-end px-2">
+                  
+
                   <button @click="sendRequest">
                     <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                       <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
