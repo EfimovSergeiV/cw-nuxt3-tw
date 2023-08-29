@@ -2,7 +2,7 @@
   const config = useRuntimeConfig()
   const route = useRoute()
 
-  const { data: orderinfo, pending: pendingorder, error: ordererr } = await useFetch(`${ config.public.baseURL }o/orderinfo/${ route.hash.slice(1,) }`)
+  const { data: orderinfo, pending: pendingorder, error: errorder } = await useFetch(`${ config.public.baseURL }o/orderinfo/${ route.hash.slice(1,) }`)
 // const sendRequest = async () => {
 //     if ( (clientStore.client.city) && (clientStore.client.contact) ) {
 //       const { data: response } = await useFetch(`${ config.public.baseURL }o/request-price/`, {
@@ -34,10 +34,16 @@
 <template>
   <div class="container mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-    <p class="my-2">{{ orderinfo }}</p>
+    <p class="my-2">{{ orderinfo.order_number }}</p>
+    <p class="my-2">{{ orderinfo.status }}</p>
+    <p class="my-2">{{ orderinfo.position_total }}</p>
+    <p class="my-2">{{ orderinfo.delivery_summ }}</p>
+    <p class="my-2">{{ orderinfo.total }}</p>
+    <p class="my-2">{{ orderinfo.client_product }}</p>
+
     <p class="my-2">{{ route.hash.slice(1,) }}</p>
     <p class="my-2">{{ pendingorder }}</p>
-    <p class="my-2">{{ ordererr }}</p>
+    <p class="my-2">{{ errorder }}</p>
 
   </div>
 </template>
