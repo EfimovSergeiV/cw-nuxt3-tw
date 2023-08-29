@@ -163,9 +163,9 @@
       </div>
 
       <div class="flex gap-2">
-        <div class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-lg transition-all">
-          <div class="grid grid-cols-1 px-10 py-1">
-            <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-base font-semibold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
+        <div class="text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+          <div class="grid grid-cols-1 px-10 py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+            <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-base font-semibold text-gray-100 hover:text-white dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
           </div>        
         </div>
         <!-- <div class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-md transition-all">
@@ -173,9 +173,9 @@
             <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-base font-semibold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
           </div>        
         </div> -->
-        <div class="bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 rounded-lg transition-all">
-          <div class="grid grid-cols-1 px-10 py-1">
-            <a href="#" class="text-base">zakaz@glsvar.ru</a>
+        <div class="text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+          <div class="grid grid-cols-1 px-10 py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+            <a href="#" class="text-base font-semibold">zakaz@glsvar.ru</a>
           </div>        
         </div>
       </div>
