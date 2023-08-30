@@ -33,17 +33,45 @@
 
 <template>
   <div class="container mx-auto px-4 lg:max-w-7xl lg:px-8">
+    <div v-if="orderinfo">
+      <p class="my-2">{{ orderinfo.order_number }}</p>
+      <p class="my-2">{{ orderinfo.status }}</p>
+      <p class="my-2">{{ orderinfo.position_total }}</p>
+      <p class="my-2">{{ orderinfo.delivery_summ }}</p>
+      <p class="my-2">{{ orderinfo.total }}</p>
+      <p class="my-2">{{ orderinfo.client_product }}</p>
 
-    <p class="my-2">{{ orderinfo.order_number }}</p>
-    <p class="my-2">{{ orderinfo.status }}</p>
-    <p class="my-2">{{ orderinfo.position_total }}</p>
-    <p class="my-2">{{ orderinfo.delivery_summ }}</p>
-    <p class="my-2">{{ orderinfo.total }}</p>
-    <p class="my-2">{{ orderinfo.client_product }}</p>
+      <p class="my-2">{{ route.hash.slice(1,) }}</p>
+      <p class="my-2">{{ pendingorder }}</p>
+      <p class="my-2">{{ errorder }}</p>    
+    </div>
+    <div v-else>
+      <p>Заказ не найден</p>
+    </div>
 
-    <p class="my-2">{{ route.hash.slice(1,) }}</p>
-    <p class="my-2">{{ pendingorder }}</p>
-    <p class="my-2">{{ errorder }}</p>
+
+
+    <div class="my-8 flex gap-4">
+
+      <div class="w-32 h-8">
+        <nuxt-link :to="{ name: 'index' }" class="bg-blue-600 hover:bg-blue-700 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg transition-all duration-1000">
+          <div class="flex items-center gap-2 text-gray-100 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg h-full w-full">
+            <span class="px-2 mdi mdi-star border-r border-gray-100/50"></span>
+            <p class="text-sm "> Избранное</p>
+          </div>
+        </nuxt-link>
+      </div>
+
+      <div class="w-32 h-8">
+        <nuxt-link :to="{ name: 'index' }" class="bg-gray-300 hover:bg-white flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg transition-all duration-1000">
+          <div class="flex items-center gap-2 text-gray-700 bg-gradient-to-br from-gray-100/20 via-white to-gray-900/20 rounded-lg h-full w-full">
+            <span class="px-2 mdi mdi-star border-r border-gray-700/50"></span>
+            <p class="text-sm "> Избранное</p>
+          </div>
+        </nuxt-link>
+      </div>
+
+    </div>
 
   </div>
 </template>
