@@ -33,15 +33,15 @@
         }
       }"
     >
-      <SwiperSlide v-for="slide in widebanners" :key="slide.id" class="relative border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-md">
-        <div class="rounded-md">
+      <SwiperSlide v-for="slide in widebanners" :key="slide.id" class="relative border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-md overflow-hidden">
+        <div class="rounded-md overflow-hidden">
 
           <img
             :src="slide.image"
             style="width: 100%;"
             width="1024px"
             height="320px"
-            class="rounded-md"
+            class="rounded-md overflow-hidden"
             :alt="slide.name"
             onerror="this.src='./noimage-960-540.jpg'"
           />
