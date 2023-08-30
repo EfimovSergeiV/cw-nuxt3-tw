@@ -67,33 +67,41 @@
       <div class="pb-14">
 
         <div class="py-2">
-            <div class="break-inside-avoid-column border border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600 rounded-md p-1">
-              
-              <div id="checkbox-form my-2">
-                <p class="text-sm mb-2 m-1">Производитель</p>
+          <div class="break-inside-avoid-column border border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600 rounded-md p-1 duration-700 transition-all">
+            
+            <div id="checkbox-form my-2">
+              <p class="text-sm mb-2 m-1">Производитель</p>
 
 
-                <div class="flex flex-wrap">
-                  <div class="flex items-center mr-4 p-1" v-for="brand in props.brands" :key="brand.id">
-                    
-                    <!-- <input @change="changeForm('brnd', brand.id )" v-model="filte['brnd']" :id="brand.id" :value="brand.id" type="checkbox"  class="w-4 h-4 text-blue-600 bg-gray-100 rounded-md border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"> -->
-                    <input :id="brand.id" v-model="filters.brnd" :value="brand.id" type="checkbox" class="w-4 h-4 text-blue-600/0 bg-gray-100 rounded-md border-gray-300 focus:ring-blue-500/0 dark:focus:ring-gray-700/0 dark:ring-offset-gray-800/0  dark:bg-gray-700 focus:dark:bg-gray-700 dark:border-gray-600">
-                    <label :for="brand.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ brand.brand }}</label>
-                  
-                  </div>
+              <div class="flex flex-wrap">
+                <div class="flex items-center mr-4 p-1" v-for="brand in props.brands" :key="brand.id">
+
+                  <input 
+                    :id="brand.id"
+                    :value="brand.id"
+                    type="checkbox"
+                    v-model="filters.brnd" 
+                    class="w-4 h-4 
+                      rounded text-gray-700 focus:ring-0 
+                      focus:ring-gray-300 ring-offset-gray-300 bg-gray-700 border-gray-300
+                      dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600
+                    " >
+                  <label :for="brand.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ brand.brand }}</label>
                 
-                </div>                      
-              </div>
-
+                </div>
+              
+              </div>                      
             </div>
+
           </div>
+        </div>
 
 
 
         <div class="" v-for="prop in props.props" :key="prop.id">
           
           <div class="py-2" v-if="prop.propwidget == 'value'">
-            <div class="break-inside-avoid-column border border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600 rounded-md p-1">
+            <div class="break-inside-avoid-column border border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600 rounded-md p-1 duration-700 transition-all">
               
               <div id="checkbox-form my-2">
                 <p class="text-sm mb-2 m-1">{{ prop.name }}</p>
@@ -103,7 +111,16 @@
                     <!-- <input @change="changeForm(prop.prop_alias, ops.opskey )" :value="ops.opskey" v-model="filte[prop.prop_alias]" :id="ops.opskey" :value="ops.opskey" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-md border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"> -->
 
  
-                    <input :id="ops.id" v-model="filters[prop.prop_alias]" :value="ops.opskey" type="checkbox" class="w-4 h-4 text-blue-600/0 bg-gray-100 rounded-md border-gray-300 focus:ring-blue-500/0 dark:focus:ring-gray-700/0 dark:ring-offset-gray-800/0  dark:bg-gray-700 focus:dark:bg-gray-700 dark:border-gray-600">
+                    <input 
+                      :id="ops.id" 
+                      v-model="filters[prop.prop_alias]" 
+                      :value="ops.opskey" 
+                      type="checkbox" 
+                      class="w-4 h-4 
+                        rounded text-gray-700 focus:ring-0 
+                        focus:ring-gray-300 ring-offset-gray-300 bg-gray-700 border-gray-300
+                        dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                        >
                     <label :for="ops.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ ops.ops }}</label>
 
 
