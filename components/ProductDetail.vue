@@ -11,7 +11,7 @@
   <div class="">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 py-2">
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4">
+      <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div class="">
             <div class="flex h-full bg-white rounded-md cursor-zoom-in" @click="productsStore.showProductImages(product.prod_img)">
@@ -120,7 +120,7 @@
       </div>
 
       <div v-if="props.related.length > 0" class="pb-4">
-        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
+        <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
           <p class="my-2">Сопутствующие товары</p>
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
             <div v-for="prod_related in related" :key="prod_related.id" class="">
@@ -132,7 +132,7 @@
       <div class="">
         <div class="">
           <div class="grid grid-cols-1 md:flex gap-4 ">
-            <div class="md:w-[400px] bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
+            <div class="md:w-[400px] bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
               <div class="">
                 <p class="text-base">Документы:</p>
                 <div class="grid grid-cols-1 gap-2 py-2">
@@ -146,7 +146,7 @@
               </div>
             </div>
             <div class="w-full">
-              <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4">
+              <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4">
                 <p class="text-base my-2">Характеристики:</p>
                 <div class="columns-1 gap-8">
                   <div v-for="param in props.product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
@@ -157,7 +157,7 @@
                   </div>
                 </div>
               </div>
-              <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-2">
+              <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-2">
                 <p class="text-base my-2">Описание:</p>
                 <p class="text-sm">{{ props.product.description }}</p> 
               </div>
@@ -171,10 +171,10 @@
       fixed inset-0 overflow-y-hidden overscroll-y-none w-full h-full top-0 left-0 my-10
       <div v-if="largeImage" class="fixed w-full h-full overscroll-y-none top-0 left-0 bg-gray-500/50 backdrop-blur-sm z-40">
         <div class="flex min-h-full bg-gray-500/50 justify-center text-center items-center">
-          <div class="relative rounded-sm">
+          <div class="relative rounded-md">
             <div class="overflow-y-auto h-screen">
               <div class="flex min-h-full justify-center text-center items-center">
-                <div class="bg-white p-2 rounded-sm border border-gray-200 dark:border-gray-600">
+                <div class="bg-white p-2 rounded-md border border-gray-200 dark:border-gray-600">
                   <div class="w-[380px] h-[300] md:w-[640px] md:h-[480px] relative">
                     <div class="flex justify-end items-center absolute z-50 right-0">
                       <p @click="largeImage = false" class="mdi mdi-24px mdi-close text-gray-700 hover:text-gray-900 cursor-pointer"></p>
@@ -186,9 +186,9 @@
                       :auto-play="true"
                       style="height: 100%"
                     >
-                      <slide v-for="image in props.product.prod_img" :key="image.id" class="rounded-sm">
+                      <slide v-for="image in props.product.prod_img" :key="image.id" class="rounded-md">
                         <div @click="largeImage = false" class="flex items-center justify-center">
-                          <img :src="image.image" :alt="image.image" class="rounded-sm cursor-zoom-out p-6" fluid/>
+                          <img :src="image.image" :alt="image.image" class="rounded-md cursor-zoom-out p-6" fluid/>
                         </div>
                       </slide>
                       <hooper-navigation slot="hooper-addons"></hooper-navigation>

@@ -34,11 +34,11 @@
               <div v-for="product in productsStore.comp.slice(0, 4)" :key="product.id" class="">
                 <ProductSmall :product="product" />
 
-                <!-- <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 h-full">
+                <!-- <div class="bg-white border-gray-200 border rounded-md dark:border-gray-700 dark:bg-gray-800 h-full">
 
                   <div class="">
 
-                    <div class="bg-white flex items-center justify-center m-1 rounded-sm relative">
+                    <div class="bg-white flex items-center justify-center m-1 rounded-md relative">
                       <div class="">
                         <img :src="product.preview_image" />
                       </div>
@@ -93,7 +93,7 @@
           </div> -->
 
 
-          <div class="bg-white rounded-sm dark:bg-gray-800 border border-gray-700 my-4">
+          <div class="bg-white rounded-md dark:bg-gray-800 border border-gray-700 my-4">
             <div class="px-2 py-4 bg-gray-700 border-b border-gray-600">
               <p class="text-base">Сравнение характеристик:</p>
             </div>

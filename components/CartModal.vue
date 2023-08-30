@@ -62,8 +62,8 @@
                       <transition-group tag="div" name="left-emergence">
                         <div v-for="product in productsStore.cart" :key="product.id" class="my-4 border-t border-gray-300 dark:border-gray-600">
                           <div class="flex items-center gap-2">
-                            <div class="flex justify-center items-center w-24 bg-white rounded-sm">
-                              <img :src="product.preview_image" :alt="product.name" width="235px" height="177px" class="rounded-sm w-20 py-2" />
+                            <div class="flex justify-center items-center w-24 bg-white rounded-md">
+                              <img :src="product.preview_image" :alt="product.name" width="235px" height="177px" class="rounded-md w-20 py-2" />
                             </div>
                             <div class="flex justify-center w-1/2">
                               <p class="text-sm text-center">{{ product.name }}</p>

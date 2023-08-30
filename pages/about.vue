@@ -28,7 +28,7 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
+      <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
 
         <div class="px-4 py-4">
 
@@ -37,7 +37,7 @@
             <div class="max-w-[500px]">
               <div class="">
                 <Swiper
-                  class="rounded-sm relative"
+                  class="rounded-md relative"
                   style=""
                   :modules="[SwiperAutoplay, SwiperEffectCreative]"
                   :slides-per-view="1"
@@ -62,7 +62,7 @@
                       <img
                         style=""
                         :src="slide.url"
-                        class="rounded-sm border dark:border-gray-700 shadow-md "
+                        class="rounded-md border dark:border-gray-700 shadow-md "
                       />             
 
                   </SwiperSlide>
@@ -93,13 +93,13 @@
           </div>
           <div class="flex items-center gap-4">
             <div class="">
-              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="/esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
+              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="/esab-cert.jpg" class="rounded-md cursor-zoom-in w-48" fluid/>
             </div>
             <div class="">
-              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="/cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="/cert-redius.jpg" class="rounded-md cursor-zoom-in w-48" fluid />
             </div>
             <div class="">
-              <img @click="cert = 'svarog.jpg'" alt="cert-3" src="/svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'svarog.jpg'" alt="cert-3" src="/svarog.jpg" class="rounded-md cursor-zoom-in w-48" fluid />
             </div>                
           </div>
         </div>
@@ -160,12 +160,12 @@
         <div v-if="cert" class="fixed inset-0 overflow-y-hidden overscroll-y-none z-50 my-10">
           <div class="flex min-h-full justify-center text-center items-center">
 
-            <div class="relative rounded-sm px-10">
+            <div class="relative rounded-md px-10">
               <div class="overflow-y-auto h-screen">
                 <div class="flex min-h-full justify-center text-center items-center">
-                  <!-- <img src="cert-redius.jpg" class="rounded-sm cursor-zoom-out" fluid/> -->
-                  <!-- <img src="esab-cert.jpg" class="rounded-sm cursor-zoom-out" fluid/> -->
-                  <img @click="cert = null" :src="cert" class="rounded-sm cursor-zoom-out" fluid/>
+                  <!-- <img src="cert-redius.jpg" class="rounded-md cursor-zoom-out" fluid/> -->
+                  <!-- <img src="esab-cert.jpg" class="rounded-md cursor-zoom-out" fluid/> -->
+                  <img @click="cert = null" :src="cert" class="rounded-md cursor-zoom-out" fluid/>
                 </div>
 
               </div>

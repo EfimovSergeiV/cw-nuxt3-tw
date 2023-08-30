@@ -36,7 +36,7 @@
               <div class="bg-white">
                 <div class="h-[28rem]">
                   <Swiper
-                    class="rounded-sm relative h-[28rem] flex items-center justify-center"
+                    class="rounded-md relative h-[28rem] flex items-center justify-center"
                     :modules="[SwiperAutoplay, SwiperEffectCreative]"
                     :slides-per-view="1"
                     :loop="true"

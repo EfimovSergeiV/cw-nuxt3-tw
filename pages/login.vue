@@ -22,7 +22,7 @@ definePageMeta({
 
 
     <div class="grid grid-cols-2 gap-4">
-      <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 py-12 px-8 rounded-sm">
+      <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 py-12 px-8 rounded-md">
 
         <div class="flex items-center justify-start">
           <p>Авторизоваться</p>
@@ -37,7 +37,7 @@ definePageMeta({
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-form-textbox"></p>
                 </div>
-                <input v-model="username" type="text" id="user" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="UserName">
+                <input v-model="username" type="text" id="user" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="UserName">
               </div>
             </div> -->
 
@@ -47,7 +47,7 @@ definePageMeta({
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-form-textbox-password"></p>
                 </div>
-                <input v-model="password" type="password" id="pass" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="* * * * * * * *">
+                <input v-model="password" type="password" id="pass" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="* * * * * * * *">
               </div>
             </div> -->
 

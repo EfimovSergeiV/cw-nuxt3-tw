@@ -14,18 +14,18 @@
 <template>
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <!-- <div class="my-4 p-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">
+      <!-- <div class="my-4 p-2 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">
         <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300">{{ title }}</p>
       </div> -->
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-        <div class="border dark:border-gray-700 rounded-sm shadow-md">
+        <div class="border dark:border-gray-700 rounded-md shadow-md">
 
           <div class="relative">
             
             <img 
-                class="rounded-sm w-full h-full"
+                class="rounded-md w-full h-full"
                 loading=lazy
                 width="800px"
                 height="400px"
@@ -82,7 +82,7 @@
 
           <div class="">
             <Swiper
-              class="rounded-sm relative"
+              class="rounded-md relative"
 
               :modules="[SwiperAutoplay, SwiperEffectCreative]"
               :slides-per-view="1"
@@ -106,7 +106,7 @@
                 <nuxt-link :to="banner.path">
                   <img
                     :src="banner.image"
-                    class="rounded-sm border dark:border-gray-700 shadow-md "
+                    class="rounded-md border dark:border-gray-700 shadow-md "
                   />                 
                 </nuxt-link>
               </SwiperSlide>
@@ -123,7 +123,7 @@
       </div>
 
 
-      <div class="flex items-center my-4 p-1 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
+      <div class="flex items-center my-4 p-1 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         <div class="hidden md:block flex-none">
           <img
             src="/esab-logo.jpg"

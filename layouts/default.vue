@@ -68,7 +68,7 @@
               <div class="flex gap-4 justify-between relative">
 
 
-                <div class="w-full grid grid-cols-1 content-between rounded-md">
+                <div class="w-full grid grid-cols-1 content-between">
 
                   <div class="flex items-center justify-center -mt-5">
                     <nuxt-link :to="{ name: 'index'}" class="">
@@ -148,8 +148,8 @@
 
 
 
-                      <div class="cursor-pointer h-full text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-lg border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                        <div class="bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg py-3">
+                      <div class="cursor-pointer h-full text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-md border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                        <div class="bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-md py-3">
                           <nuxt-link :to="{ name: 'cts' }">
                             <div class="mdi mdi-24px mdi- menu flex items-center justify-center">
                               <p class="text-lg px-2 uppercase "> Открыть каталог</p>

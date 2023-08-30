@@ -16,10 +16,10 @@
         <div class="grid grid-cols-2 gap-4 h-full content-stretch">
           <div v-for="product in latest.slice(0, 4)" :key="product.id">
 
-            <div class="bg-white w-full h-full rounded-sm">
+            <div class="bg-white w-full h-full rounded-md">
  
-              <div class="grid grid-cols-1 content-between h-full">
-                <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}">
+              <div class="grid grid-cols-1 h-full">
+                <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="grid grid-cols-1 content-between">
                   <div class="flex items-center justify-start px-2">
                     
                     <div class="text-red-700 flex items-center gap-1">
@@ -37,7 +37,7 @@
 
                   </div>
                               
-                  <div class="flex items-center justify-end pb-1  px-2 min-h-[36px]">
+                  <div class="flex items-center justify-end pb-1 px-2 min-h-[36px]">
                     <p class="text-xs font-semibold text-gray-600 dark:text-gray-700 text-right">{{ product.name }}</p>
                   </div>
                 </nuxt-link>
@@ -53,7 +53,7 @@
 
       <div class="hidden lg:block">
         <Swiper
-          class="rounded-sm relative w-full"
+          class="rounded-md relative w-full"
           :modules="[SwiperAutoplay, SwiperEffectCreative]"
           :slides-per-view="1"
           :loop="true"
@@ -77,7 +77,7 @@
               <img
 
                 :src="slide.image"
-                class="rounded-sm border dark:border-gray-700 shadow-md w-full"
+                class="rounded-md border dark:border-gray-700 shadow-md w-full"
               />             
             </nuxt-link>
           </SwiperSlide>

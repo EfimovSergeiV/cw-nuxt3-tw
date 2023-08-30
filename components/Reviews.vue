@@ -20,7 +20,7 @@
   <div class="">
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
+      <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
         <div class="px-2 mt-2">
           <div class="flex gap-2">
             <div class="flex items-center justify-center px-4 py-0.5 border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">

@@ -6,7 +6,7 @@
     <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
+      <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         <div class="p-4">
 
           <div class="flex justify-center items-center">

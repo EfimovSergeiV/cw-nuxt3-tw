@@ -79,7 +79,7 @@
 
                   <div class="absolute invisible group-hover:opacity-100 group-hover:visible right-0 z-40" v-if="sct.inserted.length > 0">
                     
-                    <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 p-4">
+                    <div class="bg-white border-gray-200 border rounded-md dark:border-gray-700 dark:bg-gray-800 p-4">
                       <nuxt-link :to="{ name: 'prods', query: {ct: sct.id}}" class="font-bold">{{ sct.name }}</nuxt-link>
                       <div class="my-2 md:columns-2">
                         <div v-for="ssct in sct.inserted" :key="ssct.id" class="px-1">

@@ -5,14 +5,14 @@
 </script>
 
 <template>
-  <div class="bg-white dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-700 hover:dark:border-gray-600 transition-all rounded-sm px-2">
+  <div class="bg-white dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-700 hover:dark:border-gray-600 transition-all rounded-md px-2">
     <div class="py-2">
 
       <nuxt-link :to="{ name: 'product-id', params: { id: props.product.id } }">
         <div class="flex md:grid md:grid-cols-1 gap-4">
-          <div class="bg-white rounded-sm flex items-center justify-center">
+          <div class="bg-white rounded-md flex items-center justify-center">
             <div class="w-28 md:w-48 p-1">
-              <img :src="props.product.preview_image" class="rounded-sm w-28 md:w-48"/>
+              <img :src="props.product.preview_image" class="rounded-md w-28 md:w-48"/>
             </div>          
           </div>
           <div class="flex items-center md:justify-center md:min-h-[80px]">

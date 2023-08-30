@@ -6,7 +6,7 @@
 
 <template>
   <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 my-2">
-    <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-sm bg-white dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
+    <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-md bg-white dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="hidden md:inline-flex items-center">
           <nuxt-link :to="{ name: 'index' }" class="inline-flex items-center text-xs text-center font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">

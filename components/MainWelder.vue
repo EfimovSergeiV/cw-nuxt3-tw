@@ -3,8 +3,8 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
 
-      <div class="bg-[url('images/mw-one-bg.jpg')] bg-no-repeat bg-cover rounded-sm">
-        <div class="bg-white/80 dark:bg-gray-800/80 h-full rounded-sm border border-gray-100 dark:border-gray-700 shadow-sm">
+      <div class="bg-[url('images/mw-one-bg.jpg')] bg-no-repeat bg-cover rounded-md">
+        <div class="bg-white/80 dark:bg-gray-800/80 h-full rounded-md border border-gray-100 dark:border-gray-700 shadow-sm">
 
           <div class="flex items-center justify-center md:justify-start h-full px-4 py-6">
             
@@ -23,8 +23,8 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-[url('images/mw-two-bg.jpg')] bg-no-repeat bg-cover rounded-sm">
-          <div class="bg-white/80 dark:bg-gray-800/80 h-full rounded-sm border border-gray-100 dark:border-gray-700 shadow-sm">
+        <div class="bg-[url('images/mw-two-bg.jpg')] bg-no-repeat bg-cover rounded-md">
+          <div class="bg-white/80 dark:bg-gray-800/80 h-full rounded-md border border-gray-100 dark:border-gray-700 shadow-sm">
             <div class="flex items-center h-full px-2">
               <div class="">
                 <div class="my-2">
@@ -50,8 +50,8 @@
             </div>                  
           </div>
         </div>
-        <div class="bg-[url('images/mw-third-bg.jpg')] bg-no-repeat bg-cover rounded-sm">
-          <div class="bg-white/80 dark:bg-gray-800/80 h-full rounded-sm border border-gray-100 dark:border-gray-700 shadow-sm">
+        <div class="bg-[url('images/mw-third-bg.jpg')] bg-no-repeat bg-cover rounded-md">
+          <div class="bg-white/80 dark:bg-gray-800/80 h-full rounded-md border border-gray-100 dark:border-gray-700 shadow-sm">
             <div class="flex items-center h-full px-2">
               <div class="">
                 <div class="my-2">

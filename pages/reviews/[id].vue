@@ -35,7 +35,7 @@
         <p class="text-2xl">{{ review.name }}</p>
       </div> -->
 
-      <!-- <nav class="flex px-5 py-3 mt-1 mb-4 text-gray-700 border border-gray-200 rounded-sm bg-white dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
+      <!-- <nav class="flex px-5 py-3 mt-1 mb-4 text-gray-700 border border-gray-200 rounded-md bg-white dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1">
           <li class="">
             <nuxt-link :to="{ name: 'index' }" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><span class="mdi mdi-home px-1"></span> Главная</nuxt-link>
@@ -52,7 +52,7 @@
 
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div class="h-96 border border-gray-300 dark:border-gray-700 shadow-md rounded-sm bg-white dark:bg-gray-900">
+        <div class="h-96 border border-gray-300 dark:border-gray-700 shadow-md rounded-md bg-white dark:bg-gray-900">
           <iframe
             :src="review.video"
             loading="lazy"
@@ -60,13 +60,13 @@
             width="100%"
             allowfullscreen="0"
             frameborder="0"
-            class="rounded-sm"
+            class="rounded-md"
           ></iframe>
 
         </div>
 
         <transition name="fade">
-          <div v-if="product" class="bg-white dark:bg-gray-800 px-2 rounded-sm border border-gray-200 dark:border-gray-600">
+          <div v-if="product" class="bg-white dark:bg-gray-800 px-2 rounded-md border border-gray-200 dark:border-gray-600">
             
             <div class="">
               <div class="">
