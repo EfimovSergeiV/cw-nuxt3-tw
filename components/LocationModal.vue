@@ -88,10 +88,17 @@
 
               <div class="px-4 py-8  min-h-[20rem]">
 
+
                 <div class="">
-                  <p class="text-xs text-gray-700 dark:text-gray-300 my-1">Найти город</p>
-                  <input v-model="searchTerm" type="search-city" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-600 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Москва">
+                  <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Найти город</label>
+                  <div class="relative">
+                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                      <p class="text-gray-700 dark:text-gray-400 mdi mdi-map-marker-radius"></p>
+                    </div>
+                    <input v-model="searchTerm" type="search" id="search-city" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Москва">
+                  </div> 
                 </div>
+
 
                 
                 <div class="flex flex-wrap gap-2 py-2">
