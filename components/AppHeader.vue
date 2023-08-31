@@ -127,7 +127,8 @@
                 <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
                   <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                     <span class="px-2 mdi mdi-map-marker-radius border-r border-gray-100/50"></span>
-                    <p class="text-sm "> Санкт-Петербург</p>
+                    <p v-if="clientStore.client.city.length < 16" class="text-sm ">{{ clientStore.client.city }}</p>
+                    <p v-else class="text-sm " >{{ clientStore.client.city.slice(0, 16) }} ...</p>
                   </div>
                 </button>
 

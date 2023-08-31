@@ -1,4 +1,6 @@
 <script setup>
+  import cities from '@/cities.ts'
+
   const config = useRuntimeConfig()
   // const router = useRouter()
 
@@ -6,7 +8,6 @@
   const clientStore = useClientStore()
   const notificationsStore = useNotificationsStore()
 
-  const errorMsg = ref(null)
 
   const sendRequest = async () => {
     if ( (clientStore.client.city) && (clientStore.client.contact) ) {
@@ -32,6 +33,32 @@
     }
   }
 
+  const changeCity = () => {
+    clientStore.client.city = selectedCity.value
+    clientStore.locationModal = false
+  }
+
+  const searchCountries = computed(() => {
+    if (searchTerm.value === '') {
+      return []
+    }
+
+    let matches = 0
+
+    return cities.filter(country => {
+      if (
+        country.toLowerCase().includes(searchTerm.value.toLowerCase())
+        && matches < 10
+      ) {
+        matches++
+        return country
+      }
+    })
+  })
+
+  const searchTerm = ref('')
+  const selectedCity = ref(null)
+  
 
 </script>
 
@@ -50,7 +77,7 @@
 
               <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
-                  Ваш город
+                  Выбрать город {{ selectedCity }}
                 </h3>
                 <button @click="clientStore.locationModal = false" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
                   <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -59,7 +86,40 @@
               </div>
 
 
-              <div class="">
+              <div class="px-4 py-8">
+
+                <div class="">
+                  <p class="text-xs text-gray-700 dark:text-gray-300 my-1">Найти город</p>
+                  <input v-model="searchTerm" type="search-city" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-600 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Москва">
+                </div>
+
+                
+                <div class="flex flex-wrap gap-2 py-2">
+                  <button 
+                    v-for="(city, pk) in ['Москва','Санкт-Петербург','Псков','Смоленск','Петрозаводск','Великие луки',]" :key="pk"
+                    @click="selectedCity = city"
+                    class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-600 transition-all shadow-md">
+                    <div class="flex items-center justify-center py-1 px-4">
+                      <p  class="text-[10px] md:text-xs text-gray-700 dark:text-gray-300">{{ city }}</p>
+                    </div>
+                  </button>
+                </div>
+
+
+                <div class="py-2">
+                  <div class="flex flex-wrap gap-2">
+                    <transition-group name="fade" mode="out-in">
+                      <button 
+                        v-for="(city, pk) in searchCountries" :key="pk"
+                        @click="selectedCity = city; searchTerm = city"
+                        class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-600 transition-all shadow-md">
+                        <div class="flex items-center justify-center py-1 px-4">
+                          <p  class="text-[10px] md:text-xs text-gray-700 dark:text-gray-300">{{ city }}</p>
+                        </div>
+                      </button>
+                    </transition-group>
+                  </div>
+                </div>
 
 
 
@@ -73,7 +133,7 @@
                 <div class="flex justify-center gap-2 w-full md:justify-end px-2">
                   
 
-                  <button @click="sendRequest">
+                  <button @click="changeCity">
                     <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                       <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
                         <p class="px-5 py-2.5">Сменить город</p>

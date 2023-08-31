@@ -194,7 +194,7 @@ export const useClientStore = defineStore('ClientStore', {
       delivery: false,
       adress: null,
 
-      city: null, /// Custom city
+      city: 'Москва', /// Custom city
       contact: null, /// Custom contact
     
       entity: false,
@@ -208,6 +208,7 @@ export const useClientStore = defineStore('ClientStore', {
       corresponding: null,
       bic: null,
     } as Client,
+
     locationModal: false,
     registerModal: false,
     loginModal: false,
