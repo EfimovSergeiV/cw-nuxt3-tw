@@ -6,6 +6,7 @@
   const clientStore = useClientStore()
   const notificationsStore = useNotificationsStore()
 
+  /// Error: Navigating to external URL is not allowed by default. Use `navigateTo (url, { external: true })`
   const { signIn, token, data, status, lastRefreshedAt } = useAuth()
 
   const username = ref('')
