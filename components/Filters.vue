@@ -9,13 +9,14 @@
   
   const filters = ref({ "brnd": [],})
 
-  const aplleFilter = () => {
+  const applyFilter = () => {
     notificationsStore.statusFilterComponent()
     router.push({
       name: 'prods',
       query: {
         ...route.query,
         ...filters.value,
+        page: 1
       },
     })
   }
@@ -23,7 +24,7 @@
   const clearFilter = () => {
     filters.value["brnd"] = []
     props.props.forEach(element => filters.value[element.prop_alias] = [])
-    aplleFilter()
+    applyFilter()
   }
 
   onMounted(() => {
@@ -141,7 +142,7 @@
       <div class="bg-gray-300 dark:bg-gray-800">
         <div class="flex justify-end p-4">
           <button @click="clearFilter" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
-          <button @click="aplleFilter" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
+          <button @click="applyFilter" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
         </div>                
       </div>
     </div>

@@ -17,7 +17,7 @@ definePageMeta({
 
 
 <template>
-  <div class="mx-auto max-w-7xl px-4 max-w-6xl lg:px-8 py-8">
+  <div class="mx-auto max-w-xl px-4 lg:px-8 py-8">
 
 
 
