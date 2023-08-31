@@ -156,21 +156,21 @@
                 <div class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
 
                   <p class="text-sm mdi mdi-account hidden"> Личный кабинет</p>
-                  <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                  <button @click="clientStore.registerModal = true" class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                     <span class="px-2 mdi mdi-account-plus border-r border-gray-100/50"></span>
                     <p class="text-sm "> Регистрация</p>
-                  </div>
+                  </button>
 
                 </div>
 
                 <div class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
-                  <nuxt-link v-if="status === 'unauthenticated'" :to="{ name: 'login' }" class="">
+                  <button @click="clientStore.loginModal = true" v-if="status === 'unauthenticated'" class="">
                     <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                       <span class="px-2 mdi mdi-login-variant border-r border-gray-100/50"></span>
                       <p class="text-sm "> Войти</p>
                     </div>
                     
-                  </nuxt-link>
+                  </button>
                   <button v-else @click="signOut()" class="bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full">
                     <p class="text-sm mdi mdi-login-variant text-gray-100">
                       Выйти

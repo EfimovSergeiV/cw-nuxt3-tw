@@ -22,7 +22,7 @@
 //       // productsStore.clearCartProducts() 
 //       // clientStore.saveClientData(clientData)
 
-// o/orderinfo/PSK1156363/
+//          o/orderinfo/PSK1156363/
 
 //     } else {
 //       errorMsg.value = 'Для отправки запроса заполните все поля.'

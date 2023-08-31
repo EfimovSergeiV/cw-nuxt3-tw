@@ -58,6 +58,12 @@
     <transition name="fade" mode="in-out">
       <LocationModal v-if="clientStore.locationModal" />
     </transition>
+    <transition name="fade" mode="in-out">
+      <LoginModal v-if="clientStore.loginModal" />
+    </transition>
+    <transition name="fade" mode="in-out">
+      <RegisterModal v-if="clientStore.registerModal" />
+    </transition>
     
 
     <div class="bg-gradient-to-r from-gray-300 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-700 dark:text-gray-300">
