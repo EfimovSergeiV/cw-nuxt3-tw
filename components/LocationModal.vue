@@ -4,9 +4,9 @@
   const config = useRuntimeConfig()
   // const router = useRouter()
 
-  const productsStore = useProductsStore()
+  const shopStore = useShopStore()
   const clientStore = useClientStore()
-  const notificationsStore = useNotificationsStore()
+  // const notificationsStore = useNotificationsStore()
 
 
   const sendRequest = async () => {
@@ -34,8 +34,17 @@
   }
 
   const changeCity = () => {
+    /// Сделать проверку на пустое поле
     clientStore.client.city = selectedCity.value
     clientStore.locationModal = false
+    
+    /// Пробуем найти подходящий магазин
+    shopStore.shops.forEach((shop) => {
+      console.log(shop)
+      if (shop.city.toLowerCase() === selectedCity.value.toLowerCase()) {
+        clientStore.client.adress = shop
+      }
+    })
   }
 
   const searchCountries = computed(() => {

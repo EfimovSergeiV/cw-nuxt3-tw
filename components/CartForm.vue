@@ -367,7 +367,7 @@
     </div>
 
 
-    
+    {{ clientStore.client }}
 
 
   </div>
