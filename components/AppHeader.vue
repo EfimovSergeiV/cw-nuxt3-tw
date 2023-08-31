@@ -153,29 +153,44 @@
                   </button>
                 </div>
 
-                <div class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
+                <div class="">
 
-                  <p class="text-sm mdi mdi-account hidden"> Личный кабинет</p>
-                  <button @click="clientStore.registerModal = true" class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                    <span class="px-2 mdi mdi-account-plus border-r border-gray-100/50"></span>
-                    <p class="text-sm "> Регистрация</p>
+                  <button  v-if="status === 'authenticated'" class=" bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 h-full w-full">
+                      <span class="px-2 mdi mdi-account border-r border-gray-100/50"></span>
+                      <p class="text-sm "> Личный кабинет</p>
+                    </div>
+                  </button>
+                  <button  v-else @click="clientStore.registerModal = true" class=" bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 h-full w-full">
+                      <span class="px-2 mdi mdi-account border-r border-gray-100/50"></span>
+                      <p class="text-sm "> Регистрация</p>
+                    </div>
                   </button>
 
                 </div>
 
-                <div class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
-                  <button @click="clientStore.loginModal = true" v-if="status === 'unauthenticated'" class="">
+                <div class="py-1 bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
+                  
+                  <button @click="clientStore.loginModal = true" v-if="status === 'unauthenticated'" class="w-full h-full">
                     <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                       <span class="px-2 mdi mdi-login-variant border-r border-gray-100/50"></span>
                       <p class="text-sm "> Войти</p>
                     </div>
-                    
                   </button>
-                  <button v-else @click="signOut()" class="bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full">
+
+                  <button v-else @click="signOut()" class="w-full h-full">
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                      <span class="px-2 mdi mdi-login-variant border-r border-gray-100/50"></span>
+                      <p class="text-sm "> Выйти</p>
+                    </div>
+                  </button>
+
+                  <!-- <button v-else @click="signOut()" class="bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full">
                     <p class="text-sm mdi mdi-login-variant text-gray-100">
                       Выйти
                     </p>
-                  </button>
+                  </button> -->
                 </div>
 
               </div>

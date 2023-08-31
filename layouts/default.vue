@@ -10,6 +10,7 @@
   const clientStore = useClientStore()
   const notificationsStore = useNotificationsStore()
 
+  const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
   const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 
 
@@ -59,7 +60,7 @@
       <LocationModal v-if="clientStore.locationModal" />
     </transition>
     <transition name="fade" mode="in-out">
-      <LoginModal v-if="clientStore.loginModal" />
+      <LoginModal v-if="clientStore.loginModal && status === 'unauthenticated'" />
     </transition>
     <transition name="fade" mode="in-out">
       <RegisterModal v-if="clientStore.registerModal" />
