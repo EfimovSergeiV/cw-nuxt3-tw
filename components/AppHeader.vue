@@ -6,8 +6,10 @@
   const colorMode = useColorMode()
 
   const shopStore = useShopStore()
+  const clientStore = useClientStore()
   // const route = useRoute()
-  
+
+  const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
   const { data: cts } = await useFetch(`${ config.public.baseURL }c/ct/`)
 
   
@@ -122,12 +124,12 @@
 
             <div class=" ">
               <div class="grid grid-cols-2 gap-x-1 gap-y-1">
-                <div class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
+                <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
                   <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                     <span class="px-2 mdi mdi-map-marker-radius border-r border-gray-100/50"></span>
                     <p class="text-sm "> Санкт-Петербург</p>
                   </div>
-                </div>
+                </button>
 
                 <div id="color-mode">
                   <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full flex items-center">

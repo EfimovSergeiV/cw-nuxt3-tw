@@ -7,9 +7,9 @@
 
   const shopStore = useShopStore()
   const productsStore = useProductsStore()
+  const clientStore = useClientStore()
   const notificationsStore = useNotificationsStore()
 
-  const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
   const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
 
 
@@ -54,6 +54,9 @@
     </transition>
     <transition name="fade" mode="in-out">
       <Toasts />
+    </transition>
+    <transition name="fade" mode="in-out">
+      <LocationModal v-if="clientStore.locationModal" />
     </transition>
     
 

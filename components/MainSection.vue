@@ -37,7 +37,7 @@
 
                   </div>
                               
-                  <div class="flex items-center justify-end pb-1 px-2 min-h-[36px]">
+                  <div class="flex items-center justify-end pb-1 px-4 min-h-[36px]">
                     <p class="text-xs font-semibold text-gray-600 dark:text-gray-700 text-right">{{ product.name }}</p>
                   </div>
                 </nuxt-link>

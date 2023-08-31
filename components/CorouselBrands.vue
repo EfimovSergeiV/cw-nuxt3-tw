@@ -16,7 +16,7 @@
 
 
 <template>
-  <div class="mx-auto max-w-7xl px-4 max-w-6xl lg:px-8 py-2">
+  <div class="container mx-auto max-w-6xl px-4 lg:px-8 py-2">
 
     <div class="bg-gray-400 rounded-md border dark:border-gray-500 dark:bg-gray-600 shadow-md px-4 py-2">
       <Swiper
