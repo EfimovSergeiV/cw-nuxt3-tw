@@ -70,14 +70,13 @@
             next: {
               translate: ['100%', 0, 0]
             }
-          }"
-        >
+          }" >
+       
           <SwiperSlide v-for="slide in props.banners" :key="slide.id" class="">
             <nuxt-link :to="slide.link">
               <img
-
                 :src="slide.image"
-                class="rounded-md border dark:border-gray-700 shadow-md w-full"
+                class="rounded-md w-full border dark:border-gray-600"
               />             
             </nuxt-link>
           </SwiperSlide>
