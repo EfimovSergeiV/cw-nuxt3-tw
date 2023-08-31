@@ -40,7 +40,6 @@
     
     /// Пробуем найти подходящий магазин
     shopStore.shops.forEach((shop) => {
-      console.log(shop)
       if (shop.city.toLowerCase() === selectedCity.value.toLowerCase()) {
         clientStore.client.adress = shop
       }
