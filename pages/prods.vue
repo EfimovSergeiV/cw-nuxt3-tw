@@ -47,7 +47,7 @@
 
     <BreadCrumbs id="breadcrumbs" :breadcrumbs="breadcrumbs" />
 
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
       <div class="">
         <!-- <div id="cat-title" class="flex items-center justify-end mb-2">
@@ -74,7 +74,7 @@
     </div>
 
 
-    <div class="mx-auto px-4 my-2 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 my-2 max-w-6xl lg:px-8">
       <div class="grid grid-cols-1 md:flex items-center justify-between">
 
         <div class="flex items-center gap-0.5 justify-between md:justify-end my-2">
@@ -99,7 +99,7 @@
 
    
     <div class="">
-      <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+      <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
         <div id="products" class="">
           <div class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
@@ -122,7 +122,7 @@
 
     
 
-    <div class="mx-auto px-4 my-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 my-4 max-w-6xl lg:px-8">
       <div class="flex items-center justify-end">
         <Pagination :count="products.count" />
       </div>

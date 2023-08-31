@@ -17,7 +17,7 @@
 </script>
 
 <template>
-  <div class="container mx-auto my-4 px-4 lg:max-w-7xl lg:px-8">
+  <div class="container mx-auto my-4 px-4 max-w-6xl lg:px-8">
 
 
 

@@ -29,8 +29,8 @@
 
 
 <template>
-  <div class="container">
-    <div class="mx-auto my-4 px-4 lg:max-w-7xl lg:px-8">
+  <div class="">
+    <div class="container mx-auto py-2 px-4 max-w-6xl lg:px-8">
 
       <div class="grid grid-cols-2 gap-4 bg-white dark:bg-gray-800 border dark:border-gray-600 px-2 py-2 rounded-md">
         

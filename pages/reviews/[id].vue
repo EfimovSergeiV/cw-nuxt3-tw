@@ -29,7 +29,7 @@
 <template>
   <section id="" class="mt-4">
 
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
       <!-- <div class="flex justify-end items-center">
         <p class="text-2xl">{{ review.name }}</p>

@@ -88,7 +88,7 @@
 
 
 <template>
-  <div class="container mx-auto px-4 lg:max-w-7xl lg:px-8">
+  <div class="container mx-auto px-4 max-w-6xl lg:px-8">
 
     <div id="cart-set" class="">
 

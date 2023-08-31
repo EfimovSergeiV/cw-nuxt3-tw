@@ -17,7 +17,7 @@
 
 
 <template>
-  <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 py-2">
+  <div class="mx-auto px-4 max-w-6xl lg:px-8 py-2">
 
     <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 text-center">
         <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md cursor-pointer group" v-for="(city, pk) in ['Москва', 'Санкт-Петербург', 'Псков', 'Смоленск', 'Петрозаводск', 'Великие луки',]" :key="pk">

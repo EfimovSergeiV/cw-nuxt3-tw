@@ -19,7 +19,7 @@
 <template>
   <div class="">
 
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 max-w-6xl lg:px-8">
       <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
         <div class="px-2 mt-2">
           <div class="flex gap-2">

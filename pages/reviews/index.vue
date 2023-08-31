@@ -17,7 +17,7 @@
 <template>
   <section id="" class="mt-4">
 
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
       <div class="">
         <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-md bg-white dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">

@@ -32,7 +32,7 @@
 
 
 <template>
-  <div class="container mx-auto px-4 lg:max-w-7xl lg:px-8">
+  <div class="container mx-auto px-4 max-w-6xl lg:px-8">
     <div v-if="orderinfo">
       <p class="my-2">{{ orderinfo.order_number }}</p>
       <p class="my-2">{{ orderinfo.status }}</p>
