@@ -155,12 +155,12 @@
 
                 <div class="">
 
-                  <button  v-if="status === 'authenticated'" class=" bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+                  <nuxt-link :to="{name: 'lk-name', params: { name: data.username}}"  v-if="status === 'authenticated'" class=" bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full flex items-center">
                     <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 h-full w-full">
                       <span class="px-2 mdi mdi-account border-r border-gray-100/50"></span>
                       <p class="text-sm "> Личный кабинет</p>
                     </div>
-                  </button>
+                  </nuxt-link>
                   <button  v-else @click="clientStore.registerModal = true" class=" bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full flex items-center">
                     <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 h-full w-full">
                       <span class="px-2 mdi mdi-account border-r border-gray-100/50"></span>
