@@ -128,7 +128,7 @@
                   <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                     <span class="px-2 mdi mdi-map-marker-radius border-r border-gray-100/50"></span>
                     <p v-if="clientStore.client.city.length < 16" class="text-sm ">{{ clientStore.client.city }}</p>
-                    <p v-else class="text-sm " >{{ clientStore.client.city.slice(0, 16) }} ...</p>
+                    <p v-else class="text-sm " :title="clientStore.client.city" >{{ clientStore.client.city.slice(0, 16) }} ...</p>
                   </div>
                 </button>
 
