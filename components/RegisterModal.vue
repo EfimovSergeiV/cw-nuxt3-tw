@@ -6,29 +6,48 @@
   const clientStore = useClientStore()
   const notificationsStore = useNotificationsStore()
 
-  const errorMsg = ref(null)
 
-  const sendRequest = async () => {
-    if ( (clientStore.client.city) && (clientStore.client.contact) ) {
-      const { data: response } = await useFetch(`${ config.public.baseURL }o/request-price/`, {
+  const errorMsg = ref(null)
+  const username = ref(null)
+  const email = ref(null)
+  const first_name = ref(null)
+  const last_name = ref(null)
+  const password = ref(null)
+
+  /// Переключение видимости пароля
+  const showPassword = ref(false)
+  const inputStatus = ref('password')
+  watch(showPassword, async () => {
+    if (showPassword.value) {
+      inputStatus.value = 'text'
+    } else {
+      inputStatus.value = 'password'
+    }
+  })
+
+  const sendForm = async () => {
+    if ( username.value && email.value && first_name.value && last_name && password.value ) {
+      const { data, pending, error } = await useFetch(`${ config.public.baseURL }signup/`, {
         method: 'POST',
         body: {
-          city: clientStore.client.city,
-          contact: clientStore.client.contact,
-          product: `id: ${ productsStore.requestPrice.id } vc: ${ productsStore.requestPrice.vcode } name: ${ productsStore.requestPrice.name }`,
+          username: username.value,
+          email: email.value,
+          first_name: first_name.value,
+          last_name: last_name.value,
+          password: password.value,        
         }
-        
       });
 
-      notificationsStore.pushToast({ id: 1, type: 'success', text: 'Запрос на стоимость товара успешно отправлен!' })
-      productsStore.clearRequestPrice()
+      if (error.value == null) {
+        notificationsStore.pushToast({ id: 1, type: 'success', text: 'Вы успешно зарегистрированы' })
+        clientStore.registerModal = false        
+      } else {
+        errorMsg.value = 'Ошибка: Пользователь уже существует или email уже используется'
+      }
 
-      // order.value = await response.value
-      // productsStore.clearCartProducts()
-      // clientStore.saveClientData(clientData)
 
     } else {
-      errorMsg.value = 'Ошибка: Для отправки запроса заполните все поля.'
+      errorMsg.value = 'Ошибка: неверно введены данные'
     }
   }
 
@@ -58,22 +77,74 @@
                 </button>
               </div>
 
-
+<!-- 
+    const username = ref(null)
+  const email = ref(null)
+  const first_name = ref(null)
+  const last_name = ref(null)
+  const password = ref(null)
+ -->
               <div class="px-4 py-8 min-h-[20rem]">
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-4 items-end">
                   <div class="">
                     <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Логин</label>
                     <div>
-                      <input  type="search" id="login" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                      <input v-model="username" type="text" id="login" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                    </div> 
+                  </div>
+                  <div class="">
+                    <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Электронная почта</label>
+                    <div>
+                      <input v-model="email" type="search" id="email" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                    </div> 
+                  </div>
+                  <div class="">
+                    <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Имя</label>
+                    <div>
+                      <input v-model="first_name" type="text" id="firstname" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                    </div> 
+                  </div>
+                  <div class="">
+                    <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Фамилия</label>
+                    <div>
+                      <input v-model="last_name" type="text" id="lastname" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
                     </div> 
                   </div>
                   <div class="">
                     <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Пароль</label>
                     <div>
-                      <input  type="search" id="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
-                    </div> 
+                      <input v-model="password" :type="inputStatus" id="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                    </div>
+                  </div>
+
+                  <button @click="sendForm">
+                    <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                      <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+                        <p class="px-5 py-2.5">Отправить</p>
+                      </div>
+                    </div>
+                  </button>
+
+                </div>
+                <div class="flex items-center justify-between py-1">
+                  <div class="">
+                    <input 
+                      id="show-pwd"
+                      type="checkbox"
+                      value="text"
+                      v-model="showPassword"
+                      class="w-4 h-4 
+                        rounded text-gray-700 focus:ring-0 
+                        focus:ring-gray-300 ring-offset-gray-300 bg-gray-700 border-gray-300
+                        dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600
+                      " >
+                    <label for="show-pwd" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Показать пароль</label>
+                  </div>
+                  <div class="">
+                    <p class="text-red-600 dark:text-red-500 text-sm">{{ errorMsg }}</p>
                   </div>
                 </div>
+
               </div>
 
 

@@ -195,7 +195,7 @@ export const useClientStore = defineStore('ClientStore', {
       adress: null,
 
       city: 'Москва', /// Custom city
-      contact: null, /// Custom contact
+      contact: null,  /// Custom contact
     
       entity: false,
       company: null,
