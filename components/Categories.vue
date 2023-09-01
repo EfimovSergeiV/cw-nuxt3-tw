@@ -9,7 +9,7 @@
 
 <template>
   <div class="mx-auto px-4 max-w-6xl lg:px-8">
-    <div class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-700 p-2 ">
+    <div class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-700 p-2 rounded-md">
 
 
       <p v-if="pending">Загрузка данных...</p>
@@ -28,7 +28,7 @@
             
             <div class="px-2 py-3">
               
-              <div class="columns-3 lg:columns-4">
+              <div class="columns-1 xl:columns-3 lg:columns-4">
                 <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
                   <div class="">
 

@@ -40,9 +40,9 @@
   <div class="container mx-auto max-w-6xl px-4 lg:px-8">
 
 
-    <div id="navbar" class="py-2 hidden">
+    <div id="navbar" class="py-2">
 
-      <div class="flex items-center justify-between">
+      <div class="grid grid-cols-1 gap-2 md:flex items-center justify-between">
 
         <div class="grid grid-cols-1 gap-2">
           <ul class="flex items-center rounded-md flex-row space-x-2 md:space-x-3 justify-end transition-all">
@@ -82,16 +82,30 @@
         </div>
 
 
+        <div class="md:hidden">
+          <div class="flex items-center justify-center -mt-5">
+            <nuxt-link :to="{ name: 'index'}" class="">
+              <img
+                class=" select-none"
+                width=""
+                src="/images/blue-svar.webp"
+              />      
+            </nuxt-link>                  
+          </div>            
+        </div>
+
+
+
         <div class="flex gap-2">
           <div class="text-gray-300 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
             <div class="grid grid-cols-1 px-10 py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-              <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-base font-semibold text-gray-100 hover:text-white dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
+              <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-base font-semibold text-gray-100 hover:text-white dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
             </div>        
           </div>
 
-          <div class="text-gray-300 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+          <div class="text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
             <div class="grid grid-cols-1 px-10 py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-              <a href="mailto:zakaz@glsvar.ru" target="blank" class="text-base font-semibold">zakaz@glsvar.ru</a>
+              <a href="mailto:zakaz@glsvar.ru" target="blank" class="text-sm md:text-base font-semibold">zakaz@glsvar.ru</a>
             </div>        
           </div>
         </div>
@@ -106,23 +120,26 @@
 
 
 
-    <div id="header" class="py-2 hidden">
-      <div class="flex gap-4 justify-between relative">
-        <div class="w-full grid grid-cols-1 content-between">
+    <div id="header" class="py-2">
+      <div class="grid grid-cols-1 md:flex gap-4 justify-between relative">
+        <div class="w-full grid grid-cols-1 content-between order-2 md:order-1">
 
-          <div class="flex items-center justify-center -mt-5">
-            <nuxt-link :to="{ name: 'index'}" class="">
-              <img
-                class=" select-none"
-                width=""
-                src="/images/blue-svar.webp"
-              />      
-            </nuxt-link>                  
+          <div class="hidden md:block">
+            <div class="flex items-center justify-center -mt-5 py-4 md:py-0">
+              <nuxt-link :to="{ name: 'index'}" class="">
+                <img
+                  class=" select-none"
+                  width=""
+                  src="/images/blue-svar.webp"
+                />      
+              </nuxt-link>                  
+            </div>            
           </div>
+
 
           <div class="bg-white dark:bg-gray-800 p-1 grid grid-cols-1 gap-4 rounded-md border dark:border-gray-600">
 
-            <div class=" ">
+            <div class="">
               <div class="grid grid-cols-2 gap-x-1 gap-y-1">
                 <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
                   <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
@@ -185,22 +202,13 @@
                       <p class="text-sm "> Выйти</p>
                     </div>
                   </button>
-
-                  <!-- <button v-else @click="signOut()" class="bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full">
-                    <p class="text-sm mdi mdi-login-variant text-gray-100">
-                      Выйти
-                    </p>
-                  </button> -->
                 </div>
-
               </div>
             </div>
 
 
             <div class="">
-
               <div class="group">
-            
                 <div class="cursor-pointer h-full text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-md border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                   <div class="bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-md py-3">
                     <nuxt-link :to="{ name: 'cts' }">
@@ -211,24 +219,17 @@
                   </div>
                 </div>
 
-
                 <div v-if=" route.path !== '/cts'" class="py-4 absolute w-full left-0 z-40 invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
                   <div class="bg-white/90 dark:bg-gray-700/90 border border-gray-100 dark:border-gray-600 backdrop-blur-md rounded-t-md rounded-b-2xl">
-                    
                     <div class="px-2 py-2">
-                      
-                      <div class="columns-3 lg:columns-4">
+                      <div class="columns-1 xl:columns-3 lg:columns-4">
                         <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
                           <div class="">
-
-
                             <div class="py-2 ">
-                              
                               <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-2 px-2">
                                 <div class="py-2">
                                   <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
                                 </div>
-
                                 <div>
                                   <ul>
                                     <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block ">
@@ -244,17 +245,13 @@
                     </div>
                   </div>  
                 </div>
-              
               </div>
             </div>
-
-
           </div>
-
-
         </div>
 
-        <div class="lg:w-[700px]">
+
+        <div class="w-full lg:w-[700px] order-1 md:order-2">
           <TopSlider />
         </div>
 
