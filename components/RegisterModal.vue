@@ -5,7 +5,7 @@
   const productsStore = useProductsStore()
   const clientStore = useClientStore()
   const notificationsStore = useNotificationsStore()
-
+  const { signIn, token, data, status, lastRefreshedAt } = useAuth()
 
   const errorMsg = ref(null)
   const username = ref(null)
@@ -39,8 +39,9 @@
       });
 
       if (error.value == null) {
+        signIn({ username: username.value, password: password.value })
         notificationsStore.pushToast({ id: 1, type: 'success', text: 'Вы успешно зарегистрированы' })
-        clientStore.registerModal = false        
+        clientStore.registerModal = false       
       } else {
         errorMsg.value = 'Ошибка: Пользователь уже существует или email уже используется'
       }
