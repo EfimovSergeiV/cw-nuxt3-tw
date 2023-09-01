@@ -1,9 +1,9 @@
 <template>
   <div class="">
-    
-    <!-- <TopSlider /> -->
+    <AppHeader />
+    <AppNavbar />
 
-    <div class="mx-auto max-w-7xl px-4 max-w-6xl lg:px-8 pt-2">
+    <div class="mx-auto max-w-6xl px-4 lg:px-8 pt-2">
 
 
       <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md">

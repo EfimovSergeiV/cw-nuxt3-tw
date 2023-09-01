@@ -43,7 +43,8 @@
 
 <template>
   <div>
-    <!-- <AppNavbar /> -->
+    <AppHeader />
+    <AppNavbar />
 
     <BreadCrumbs id="breadcrumbs" :breadcrumbs="breadcrumbs" />
 

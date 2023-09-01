@@ -10,8 +10,8 @@
 <template>
 
   <div class="">
-    <!-- <TopSlider />
-    <AppNavbar /> -->
+    <AppHeader />
+    <AppNavbar />
     <Categories />
     <Recommend />
     <CorouselBrands />

@@ -9,9 +9,8 @@ useHead({
 
 <template>
   <div class="">
-    <!-- <TopSlider />
-    <AppNavbar /> -->
-
+    <AppHeader />
+    <AppNavbar />
     
     <CartForm :shops="shops" />
 

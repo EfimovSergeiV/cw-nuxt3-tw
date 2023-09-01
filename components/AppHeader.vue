@@ -226,13 +226,13 @@
                               
                               <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-2 px-2">
                                 <div class="py-2">
-                                  <nuxt-link :to="{ name: 'prods', query: { ct: ct.id }, hash: '#breadcrumbs' }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
+                                  <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
                                 </div>
 
                                 <div>
                                   <ul>
                                     <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block ">
-                                      <nuxt-link :to="{ name: 'prods', query: { ct: sct.id }, hash: '#breadcrumbs' }" class="text-gray-700 mr-3 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">{{ sct.name }}</nuxt-link>
+                                      <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 mr-3 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">{{ sct.name }}</nuxt-link>
                                     </li>
                                   </ul>
                                 </div>                                  
