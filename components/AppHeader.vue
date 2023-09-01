@@ -40,7 +40,7 @@
   <div class="container mx-auto max-w-6xl px-4 lg:px-8">
 
 
-    <div id="navbar" class="py-2">
+    <div id="navbar" class="py-2 hidden">
 
       <div class="flex items-center justify-between">
 
@@ -106,7 +106,7 @@
 
 
 
-    <div id="header" class="py-2">
+    <div id="header" class="py-2 hidden">
       <div class="flex gap-4 justify-between relative">
         <div class="w-full grid grid-cols-1 content-between">
 
