@@ -86,8 +86,7 @@
           <div class="flex items-center justify-center -mt-5">
             <nuxt-link :to="{ name: 'index'}" class="">
               <img
-                class=" select-none"
-                width=""
+                class=" select-none max-h-[6rem]"
                 src="/images/blue-svar.webp"
               />      
             </nuxt-link>                  
@@ -129,7 +128,6 @@
               <nuxt-link :to="{ name: 'index'}" class="">
                 <img
                   class=" select-none"
-                  width=""
                   src="/images/blue-svar.webp"
                 />      
               </nuxt-link>                  
@@ -139,7 +137,7 @@
 
           <div class="bg-white dark:bg-gray-800 p-1 grid grid-cols-1 gap-4 rounded-md border dark:border-gray-600">
 
-            <div class="">
+            <div class="hidden md:block">
               <div class="grid grid-cols-2 gap-x-1 gap-y-1">
                 <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 dark:bg-gray-700 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
                   <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
