@@ -184,7 +184,7 @@
       <div class="grid grid-cols-1 md:flex gap-4 justify-between relative">
         <div class="w-full grid grid-cols-1 content-between order-2 md:order-1">
 
-          <div class="hidden md:block">
+          <div class="hidden lg:block">
             <div class="flex items-center justify-center -mt-5 py-4 md:py-0">
               <nuxt-link :to="{ name: 'index'}" class="">
                 <img
@@ -198,7 +198,7 @@
 
           <div class="bg-white dark:bg-gray-800 p-1 grid grid-cols-1 gap-4 rounded-md border dark:border-gray-600">
 
-            <div class="hidden md:block">
+            <div class="hidden lg:block">
               <div class="grid grid-cols-2 gap-x-1 gap-y-1">
                 <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
                   <div class="flex items-center gap-2 text-gray-600">
