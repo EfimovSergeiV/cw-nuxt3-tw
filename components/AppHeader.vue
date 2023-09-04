@@ -119,13 +119,13 @@
 
         <div class="grid grid-cols-2 md:flex gap-2 mt-2 md:mt-0">
           <div class="text-gray-300 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-            <div class="grid grid-cols-1 px-10 py-2 md:py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+            <div class="grid grid-cols-1 px-6 py-2 md:py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
               <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ shopStore.shop.phone }}</a>
             </div>        
           </div>
 
           <div class="text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-            <div class="grid grid-cols-1 px-10 py-2 md:py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+            <div class="grid grid-cols-1 px-6 py-2 md:py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
               <a href="mailto:zakaz@glsvar.ru" target="blank" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all">zakaz@glsvar.ru</a>
             </div>        
           </div>
@@ -140,8 +140,8 @@
       <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
         <div class="flex items-center gap-2 text-gray-600">
           <span class="px-2 mdi mdi-map-marker-radius border-r border-gray-600/50"></span>
-          <p v-if="clientStore.client.city.length < 12" class="text-xs ">{{ clientStore.client.city }}</p>
-          <p v-else class="text-xs " :title="clientStore.client.city" >{{ clientStore.client.city.slice(0, 12) }} ...</p>
+          <p v-if="clientStore.client.city.length < 10" class="text-xs ">{{ clientStore.client.city }}</p>
+          <p v-else class="text-xs " :title="clientStore.client.city" >{{ clientStore.client.city.slice(0, 10) }} ...</p>
         </div>
       </button>
       <div class="">
