@@ -2,13 +2,13 @@
   import { onMounted } from 'vue'
 
   const config = useRuntimeConfig()
-  const route = useRoute()
-  const colorMode = useColorMode()
+  // const route = useRoute()
+  // const colorMode = useColorMode()
 
   const shopStore = useShopStore()
   const productsStore = useProductsStore()
   const clientStore = useClientStore()
-  const notificationsStore = useNotificationsStore()
+  // const notificationsStore = useNotificationsStore()
 
   const { signIn, signOut, token, data, status, lastRefreshedAt } = useAuth()
   const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
@@ -71,8 +71,6 @@
       
       <div id="background-page" class="bg-fixed bg-no-repeat bg-[center_100px] bg-cover bg-[url('images/footer-bg.webp')] dark:bg-[url('images/footer-dark-bg.webp')] min-h-screen">        
         <div class="">
-          <!-- <AppHeader /> -->          
-          <!-- <AppNavbar /> -->
           <slot />
           <AppFooter />
         </div>

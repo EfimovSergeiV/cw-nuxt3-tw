@@ -99,13 +99,13 @@
         <div class="flex gap-2">
           <div class="text-gray-300 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
             <div class="grid grid-cols-1 px-10 py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-              <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-base font-semibold text-gray-100 hover:text-white dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shopStore.shop.phone }}</a>
+              <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ shopStore.shop.phone }}</a>
             </div>        
           </div>
 
           <div class="text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
             <div class="grid grid-cols-1 px-10 py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-              <a href="mailto:zakaz@glsvar.ru" target="blank" class="text-sm md:text-base font-semibold">zakaz@glsvar.ru</a>
+              <a href="mailto:zakaz@glsvar.ru" target="blank" class="text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all">zakaz@glsvar.ru</a>
             </div>        
           </div>
         </div>
@@ -211,11 +211,11 @@
               <div class="group">
                 <div class="cursor-pointer h-full text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-md border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                   <div class="bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-md py-3">
-                    <nuxt-link :to="{ name: 'cts' }">
+                    <div class="cursor-pointer">
                       <div class="mdi mdi-24px mdi- menu flex items-center justify-center">
                         <p class="text-lg px-2 uppercase "> Открыть каталог</p>
                       </div>                        
-                    </nuxt-link>                          
+                    </div>                          
                   </div>
                 </div>
 
@@ -241,6 +241,13 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="flex items-center justify-end">
+                        <nuxt-link :to="{ name: 'cts' }" class="border border-gray-500 text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-md  border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                          <div class="bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-md h-full w-full px-8 py-2">
+                            <p>Перейти в каталог</p>
+                          </div>
+                        </nuxt-link>
                       </div>
                     </div>
                   </div>  
