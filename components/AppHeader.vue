@@ -47,21 +47,21 @@
         <div class="flex items-center justify-between">
           <div class="md:hidden">
             <div id="mobile-color-mode">
-              <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-blue-600 border border-gray-100/10 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
+              <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-blue-600 py-1 border border-gray-100/10 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
                 <div class="flex items-center gap-2 text-gray-100">
-                  <span class="px-1 mdi mdi-laptop border-r border-gray-100/50"></span>
+                  <span class="px-2 mdi mdi-laptop border-r border-gray-100/50"></span>
                   <p class="text-xs pr-2"> Сменить тему</p>
                 </div>
               </button>
-              <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-gray-800 border border-gray-100/50 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
+              <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-gray-800 py-1 border border-gray-100/50 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
                 <div class="flex items-center gap-2 text-gray-100">
-                  <span class="px-1 mdi mdi-weather-night border-r border-gray-100/50"></span>
+                  <span class="px-2 mdi mdi-weather-night border-r border-gray-100/50"></span>
                   <p class="text-xs pr-2"> Ночной режим</p>
                 </div>
               </button>
-              <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
+              <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-gray-100 py-1 border border-gray-100/10 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
                 <div class="flex items-center gap-2 text-gray-600">
-                  <span class="px-1 mdi mdi-white-balance-sunny border-r border-gray-600/50"></span>
+                  <span class="px-2 mdi mdi-white-balance-sunny border-r border-gray-600/50"></span>
                   <p class="text-xs pr-2"> Дневной режим</p>
                 </div>
               </button>
@@ -73,8 +73,8 @@
             <transition name="right-emergence">
               <li v-if="shopStore.shop.telegram">
                 <a class="" :href="shopStore.shop.telegram" target="_blank">
-                  <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
-                    <img src="/telegr-logo.webp" class="w-4 md:w-5" />
+                  <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
+                    <img src="/telegr-logo.webp" class="w-5" />
                   </div>
                 </a>
               </li>
@@ -82,8 +82,8 @@
             <transition name="right-emergence">
               <li v-if="shopStore.shop.whatsapp">
                 <a class="" :href="shopStore.shop.whatsapp" target="_blank">
-                  <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
-                    <img src="/WhatsApp-logo.webp" class="w-5 md:w-8" />
+                  <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
+                    <img src="/WhatsApp-logo.webp" class="w-8" />
                   </div>
                 </a>
               </li>
@@ -91,8 +91,8 @@
             <transition name="right-emergence">
               <li v-if="shopStore.shop.viber">
                 <a class="" :href="shopStore.shop.viber" target="_blank">
-                  <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
-                    <img src="/viber-logo.webp" class="w-4 md:w-5" />
+                  <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
+                    <img src="/viber-logo.webp" class="w-5" />
                   </div>
                 </a>
               </li>
