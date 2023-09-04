@@ -40,11 +40,34 @@
   <div class="container mx-auto max-w-6xl px-4 lg:px-8">
 
 
-    <div id="navbar" class="py-2">
+    <div id="navbar" class="py-4">
 
       <div class="grid grid-cols-1 gap-2 md:flex items-center justify-between">
 
-        <div class="grid grid-cols-1 gap-2">
+        <div class="flex items-center justify-between">
+          <div class="md:hidden">
+            <div id="mobile-color-mode">
+              <button v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
+                <div class="flex items-center gap-2 text-gray-600">
+                  <span class="px-1 mdi mdi-laptop border-r border-gray-600/50"></span>
+                  <p class="text-sm pr-2"> Сменить тему</p>
+                </div>
+              </button>
+              <button v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
+                <div class="flex items-center gap-2 text-gray-600">
+                  <span class="px-1 mdi mdi-weather-night border-r border-gray-600/50"></span>
+                  <p class="text-sm pr-2"> Ночной режим</p>
+                </div>
+              </button>
+              <button v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-md transition-all duration-500 w-full h-full flex items-center">
+                <div class="flex items-center gap-2 text-gray-600">
+                  <span class="px-1 mdi mdi-white-balance-sunny border-r border-gray-600/50"></span>
+                  <p class="text-sm pr-2"> Дневной режим</p>
+                </div>
+              </button>
+            </div>
+
+          </div>
           <ul class="flex items-center rounded-md flex-row space-x-2 md:space-x-3 justify-end transition-all">
 
             <transition name="right-emergence">
@@ -94,32 +117,70 @@
         </div>
 
 
-
-        <div class="flex gap-2">
+        <div class="grid grid-cols-2 md:flex gap-2 mt-2 md:mt-0">
           <div class="text-gray-300 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-            <div class="grid grid-cols-1 px-10 py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-              <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ shopStore.shop.phone }}</a>
+            <div class="grid grid-cols-1 px-10 py-2 md:py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+              <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ shopStore.shop.phone }}</a>
             </div>        
           </div>
 
           <div class="text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-            <div class="grid grid-cols-1 px-10 py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-              <a href="mailto:zakaz@glsvar.ru" target="blank" class="text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all">zakaz@glsvar.ru</a>
+            <div class="grid grid-cols-1 px-10 py-2 md:py-1 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+              <a href="mailto:zakaz@glsvar.ru" target="blank" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all">zakaz@glsvar.ru</a>
             </div>        
           </div>
         </div>
 
       </div>
-
-
     </div>
 
 
 
+    <div id="mobile-profile" class="md:hidden grid grid-cols-3 gap-2 mb-4">
+      <button @click="clientStore.locationModal = true" class="py-1 cursor-pointer bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
+        <div class="flex items-center gap-2 text-gray-600">
+          <span class="px-2 mdi mdi-map-marker-radius border-r border-gray-600/50"></span>
+          <p v-if="clientStore.client.city.length < 12" class="text-xs ">{{ clientStore.client.city }}</p>
+          <p v-else class="text-xs " :title="clientStore.client.city" >{{ clientStore.client.city.slice(0, 12) }} ...</p>
+        </div>
+      </button>
+      <div class="">
+
+        <nuxt-link :to="{name: 'lk-name', params: { name: data.username}}"  v-if="status === 'authenticated'" class=" bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+          <div class="flex items-center gap-2 text-gray-600 h-full w-full">
+            <span class="px-2 mdi mdi-account border-r border-gray-600/50"></span>
+            <p class="text-xs "> Личный кабинет</p>
+          </div>
+        </nuxt-link>
+        <button  v-else @click="clientStore.registerModal = true" class=" bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500 w-full h-full flex items-center">
+          <div class="flex items-center gap-2 text-gray-600 h-full w-full">
+            <span class="px-2 mdi mdi-account border-r border-gray-600/50"></span>
+            <p class="text-xs "> Регистрация</p>
+          </div>
+        </button>
+
+      </div>
+      <div class="py-1 bg-gray-100 border border-gray-100/10 dark:border-gray-500/50 rounded-lg transition-all duration-500">
+                  
+        <button @click="clientStore.loginModal = true" v-if="status === 'unauthenticated'" class="w-full h-full">
+          <div class="flex items-center gap-2 text-gray-600">
+            <span class="px-2 mdi mdi-login-variant border-r border-gray-600/50"></span>
+            <p class="text-xs "> Войти</p>
+          </div>
+        </button>
+
+        <button v-else @click="signOut()" class="w-full h-full">
+          <div class="flex items-center gap-2 text-gray-600">
+            <span class="px-2 mdi mdi-login-variant border-r border-gray-600/50"></span>
+            <p class="text-xs "> Выйти</p>
+          </div>
+        </button>
+      </div>
+    </div>
 
 
 
-    <div id="header" class="py-2">
+    <div id="header" class="">
       <div class="grid grid-cols-1 md:flex gap-4 justify-between relative">
         <div class="w-full grid grid-cols-1 content-between order-2 md:order-1">
 
