@@ -34,8 +34,10 @@
 
     <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8 min-h-[40rem]">
 
-      <div class="bg-gray-800 px-4 py-4 rounded-md border border-white/20">
-        <p class="text-3xl">ИНТЕРНЕТ-МАГАЗИН СВАРОЧНОЙ ТЕХНИКИ И ПРОМЫШЛЕННЫХ НУЖД</p>
+      <div class="bg-white dark:bg-gray-800 px-4 py-4 rounded-md border border-white/20">
+        <div class="flex border-b border-white/20">
+          <p class="text-2xl">ИНТЕРНЕТ-МАГАЗИН СВАРОЧНОЙ ТЕХНИКИ И ПРОМЫШЛЕННЫХ НУЖД</p>
+        </div>
         <div class="py-4">
           <p class="max-w-2xl">
             На сайте GLSVAR.RU вы найдете сварочную технику, сварочные принадлежности, сварочные присадочные материалы, промышленные принадлежности, технику безопасности и многое другое. Наш сварочный цех предлагает Вам большой выбор сварочных аппаратов и аксессуаров всех видов, необходимых для сварки и в мастерской.          </p>
@@ -44,7 +46,7 @@
       </div>
 
 
-      <div class="grid grid-cols-2 gap-4 hidden">
+      <div class=" gap-4 hidden">
         <div class="">
           <Swiper
             class="rounded-md relative"
@@ -99,74 +101,74 @@
       <div class="my-4">
         <div class="relative">
 
-          <!-- <div class=" bg-gray-800 px-4 py-4 rounded-md border border-white/20">
-            <p class="text-3xl">МЫ ПРЕДЛАГАЕМ РЕШЕНИЯ В СЛЕДУЮЩИХ ОБЛАСТЬЯХ</p>
-          </div> -->
-
           <div class="grid grid-cols-3 gap-4">
-            <div class="flex items-center justify-center bg-gray-800 px-4 py-1 rounded-md border border-white/20">
+            <div class="flex items-center justify-center bg-white dark:bg-gray-800 px-4 py-1 rounded-md border border-white/20">
               <p class="text-center uppercase">Мы предлагаем решения в следующих областях</p>
             </div>
-            <div class="flex items-center gap-2 bg-gray-800 px-1 py-1 rounded-md border border-white/20">
+            <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-1 py-1 rounded-md border border-white/20">
               <img src="/bnr/arbeitsschutz-schweissen.webp" class=" rounded-full w-24 border border-white/20"/>
               <div class="">
                 <p class="">Средства защиты головы, рук и лица</p>
               </div>
             </div>
-            <div class="flex items-center gap-2 bg-gray-800 px-1 py-1 rounded-md border border-white/20">
+            <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-1 py-1 rounded-md border border-white/20">
               <img src="/bnr/autogentechnik.webp" class=" rounded-full w-24 border border-white/20"/>
               <div class="">
                 <p class="">Принадлежности для газокислородной сварки</p>
               </div>
             </div>
-            <div class="flex items-center gap-2 bg-gray-800 px-1 py-1 rounded-md border border-white/20">
+            <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-1 py-1 rounded-md border border-white/20">
               <img src="/bnr/Kreise-SH-hell4.webp" class=" rounded-full w-24 border border-white/20"/>
               <div class="">
                 <p class="">Современные сварочные аппараты на дуговой сварке</p>
               </div>
             </div>
-            <div class="flex items-center gap-2 bg-gray-800 px-1 py-1 rounded-md border border-white/20">
+            <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-1 py-1 rounded-md border border-white/20">
               <img src="/bnr/schweissbrenner.webp" class=" rounded-full w-24 border border-white/20"/>
               <div class="">
                 <p class="">Сварочные горелки и их изнашиваемые детали</p>
               </div>
             </div>
-            <div class="flex items-center gap-2 bg-gray-800 px-1 py-1 rounded-md border border-white/20">
+            <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-1 py-1 rounded-md border border-white/20">
               <img src="/bnr/schweisszusatzwerkstoffe.webp" class=" rounded-full w-24 border border-white/20"/>
               <div class="">
                 <p class="">Сварочные электроды, проволока и присадочные материалы</p>
               </div>
             </div>
-            <div class="flex items-center gap-2 bg-gray-800 px-1 py-1 rounded-md border border-white/20">
+            <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-1 py-1 rounded-md border border-white/20">
               <img src="/bnr/oberflaechenbearbeitung.webp" class=" rounded-full w-24 border border-white/20"/>
               <div class="">
                 <p class="">Инструменты и химия для очистки поверхности</p>
               </div>
             </div>          
-            <div class="flex items-center gap-2 bg-gray-800 px-1 py-1 rounded-md border border-white/20">
+            <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-1 py-1 rounded-md border border-white/20">
               <img src="/bnr/schweisszubehoer.webp" class=" rounded-full w-24 border border-white/20"/>
               <div class="">
                 <p class="">Другие принадлежности для ваших сварочных работ</p>
               </div>
             </div>
-            <div class="flex items-center justify-center bg-gray-800 px-4 py-1 rounded-md border border-white/20">
+            <div class="flex items-center justify-center bg-white dark:bg-gray-800 px-4 py-1 rounded-md border border-white/20">
               <p class="text-center uppercase">Перейти в каталог</p>
             </div>
             
           </div>
-
-          <!-- <div class="top-0 absolute bg-gray-800/80 rounded-md border border-white/20 w-full h-full">
-            <div class="flex items-center justify-center w-full h-full">
-              <p class="text-3xl">МЫ ПРЕДЛАГАЕМ РЕШЕНИЯ В СЛЕДУЮЩИХ ОБЛАСТЬЯХ</p>
-            </div>
-          </div> -->
 
         </div>
       </div>
 
 
 
-      <div class="bg-gray-800 rounded-md border border-white/20">
+      <div class="">
+
+        <div class="" v-for="(shop, pk) in shops" :key="shop.id">
+          <p class="text-sm">{{ pk+1 }}. {{ shop.adress }}</p>
+        </div>
+        
+      </div>
+
+
+
+      <div class="bg-white dark:bg-gray-800 rounded-md border border-white/20">
         <div class="">
           <img src="/bnr/banner_image-sh.webp" class=" rounded-t-md" />
         </div>
@@ -201,145 +203,4 @@
 
 
   </div>
-  <!-- <div class="">
-    <AppHeader />
-    <AppNavbar />
-
-    <div class="mx-auto px-4 max-w-6xl lg:px-8">
-      <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
-        <div class="px-4 py-4">
-
-          <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4">
-
-            <div class="max-w-[500px]">
-              <div class="">
-                <Swiper
-                  class="rounded-md relative"
-                  style=""
-                  :modules="[SwiperAutoplay, SwiperEffectCreative]"
-                  :slides-per-view="1"
-                  :loop="true"
-                  :effect="'creative'"
-                  :autoplay="{
-                    delay: 10000,
-                    disableOnInteraction: true
-                  }"
-                  :creative-effect="{
-                    prev: {
-                      shadow: false,
-                      translate: ['-20%', 0, -1]
-                    },
-                    next: {
-                      translate: ['100%', 0, 0]
-                    }
-                  }"
-                >
-                  <SwiperSlide v-for="slide in images" :key="slide.id" class="">
-
-                      <img
-                        style=""
-                        :src="slide.url"
-                        class="rounded-md border dark:border-gray-700 shadow-md "
-                      />             
-
-                  </SwiperSlide>
-                  <div class="absolute bottom-0 right-0 z-50 p-3">
-                    <SwiperControls />
-                  </div>
-                </Swiper>
-              </div>
-            </div>
-
-            <div class="">
-              <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Магазины</p>
-              <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
-                У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок!<br /> Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="my-10 lg:my-20"></div>
-
-        <div class="flex flex-col lg:flex-row gap-8 items-center justify-between my-8 mx-4">
-          <div class="w-full lg:w-5/12">
-            <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Сертификаты</p>
-            <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
-              Мы являемся официальным дистрибьютором ведущих брендов сварочного оборудования, и всегда готовы предложить вам широкий выбор продуктов, которые обеспечат вашу эффективную и качественную работу. Наши специалисты всегда готовы проконсультировать вас и помочь выбрать именно то, что вам нужно.
-            </p>
-          </div>
-          <div class="flex items-center gap-4">
-            <div class="">
-              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="/esab-cert.jpg" class="rounded-md cursor-zoom-in w-48" fluid/>
-            </div>
-            <div class="">
-              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="/cert-redius.jpg" class="rounded-md cursor-zoom-in w-48" fluid />
-            </div>
-            <div class="">
-              <img @click="cert = 'svarog.jpg'" alt="cert-3" src="/svarog.jpg" class="rounded-md cursor-zoom-in w-48" fluid />
-            </div>                
-          </div>
-        </div>
-
-        <div class="my-10 lg:my-20"></div>
-
-        <div class="flex justify-center items-center gap-8 md:gap-16 text-center text-sm lg:text-base px-8">
-          <div class="">
-            <div class="flex justify-center items-center">
-              <img src="/icons/thumb-up.png" class="my-4 h-10 lg:h-20" />
-            </div>
-            <p>Широкий выбор оборудования</p>
-          </div>
-          <div class="">
-            <div class="flex justify-center items-center">
-              <img src="/icons/businessman.png" class="my-4 h-10 lg:h-20" />
-            </div>
-            <p>Профессиональная консультация специалистов</p>
-          </div>
-          <div class="">
-            <div class="flex justify-center items-center">
-              <img src="/icons/high-quality.png" class="my-4 h-10 lg:h-20" />
-            </div>
-            <p>Гарантия качества продукции</p>
-          </div>
-        </div>
-
-
-        <div class="my-10 lg:my-20"></div>
-
-        <div class="flex items-center justify-center">
-          <div class="text-center text-sm md:text-base">
-            <p class="text-gray-900 dark:text-gray-100">Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас!</p>
-            <p class="text-gray-900 dark:text-gray-100">Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!</p>            
-          </div>
-        </div>
-
-        <div class="flex items-center justify-center my-8">
-          <nuxt-link to="/">
-            <img src="/images/blue-svar.png" alt="glsvar-logo" class=" h-14" />
-          </nuxt-link>
-        </div>
-      </div>
-
-
-
-      <transition name="fade">
-        <div v-if="cert" class="fixed inset-0 overflow-y-hidden overscroll-y-none z-50 my-10">
-          <div class="flex min-h-full justify-center text-center items-center">
-            <div class="relative rounded-md px-10">
-              <div class="overflow-y-auto h-screen">
-                <div class="flex min-h-full justify-center text-center items-center">
-                  <img @click="cert = null" :src="cert" class="rounded-md cursor-zoom-out" fluid/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-
-
-    </div>
-
-    <ShopMaps />
-  </div> -->
 </template>
