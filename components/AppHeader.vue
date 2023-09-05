@@ -268,7 +268,7 @@
 
             <div class="">
               <div class="group">
-                <div class="cursor-pointer h-full text-gray-100 bg-blue-600 hover:bg-blue-600 rounded-md border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                <div class="cursor-pointer h-full text-gray-100 bg-blue-500 hover:bg-blue-600 rounded-md border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                   <div class="bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-md py-3">
                     <div class="cursor-pointer">
                       <div class="mdi mdi-24px mdi- menu flex items-center justify-center">
