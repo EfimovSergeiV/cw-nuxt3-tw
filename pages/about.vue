@@ -32,21 +32,11 @@
     <AppHeader />
     <AppNavbar />
 
-    <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8 min-h-[40rem]">
-
-      <div class="bg-white dark:bg-gray-800 px-4 py-4 rounded-md border border-white/20">
-        <div class="flex border-b border-white/20">
-          <p class="text-2xl">ИНТЕРНЕТ-МАГАЗИН СВАРОЧНОЙ ТЕХНИКИ И ПРОМЫШЛЕННЫХ НУЖД</p>
-        </div>
-        <div class="py-4">
-          <p class="max-w-2xl">
-            На сайте GLSVAR.RU вы найдете сварочную технику, сварочные принадлежности, сварочные присадочные материалы, промышленные принадлежности, технику безопасности и многое другое. Наш сварочный цех предлагает Вам большой выбор сварочных аппаратов и аксессуаров всех видов, необходимых для сварки и в мастерской.          </p>
-        </div>
-
-      </div>
+    <div class="container mx-auto px-4 max-w-6xl lg:px-8 min-h-[40rem]">
 
 
-      <div class=" gap-4 hidden">
+
+      <!-- <div class=" gap-4 hidden">
         <div class="">
           <Swiper
             class="rounded-md relative"
@@ -90,15 +80,135 @@
           </div>
         </div>
 
+      </div> -->
+
+      <!-- <div class="py-2">
+        <div class="bg-white dark:bg-gray-800 px-4 py-4 rounded-md border border-white/20">
+          <div class="flex border-b border-white/20">
+            <p class="text-2xl">ИНТЕРНЕТ-МАГАЗИН СВАРОЧНОЙ ТЕХНИКИ И ПРОМЫШЛЕННЫХ НУЖД</p>
+          </div>
+          <div class="py-4">
+            <p class="max-w-2xl">
+              На сайте GLSVAR.RU вы найдете сварочную технику, сварочные принадлежности, сварочные присадочные материалы, промышленные принадлежности, технику безопасности и многое другое. Наш сварочный цех предлагает Вам большой выбор сварочных аппаратов и аксессуаров всех видов, необходимых для сварки и в мастерской.          </p>
+          </div>
+        </div>
+      </div> -->
+
+
+      <div class="bg-white dark:bg-gray-800 rounded-md border border-white/20 mt-2">
+        <div class="">
+          <img src="/bnr/banner_image-sh.webp" class=" rounded-t-md" />
+        </div>
+
+        <div class="px-4 py-4">
+          <div class="border-b border-white/10">
+            <blockquote class="text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
+              
+              <span class="px-4">ЕСЛИ НУЖНО</span>
+              <span class="before:block before:absolute before:-inset-2 before:-skew-y-3 before:bg-blue-600 relative inline-block">
+                <span class="relative text-white"> СВАРОЧНОЕ ОБОРУДОВАНИЕ </span>
+              </span>
+              <span class="px-4">, ЗАКАЗЫВАЙТЕ ОНЛАЙН </span>
+              <p class="mt-1">НА GLSVAR.RU!</p>
+              
+            </blockquote>
+          </div>
+          
+          <div class="py-4">
+            <p class="">
+              Здесь вы найдете бренды известных производителей, таких как Lorch, EWM, ESAB, Fronius, Binzel, 3 M, Optrel, Speedglas, Rehm, Böhler, Voestalpine, Kemper и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
+            </p>
+          </div>
+
+          <div class="py-2">        
+            <div class="grid grid-cols-4 gap-2">
+
+              <div v-for="shop in shops" :key="shop.id">
+                <div class="bg-gray-800 border border-white/20 rounded-md px-2 py-2 h-full">
+                  <div class="border-b border-white/20">
+                    <p class="text-xs">{{ shop.adress }}</p>
+                    <div class="py-1">
+                      <p class="text-xs">{{ shop.phone }}</p>
+                    </div>
+                    
+                    <p class="text-xs">{{ shop.wday }}</p>
+                    <p class="text-xs">{{ shop.wend }}</p>
+                  </div>
+                  <div class="">
+                    <p class="text-xs text-gray-500">Показать на карте</p>
+                  </div>              
+                </div>
+                
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
       </div>
 
 
+      <!-- <p class="text-xs">{{ shops[1].google_maps }}</p> -->
+
+
+      <!-- <div class="py-2">        
+        <div class="grid grid-cols-4 gap-2">
+
+          <div v-for="shop in shops" :key="shop.id">
+            <div class="bg-gray-800 border border-white/20 rounded-md px-2 py-2 h-full">
+              <div class="border-b border-white/20">
+                <p class="text-xs">{{ shop.adress }}</p>
+                <div class="py-1">
+                  <p class="text-xs">{{ shop.phone }}</p>
+                </div>
+                
+                <p class="text-xs">{{ shop.wday }}</p>
+                <p class="text-xs">{{ shop.wend }}</p>
+              </div>
+              <div class="">
+                <p class="text-xs text-gray-500">Показать на карте</p>
+              </div>              
+            </div>
+            
+          </div>
+
+        </div>
+      </div> -->
+
+
+      <!-- <div class="py-2">
+        <div class="">
+
+          <div class="grid grid-cols-2 gap-4">
+
+            <div class="bg-gray-800 border border-white/20 rounded-md px-4 py-2">
+              <div class="grid grid-cols-3 gap-2">
+                <div class="" v-for="shop in shops" :key="shop.id">
+                  <p class="text-xs">{{ shop.adress }}</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="">
+              <div class="">
+                <div class="relative">
+                  <iframe :src="mapURLs[shopStore.city]" width="100%" height="260" frameborder="0" loading="lazy" class="rounded-md"></iframe>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div> -->
 
 
 
 
-
-      <div class="my-4">
+      <div class="mt-4">
         <div class="relative">
 
           <div class="grid grid-cols-3 gap-4">
@@ -158,24 +268,24 @@
 
 
 
-      <div class="">
 
-        <div class="" v-for="(shop, pk) in shops" :key="shop.id">
-          <p class="text-sm">{{ pk+1 }}. {{ shop.adress }}</p>
-        </div>
-        
-      </div>
-
-
-
-      <div class="bg-white dark:bg-gray-800 rounded-md border border-white/20">
+      <!-- <div class="bg-white dark:bg-gray-800 rounded-md border border-white/20 mt-2">
         <div class="">
           <img src="/bnr/banner_image-sh.webp" class=" rounded-t-md" />
         </div>
 
         <div class="px-4 py-4">
           <div class="border-b border-white/10">
-            <p class="text-2xl py-4">ЕСЛИ НУЖНО СВАРОЧНОЕ ОБОРУДОВАНИЕ, ЗАКАЗЫВАЙТЕ ОНЛАЙН НА GLSVAR.RU!</p>
+            <blockquote class="text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
+              
+              <span class="px-4">ЕСЛИ НУЖНО</span>
+              <span class="before:block before:absolute before:-inset-2 before:-skew-y-3 before:bg-blue-600 relative inline-block">
+                <span class="relative text-white"> СВАРОЧНОЕ ОБОРУДОВАНИЕ </span>
+              </span>
+              <span class="px-4">, ЗАКАЗЫВАЙТЕ ОНЛАЙН </span>
+              <p class="mt-1">НА GLSVAR.RU!</p>
+              
+            </blockquote>
           </div>
           
           <div class="py-4">
@@ -185,7 +295,7 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
 
 
       <div class="my-4">
