@@ -113,14 +113,59 @@
               
             </blockquote>
           </div>
+
+
+          <div class="py-6 grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 content-between">
+              <div class="">
+                <p class="text-2xl">Наши магазины</p>
+
+                <div class="py-4 grid grid-cols-3 gap-4">
+                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
+                    <p class="text-xs text-center">В Москве</p>
+                  </div>
+                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
+                    <p class="text-xs text-center">В Смоленске</p>
+                  </div>
+                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
+                    <p class="text-xs text-center">В Петрозаводске</p>
+                  </div>
+                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
+                    <p class="text-xs text-center">В Санкт-Петербурге</p>
+                  </div>
+                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
+                    <p class="text-xs text-center">В Пскове</p>
+                  </div>
+                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
+                    <p class="text-xs text-center">В Великих луках</p>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div>
+                <p class="">График работы</p>
+              </div>
+
+            </div>
+            <div class="">
+              <iframe :src="mapURLs[shopStore.city]" width="100%" height="260" frameborder="0" loading="lazy" class="rounded-md shadow-md shadow-black/50"></iframe>
+            </div>
+
+          </div>
+
           
           <div class="py-4">
             <p class="">
-              Здесь вы найдете бренды известных производителей, таких как Lorch, EWM, ESAB, Fronius, Binzel, 3 M, Optrel, Speedglas, Rehm, Böhler, Voestalpine, Kemper и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
+              Здесь вы найдете бренды известных производителей, таких как  EWM, ESAB, Fubag, Aurora, Grovers, Cebora и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
             </p>
           </div>
 
-          <div class="py-2">        
+          <div class="py-4">
+            <p class="text-2xl">Сертификаты</p>
+          </div>
+
+          <!-- <div class="py-2">        
             <div class="grid grid-cols-4 gap-2">
 
               <div v-for="shop in shops" :key="shop.id">
@@ -142,7 +187,7 @@
               </div>
 
             </div>
-          </div>
+          </div> -->
 
 
         </div>
