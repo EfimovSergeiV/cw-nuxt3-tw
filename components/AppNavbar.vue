@@ -95,28 +95,28 @@
 
 
         <div class="grid grid-cols-2 md:flex items-center gap-2 ">
-          <nuxt-link :to="{ name: 'index' }" class="bg-blue-600 hover:bg-blue-700 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg transition-all duration-1000">
+          <nuxt-link :to="{ name: 'index' }" class="bg-blue-500 hover:bg-blue-600 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg transition-all duration-700">
             <div class="flex items-center gap-2 text-gray-100 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg h-full w-full min-h-[2rem]">
               <span class="px-2 mdi mdi-star border-r border-gray-100/50"></span>
               <p class="text-sm"> Избранное</p>
             </div>
           </nuxt-link>
 
-          <nuxt-link :to="{ name: 'compare' }" class="bg-blue-600 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg">
+          <nuxt-link :to="{ name: 'compare' }" class="bg-blue-500 hover:bg-blue-600 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg transition-all duration-700">
             <div class="flex items-center gap-2 text-gray-100 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg h-full w-full min-h-[2rem]">
               <span class="px-2 mdi mdi-align-horizontal-right border-r border-gray-100/50"></span>
               <p class="text-sm "> Сравнение</p>
             </div>
           </nuxt-link>
 
-          <nuxt-link :to="{ name: 'cart' }" class="bg-blue-600 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg">
+          <nuxt-link :to="{ name: 'cart' }" class="bg-blue-500 hover:bg-blue-600 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg transition-all duration-700">
             <div class="flex items-center gap-2 text-gray-100 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg h-full w-full min-h-[2rem]">
               <span class="px-2 mdi mdi mdi-cart border-r border-gray-100/50"></span>
               <p class="text-sm "> Корзина</p>
             </div>
           </nuxt-link>
 
-          <nuxt-link :to="{ name: 'about' }" class="bg-blue-600 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg">
+          <nuxt-link :to="{ name: 'about' }" class="bg-blue-500 hover:bg-blue-600 flex items-center h-full w-full border dark:border-gray-100/10 rounded-lg transition-all duration-700">
             <div class="flex items-center gap-2 text-gray-100 bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg h-full w-full min-h-[2rem]">
               <span class="px-2 mdi mdi-store-marker border-r border-gray-100/50"></span>
               <p class="text-sm "> Магазины</p>

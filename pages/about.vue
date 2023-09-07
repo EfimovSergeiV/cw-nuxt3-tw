@@ -115,36 +115,39 @@
           </div>
 
 
-          <div class="py-6 grid grid-cols-2 gap-4">
-            <div class="grid grid-cols-1 content-between">
-              <div class="">
-                <p class="text-2xl">Наши магазины</p>
+          <div class="py-2">
+            <p class="text-2xl">Наши магазины</p>
+          </div>
 
-                <div class="py-4 grid grid-cols-3 gap-4">
-                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
-                    <p class="text-xs text-center">В Москве</p>
-                  </div>
-                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
-                    <p class="text-xs text-center">В Смоленске</p>
-                  </div>
-                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
-                    <p class="text-xs text-center">В Петрозаводске</p>
-                  </div>
-                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
-                    <p class="text-xs text-center">В Санкт-Петербурге</p>
-                  </div>
-                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
-                    <p class="text-xs text-center">В Пскове</p>
-                  </div>
-                  <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
-                    <p class="text-xs text-center">В Великих луках</p>
-                  </div>
-                  
-                </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div v-for="shop in shops" :key="shop.id" class="">
+              <div class=" h-10">
+                <p class="text-sm">{{ shop.adress }}</p>
+              </div>
+              
+              
+              <div class="py-1">
+                <p class="text-base">{{ shop.phone }}</p>
+              </div>
+              
+              <div class="py-2">
+                <p class="text-xs">{{ shop.wday }}</p>
+                <p class="text-xs">{{ shop.wend }}</p>                
               </div>
 
-              <div>
-                <p class="">График работы</p>
+              <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
+                <p class="text-xs text-center">Показать на карте</p>
+              </div>
+            </div>            
+          </div>
+
+
+
+          <div class="py-6 grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 content-between">
+
+              <div class="">
+                <p class="">fhghdghj</p>  
               </div>
 
             </div>
@@ -154,40 +157,39 @@
 
           </div>
 
+
           
           <div class="py-4">
-            <p class="">
+            <p class="text-sm">
               Здесь вы найдете бренды известных производителей, таких как  EWM, ESAB, Fubag, Aurora, Grovers, Cebora и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
             </p>
           </div>
 
-          <div class="py-4">
-            <p class="text-2xl">Сертификаты</p>
+          <div class="grid grid-cols-2 gap-4 py-8">
+            <div class="flex items-center py-4">
+              <div class="">
+                <p class="text-2xl text-center">Сертификаты</p>
+                <div class="">
+                  <p class="text-sm text-center">
+                    Мы являемся официальным дистрибьютором ведущих брендов сварочного оборудования, и всегда готовы предложить вам широкий выбор продуктов, которые обеспечат вашу эффективную и качественную работу. Наши специалисты всегда готовы проконсультировать вас и помочь выбрать именно то, что вам нужно.
+                  </p>
+                </div>                
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="">
+                <img alt="cert-1" src="esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
+              </div>
+              <div class="">
+                <img alt="cert-2" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              </div>
+              <div class="">
+                <img alt="cert-3" src="svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              </div>                
+            </div>            
           </div>
 
-          <!-- <div class="py-2">        
-            <div class="grid grid-cols-4 gap-2">
-
-              <div v-for="shop in shops" :key="shop.id">
-                <div class="bg-gray-800 border border-white/20 rounded-md px-2 py-2 h-full">
-                  <div class="border-b border-white/20">
-                    <p class="text-xs">{{ shop.adress }}</p>
-                    <div class="py-1">
-                      <p class="text-xs">{{ shop.phone }}</p>
-                    </div>
-                    
-                    <p class="text-xs">{{ shop.wday }}</p>
-                    <p class="text-xs">{{ shop.wend }}</p>
-                  </div>
-                  <div class="">
-                    <p class="text-xs text-gray-500">Показать на карте</p>
-                  </div>              
-                </div>
-                
-              </div>
-
-            </div>
-          </div> -->
 
 
         </div>
