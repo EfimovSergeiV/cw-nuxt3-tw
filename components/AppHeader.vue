@@ -182,7 +182,7 @@
 
     <div id="header" class="">
       <div class="grid grid-cols-1 md:flex gap-4 justify-between relative">
-        <div class="w-full grid grid-cols-1 content-between order-2 md:order-1">
+        <div class="w-full max-w-[24rem] grid grid-cols-1 content-between order-2 md:order-1">
 
           <div class="hidden lg:block">
             <div class="flex items-center justify-center -mt-5 py-4 md:py-0">

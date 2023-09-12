@@ -40,7 +40,7 @@
         </div>
 
         <div class="px-4 py-4">
-          <div class="border-b border-white/10">
+          <div class="">
             <blockquote class="text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
               
               <span class="px-4">ЕСЛИ НУЖНО</span>
@@ -51,6 +51,7 @@
               <p class="mt-1">НА GLSVAR.RU!</p>
               
             </blockquote>
+
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
               <div class="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 px-1 py-1 rounded-md border border-white/20 shadow-md shadow-black/50">
@@ -98,60 +99,11 @@
             </div>
 
 
-          </div>
-
-
-          <div class="py-2">
-            <p class="text-2xl">Наши магазины</p>
-          </div>
-
-          <div class="grid grid-cols-3 gap-4">
-            <div v-for="shop in shops" :key="shop.id" class="">
-              <div class=" h-10">
-                <p class="text-sm">{{ shop.adress }}</p>
-              </div>
-              
-              
-              <div class="py-1">
-                <p class="text-base">{{ shop.phone }}</p>
-              </div>
-              
-              <div class="py-2">
-                <p class="text-xs">{{ shop.wday }}</p>
-                <p class="text-xs">{{ shop.wend }}</p>                
-              </div>
-
-              <div class="bg-gray-700 px-4 py-2 border border-white/20 rounded-md shadow-md shadow-black/50">
-                <p class="text-xs text-center">Показать на карте</p>
-              </div>
-            </div>            
-          </div>
-
-
-
-          <div class="py-6 grid grid-cols-2 gap-4">
-            <div class="flex items-center">
-
-              <p class="">
-                ГЛАВНЫЙ СВАРЩИК с 2009 года – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
-              </p>  
-
-            </div>
-            <div class="">
-              <iframe :src="mapURLs[shopStore.city]" width="100%" height="260" frameborder="0" loading="lazy" class="rounded-md shadow-md shadow-black/50"></iframe>
-            </div>
 
           </div>
 
 
-          
-          <div class="py-4">
-            <p class="text-sm">
-              Здесь вы найдете бренды известных производителей, таких как  EWM, ESAB, Fubag, Aurora, Grovers, Cebora и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
-            </p>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4 py-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="flex items-center py-4">
               <div class="">
                 <p class="text-2xl text-center">Сертификаты</p>
@@ -175,6 +127,60 @@
               </div>                
             </div>            
           </div>
+
+
+          <div class="py-4">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center">
+
+                <p class="text-sm text-center">
+                  С 2009 года Главный сварщик – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
+                </p>  
+
+              </div>
+              <div class="">
+                <iframe :src="mapURLs[shopStore.city]" width="100%" height="260" frameborder="0" loading="lazy" class="rounded-md shadow-md shadow-black/50"></iframe>
+              </div>
+
+            </div>
+
+
+            <!-- <div class="grid grid-cols-3 gap-4">
+              <div v-for="shop in shops" :key="shop.id" class="bg-gray-700 rounded-md px-2 py-2">
+                <div class="">
+                  <p class="text-sm">{{ shop.adress }}</p>
+                </div>             
+                
+                <div class="py-1">
+                  <p class="text-base">{{ shop.phone }}</p>
+                </div>
+                
+                <div class="">
+                  <p class="text-xs">{{ shop.wday }}</p>
+                  <p class="text-xs">{{ shop.wend }}</p>                
+                </div>
+
+                <div class="py-1">
+                  <p class="text-xs text-center">Показать на карте</p>
+                </div>
+              </div>            
+            </div>             -->
+          </div>
+
+
+
+
+
+
+          
+          <div class="py-4">
+            <p class="text-sm">
+              Здесь вы найдете бренды известных производителей, таких как  EWM, ESAB, Fubag, Aurora, Grovers, Cebora и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
+            </p>
+          </div>
+
+
 
         </div>
       </div>
