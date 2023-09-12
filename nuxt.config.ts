@@ -32,6 +32,12 @@ export default defineNuxtConfig({
     // }
   },
 
+  // nitro: {
+  //   experimental: {
+  //     wasm: true
+  //   }
+  // },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
@@ -42,8 +48,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-swiper',
   ],
-
-
 
   // Auth module
   build: {
