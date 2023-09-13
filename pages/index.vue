@@ -21,7 +21,7 @@
 <template>
 
   <div class="">
-    <AppHeader1 />
+    <AppHeader />
     <AppNavbar />
     <MainSection :latest="latest" :banners="banners" />
     <MainWelder />
