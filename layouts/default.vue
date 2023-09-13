@@ -97,6 +97,16 @@
       </div>
 
 
+      <div id="for-debug" class="fixed top-2 left-2">
+        <div>
+          <p class="text-4xl hidden sm:block">sm</p>
+          <p class="text-4xl hidden md:block">md</p>
+          <p class="text-4xl hidden lg:block">lg</p>
+          <p class="text-4xl hidden xl:block">xl</p>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </template>

@@ -117,13 +117,13 @@
 
             <div class="flex items-center gap-4">
               <div class="">
-                <img alt="cert-1" src="esab-cert.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid/>
+                <img alt="cert-1" src="/esab-cert.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid/>
               </div>
               <div class="">
-                <img alt="cert-2" src="cert-redius.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid />
+                <img alt="cert-2" src="/cert-redius.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid />
               </div>
               <div class="">
-                <img alt="cert-3" src="svarog.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid />
+                <img alt="cert-3" src="/svarog.jpg" class="rounded-md shadow-md shadow-black/50 cursor-zoom-in w-48" fluid />
               </div>                
             </div>            
           </div>
