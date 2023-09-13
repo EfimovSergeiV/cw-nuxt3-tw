@@ -38,29 +38,9 @@
 
 <template>
   <div class="container mx-auto max-w-6xl px-4 lg:px-8 ">
-    
-    <!-- <div class="flex  justify-between py-2">
-      <div class="">
 
-      </div>
-      <div class=" grid grid-cols-1 py-2">
-        <div class="flex justify-end gap-4">
-          <p class=" font-semibold italic text-2xl ">+7 (495) 970 30 43</p>
-          <p class=" font-semibold italic text-2xl ">zakaz@glsvar.ru</p>          
-        </div>
-        <div class="flex justify-end gap-4">
-          <p class=" font-semibold italic ">Telegramm</p>
-          <p class=" font-semibold italic ">Viber</p>          
-          <p class=" font-semibold italic ">Whatsapp</p>          
-        </div>
-
-      </div>
-      
-    </div> -->
-    
 
     <div class="relative mb-1">
-
       <div class="flex gap-4">
         <div class="min-w-[345px]">
 
@@ -105,7 +85,6 @@
                 </div>
 
                 <div class="">
-
                   <nuxt-link :to="{name: 'lk-name', params: { name: data.username}}"  v-if="status === 'authenticated'" class=" bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500 w-full h-full flex items-center">
                     <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 h-f3ll w-full">
                       <span class="px-2 mdi mdi-account border-r border-gray-300"></span>
@@ -118,7 +97,6 @@
                       <p class="text-sm "> Регистрация</p>
                     </div>
                   </button>
-
                 </div>
 
                 <div class="py-1 bg-gray-100 dark:bg-gray-600 shadow-lg shadow-black/30 border border-gray-100/10 dark:border-white/20 rounded-lg transition-all duration-500">
@@ -194,10 +172,6 @@
 
 
         <div class="">
-          <!-- <div class=" flex items-center justify-end gap-4 mb-2">
-            <p class=" font-semibold italic text-xl ">+7 (495) 970 30 43</p>
-            <p class=" font-semibold italic text-xl ">zakaz@glsvar.ru</p>
-          </div> -->
           <div class=" grid grid-cols-1 py-2">
             <div class="flex justify-end gap-4">
               <p class=" font-semibold italic text-2xl ">+7 (495) 970 30 43</p>
@@ -208,20 +182,14 @@
               <p class=" font-semibold italic ">Viber</p>          
               <p class=" font-semibold italic ">Whatsapp</p>          
             </div>
-
           </div>
-
 
           <div class="bg-white dark:bg-gray-800 rounded-md border dark:border-gray-700 w-full">
             <img src="/bnr/grovers.webp" class="rounded-md border-gray-600 dark:border-gray-200 w-full" />
           </div>
         </div>
-
       </div>
-
     </div>
-
-
 
   </div>
 </template>
