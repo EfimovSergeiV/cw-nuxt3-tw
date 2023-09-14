@@ -75,7 +75,10 @@
       productsStore.clearCartProducts()
       // clientStore.saveClientData() /// Реализовать сохранение данных клиента
 
-      await router.push({ name: 'order', hash: `#${ response.value.order }` })
+      clientStore.order = response.value.order
+      // await router.push({ name: 'order', hash: `#${ response.value.order }` })
+
+
     } else {
       errorMsg.value = 'Ошибка: Укажите как с вами связаться и выберите магазин.'
       notificationsStore.pushToast({ id: 1, type: 'error', text: 'Ошибка: Проверте правильно ли заполнены обязательные поля.' })

@@ -45,6 +45,9 @@
       <CartModal v-if="productsStore.cartAlert" />
     </transition>
     <transition name="fade" mode="in-out">
+      <OrderModal v-if="clientStore.order" />
+    </transition>
+    <transition name="fade" mode="in-out">
       <RequestPrice v-if="productsStore.requestPrice" />
     </transition>
     <transition name="fade" mode="in-out">
@@ -65,7 +68,7 @@
     <transition name="fade" mode="in-out">
       <RegisterModal v-if="clientStore.registerModal" />
     </transition>
-    
+
 
     <div class="bg-gradient-to-r from-gray-300 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-700 dark:text-gray-300">
       
@@ -96,7 +99,7 @@
         </div>
       </div>
 
-      
+
       <div class="">
         <div class="fixed z-50 bottom-16 -right-[110px] hover:right-0 focus:right-0 transition-all duration-500">
           <div class="relative">

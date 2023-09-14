@@ -212,6 +212,8 @@ export const useClientStore = defineStore('ClientStore', {
     locationModal: false,
     registerModal: false,
     loginModal: false,
+    order: null,        /// Последний сделаный заказ, если заказан в этой сессии (завязан на модальку заказа)
+    orderHistory: null, /// История заказов клиентов, получать из API
   }),
   actions: {
     saveClientData(data: any) {

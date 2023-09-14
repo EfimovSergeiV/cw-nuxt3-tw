@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-2">
 
       <div class="bg-[url('images/mw-one-bg.jpg')] bg-no-repeat bg-cover rounded-md">
         <div class="bg-white/80 dark:bg-gray-800/80 h-full rounded-md border border-gray-100 dark:border-gray-700 shadow-sm">
