@@ -9,7 +9,7 @@
 
 <template>
   <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
-    <div class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-700 p-2 rounded-md">
+    <div class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-700 rounded-md">
 
 
       <p v-if="pending">Загрузка данных...</p>
@@ -26,7 +26,7 @@
         <div class="">
           <div class="">
             
-            <div class="px-2 py-3">
+            <div class="px-1 py-2">
               
               <div class="columns-1 xl:columns-3 lg:columns-4">
                 <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
@@ -35,7 +35,7 @@
 
                     <div class="py-2 ">
                       
-                      <div class="bg-gray-100/90 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-500 rounded-md py-2 px-2">
+                      <div class="bg-gray-100/90 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-md py-2 px-2">
                         <div class="py-2">
                           <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
                         </div>
