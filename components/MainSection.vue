@@ -28,13 +28,14 @@
                     </div>
                     
                   </div>
-                  <div class="flex gap-2 px-4">
-                    <img :src="product.preview_image" class="h-16" />
-                    <div class="flex items-center justify-start w-full">
-                      <p v-if="product.only_price === 0" class="text-gray-700 font-bold text-xs">По запросу</p>
-                      <p v-else class="text-gray-600 font-bold text-xl">{{ product.only_price.toLocaleString() }} <span class="text-xs">руб.</span></p>                    
+                  <div class="flex items-center justify-center lg:justify-start">
+                    <div class="flex gap-2 px-2 lg:px-4">
+                      <img :src="product.preview_image" class="h-14 md:h-16" />
+                      <div class="flex items-center justify-start w-full">
+                        <p v-if="product.only_price === 0" class="text-gray-700 font-bold text-xs">По запросу</p>
+                        <p v-else class="text-gray-600 font-bold text-base md:text-xl">{{ product.only_price.toLocaleString() }} <span class="text-xs">руб.</span></p>                    
+                      </div>
                     </div>
-
                   </div>
                               
                   <div class="flex items-center justify-end pb-1 px-4 min-h-[36px]">
