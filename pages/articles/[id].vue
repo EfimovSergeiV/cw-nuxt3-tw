@@ -25,7 +25,7 @@
   <div>
     <AppHeader />
     <AppNavbar />
-    <div class="mx-auto px-4 max-w-6xl lg:px-8">
+    <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
 
       <div class="bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-md py-4 px-4">
         <div class="">

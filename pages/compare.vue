@@ -21,7 +21,7 @@
     <AppHeader />
     <AppNavbar />
 
-    <div class="container mx-auto my-4 px-4 max-w-6xl lg:px-8">
+    <div class="container mx-auto py-2 px-4 max-w-6xl lg:px-8">
 
 
 
@@ -130,10 +130,10 @@
 
           </div>
 
-          <div id="comp-leer" v-else class="">
-            <div class="flex gap-4 items-center justify-center h-full my-20 md:my-40">
+          <div id="comp-leer" v-else class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-600 min-h-[70vh]">
+            <div class="flex gap-4 items-center justify-center h-full">
 
-              <div class="flex items-center gap-8">
+              <div class="flex items-center gap-8 my-8">
                 <div class="grid gap-2 grid-cols-1">
                   <div class="mx-4 text-center">
                     <p class="text-2xl">У вас нет товаров для сравнения</p>

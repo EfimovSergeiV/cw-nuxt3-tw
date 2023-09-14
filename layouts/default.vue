@@ -81,7 +81,7 @@
 
 
       <div class="">
-        <div class="fixed z-50 bottom-60 md:bottom-54 right-20 hover:right-24 transition-all duration-500">
+        <div class="fixed z-40 bottom-60 md:bottom-54 right-20 hover:right-24 transition-all duration-500">
           <div class="relative">
             <div class="absolute z-50">
               <div class="-rotate-90 bg-blue-600 px-4 pb-12 group rounded-md w-44 cursor-pointer" @click="shopStore.showWriteUsModal">
@@ -101,13 +101,13 @@
 
 
       <div class="">
-        <div class="fixed z-50 bottom-16 -right-[110px] hover:right-0 focus:right-0 transition-all duration-500">
+        <div class="fixed z-40 bottom-16 -right-[110px] hover:right-0 focus:right-0 transition-all duration-500">
           <div class="relative">
-            <div class=" z-50">
+            <div class="">
               <div class=" bg-blue-600 group rounded-l-md cursor-pointer transition-all duration-500">
                 <div class="flex items-center justify-center">
                   <div class="grid grid-cols-4 items-center gap-4 py-2 px-2">
-                    <p class="mdi mdi-arrow-left-circle"></p>
+                    <p class="mdi mdi-arrow-left-circle text-gray-200"></p>
                     <a class="" title="WhatsApp" :href="shopStore.shop.whatsapp" target="_blank">
                       <img src="/WhatsApp-logo.webp" class="w-5" />
                     </a>

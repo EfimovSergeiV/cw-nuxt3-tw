@@ -7,8 +7,8 @@
 </script>
 
 <template>
-  <div class="mx-auto px-4 max-w-6xl lg:px-8">
-    <div class="my-4 p-2 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm">
+  <div class="container py-2 mx-auto px-4 max-w-6xl lg:px-8">
+    <div class="p-2 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm">
       <div class="">
         <blockquote class="text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
           

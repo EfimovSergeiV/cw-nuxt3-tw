@@ -38,24 +38,45 @@
     <AppNavbar />
 
 
-    <div class="container mx-auto px-4 max-w-6xl lg:px-8">
+    <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
       
-      <div v-if="orderinfo">
-        <p class="my-2">{{ orderinfo.order_number }}</p>
-        <p class="my-2">{{ orderinfo.status }}</p>
-        <p class="my-2">{{ orderinfo.position_total }}</p>
-        <p class="my-2">{{ orderinfo.delivery_summ }}</p>
-        <p class="my-2">{{ orderinfo.total }}</p>
-        <p class="my-2">{{ orderinfo.client_product }}</p>
+      <div class="bg-white dark:bg-gray-800 rounded-md border dark:border-gray-600 px-4 py-4 min-h-[65vh]">
+        <div v-if="orderinfo">
+          <div class=" py-6">
+            <p class="my-2">Номер заказа: <span class="font-semibold ml-2">{{ orderinfo.order_number }}</span></p>
+            <p class="my-2">Статус: <span class="font-semibold ml-2" v-if="orderinfo.status === 'notprocessed'">В обработке</span><span class=" ml-2" v-else>Обработан</span></p>
+            <p class="my-2">Сумма по позициям: <span class="font-semibold ml-2">{{ orderinfo.position_total }}</span> руб.</p>
+            <p class="my-2" v-if="orderinfo.delivery_summ">Доставка: <span class="font-semibold ml-2">{{ orderinfo.delivery_summ }}</span></p>
+            <p class="my-2">Итог заказа: <span class="font-semibold ml-2">{{ orderinfo.total }}</span> руб.</p>            
+          </div>
 
-        <p class="my-2">{{ route.hash.slice(1,) }}</p>
-        <p class="my-2">{{ pendingorder }}</p>
-        <p class="my-2">{{ errorder }}</p>
+          
+          <div class=" py-2">
+            <p class="text-sm">Позиции заказа:</p>
+            <div class="grid grid-cols-1 gap-2 py-4">
+
+              <div v-for="product in orderinfo.client_product" :key="product.id" class="bg-white dark:bg-gray-700 px-2 py-2 border border-gray-200 dark:border-gray-600 rounded-md flex items-center gap-6">
+                <img :src="product.preview_image" class="h-14 rounded-md" />
+                <p class="text-sm">{{ product.vcode }}</p>
+                <nuxt-link :to="{ name: 'product-id', params: { id: product.product_id } }">{{ product.name }}</nuxt-link>
+                <p>{{ product.price }} x {{ product.quantity }}</p>
+              </div>
+              
+            </div>
+          </div>
+          
+          <!-- <p class="my-2">{{ orderinfo.client_product }} руб.</p>
+
+          <p class="my-2">{{ route.hash.slice(1,) }}</p>
+          <p class="my-2">{{ pendingorder }}</p>
+          <p class="my-2">{{ errorder }}</p> -->
+        </div>
+
+        <div v-else>
+          <p>Заказ не найден</p>
+        </div>        
       </div>
 
-      <div v-else>
-        <p>Заказ не найден</p>
-      </div>
 
     </div>
 

@@ -8,7 +8,7 @@
 
 
 <template>
-  <div class="mx-auto px-4 max-w-6xl lg:px-8">
+  <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
     <div class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-700 p-2 rounded-md">
 
 

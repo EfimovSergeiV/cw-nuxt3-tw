@@ -7,7 +7,7 @@
 
 
 <template>
-  <div class="fixed z-50 w-full h-full bg-gray-500/50 backdrop-blur-sm">
+  <div id="order-modal" class="fixed z-50 w-full h-full bg-gray-500/50 backdrop-blur-sm">
     <div class="flex items-center justify-center h-full">
       <div class="h-full w-full flex items-center justify-center">
         
@@ -28,19 +28,23 @@
 
 
               <div class="flex items-center justify-center px-4 py-8 min-h-[20rem] ">
-                <div class="grid grid-cols-1 gap-4">
+                <div class="grid grid-cols-1 gap-16">
 
-                  <p class=""> Номер вашего заказа {{ clientStore.order }}</p>
+                  <div class="text-center grid grid-cols-1 gap-2 ">
+                    <p class="text-gray-700 dark:text-gray-300 text-xl"> Номер вашего заказа {{ clientStore.order }}</p>
+                    <p class="text-gray-700 dark:text-gray-300"> Мы свяжемся с вами в ближайшее время</p>                    
+                  </div>
+
 
 
 
                   <div class="flex items-center justify-center gap-4 py-2">
-                    <button @click="clientStore.order = null" data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Закрыть окно</button>
+                    <button id="order-success" @click="clientStore.order = null" data-modal-toggle="defaultModal" type="button" class="text-gray-700 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Закрыть окно</button>
 
-                    <nuxt-link :to="{ name: 'order', hash: `#${ clientStore.order }` }" @click="clientStore.order = null" class="text-center">
+                    <nuxt-link id="link-order-data" :to="{ name: 'order', hash: `#${ clientStore.order }` }" @click="clientStore.order = null" class="text-center">
                       <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                         <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-                          <p class="text-white text-base w-52 py-1.5">Страница заказа</p>
+                          <p class="text-white text-base w-52 py-2">Страница заказа</p>
                         </div>
                       </div>
                     </nuxt-link>

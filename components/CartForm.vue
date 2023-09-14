@@ -93,7 +93,7 @@
 
 
 <template>
-  <div class="container mx-auto px-4 max-w-6xl lg:px-8">
+  <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
 
     <div id="cart-set" class="">
 
@@ -153,7 +153,7 @@
 
       </div>
 
-      <div v-else class="flex justify-center my-4 bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-md">
+      <div v-else class="flex justify-center bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-md">
         <div class="py-8 ">
           <div class="flex items-center gap-8">
             <div class="grid gap-2 grid-cols-1">
