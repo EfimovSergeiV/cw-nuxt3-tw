@@ -106,6 +106,11 @@ export const useProductsStore = defineStore('ProductsStore', {
     productInLike: (state) => (id: number) => {
       return state.like.find((item) => item.id === id);
     },
+    cartTotalPrice: (state) => {
+      let result = 0
+      state.cart.forEach((el) => (result += el.only_price * el.quantity))
+      return result
+    },
   },
   actions: {
     /// Добавление или удаление товаров

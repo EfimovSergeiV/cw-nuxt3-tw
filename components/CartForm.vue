@@ -71,13 +71,15 @@
         
       });
 
-      // order.value = await response.value
+
+      console.log(response.value)
+      if ( productsStore.cartTotalPrice > 30000 ) {
+        clientStore.order = response.value.order
+      } else {
+        await router.push({ name: 'order', hash: `#${ response.value.order }` })
+      }
+      
       productsStore.clearCartProducts()
-      // clientStore.saveClientData() /// Реализовать сохранение данных клиента
-
-      clientStore.order = response.value.order
-      // await router.push({ name: 'order', hash: `#${ response.value.order }` })
-
 
     } else {
       errorMsg.value = 'Ошибка: Укажите как с вами связаться и выберите магазин.'
@@ -142,23 +144,12 @@
                 </div>
               </transition-group>
             </div>
-          </div>
+          </div>         
         </div>
 
-
-        <!-- <div class="flex justify-between mt-6 mx-2">
-          <div class="">
-            <div class="flex gap-6">
-              <div class="flex gap-2">
-                <p>Итог:</p>
-                <p class="text-2xl">{{ cartTotalPrice().toLocaleString() }} руб.</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <button @click="cleanCart" class="text-xs">Очистить корзину</button>            
-          </div>
-        </div> -->
+        <div class="py-2 px-2">
+          <p class="">Итог: <span class="font-semibold pl-2">{{ productsStore.cartTotalPrice.toLocaleString() }}</span> <span>руб.</span></p>
+        </div>
 
       </div>
 
