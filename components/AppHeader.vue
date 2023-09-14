@@ -174,13 +174,13 @@
         <div class="">
           <div class=" grid grid-cols-1 gap-2 py-2">
             <div class="flex justify-end gap-4">
-              <p class=" font-semibold text-xl italic">+7 (495) 970 30 43</p>
-              <p class=" font-semibold text-xl italic">zakaz@glsvar.ru</p>          
+              <p class=" font-semibold text-xl">+7 (495) 970 30 43</p>
+              <p class=" font-semibold text-xl">zakaz@glsvar.ru</p>          
             </div>
             <div class="flex justify-end gap-4">
-              <p class="text-sm font-semibold  ">Telegramm</p>
-              <p class="text-sm font-semibold  ">Viber</p>          
-              <p class="text-sm font-semibold  ">Whatsapp</p>          
+              <p class="text-sm font-semibold">Telegramm</p>
+              <p class="text-sm font-semibold">Viber</p>          
+              <p class="text-sm font-semibold">Whatsapp</p>          
             </div>
           </div>
 
