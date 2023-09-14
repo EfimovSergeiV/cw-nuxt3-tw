@@ -96,31 +96,26 @@
         </div>
       </div>
 
+      
       <div class="">
-        <div class="fixed z-50 bottom-16 right-0 transition-all duration-500">
+        <div class="fixed z-50 bottom-16 -right-[110px] hover:right-0 focus:right-0 transition-all duration-500">
           <div class="relative">
             <div class=" z-50">
               <div class=" bg-blue-600 group rounded-l-md cursor-pointer transition-all duration-500">
                 <div class="flex items-center justify-center">
-
-                  <div class="grid grid-cols-3 gap-4 py-2 px-2">
-                    
+                  <div class="grid grid-cols-4 items-center gap-4 py-2 px-2">
+                    <p class="mdi mdi-arrow-left-circle"></p>
                     <a class="" title="WhatsApp" :href="shopStore.shop.whatsapp" target="_blank">
                       <img src="/WhatsApp-logo.webp" class="w-5" />
                     </a>
-
                     <a class="" title="Telegramm" :href="shopStore.shop.telegram" target="_blank">
                       <img src="/telegr-logo.webp" class="w-5" />
                     </a>
-
                     <a class="" title="Viber" :href="shopStore.shop.viber" target="_blank">
                       <img src="/viber-logo.webp" class="w-5" />
                     </a>
-
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
