@@ -78,7 +78,7 @@
 
 
       <div class="">
-        <div class="fixed z-50 bottom-60 md:bottom-48 right-20 hover:right-24 transition-all duration-500">
+        <div class="fixed z-50 bottom-60 md:bottom-54 right-20 hover:right-24 transition-all duration-500">
           <div class="relative">
             <div class="absolute z-50">
               <div class="-rotate-90 bg-blue-600 px-4 pb-12 group rounded-md w-44 cursor-pointer" @click="shopStore.showWriteUsModal">
@@ -96,15 +96,46 @@
         </div>
       </div>
 
+      <div class="">
+        <div class="fixed z-50 bottom-16 right-0 transition-all duration-500">
+          <div class="relative">
+            <div class=" z-50">
+              <div class=" bg-blue-600 group rounded-l-md cursor-pointer transition-all duration-500">
+                <div class="flex items-center justify-center">
 
-      <div id="for-debug" class="fixed top-2 left-2">
+                  <div class="grid grid-cols-3 gap-4 py-2 px-2">
+                    
+                    <a class="" title="WhatsApp" :href="shopStore.shop.whatsapp" target="_blank">
+                      <img src="/WhatsApp-logo.webp" class="w-5" />
+                    </a>
+
+                    <a class="" title="Telegramm" :href="shopStore.shop.telegram" target="_blank">
+                      <img src="/telegr-logo.webp" class="w-5" />
+                    </a>
+
+                    <a class="" title="Viber" :href="shopStore.shop.viber" target="_blank">
+                      <img src="/viber-logo.webp" class="w-5" />
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div id="for-debug" class="fixed top-2 left-2">
         <div>
           <p class="text-4xl hidden sm:block">sm</p>
           <p class="text-4xl hidden md:block">md</p>
           <p class="text-4xl hidden lg:block">lg</p>
           <p class="text-4xl hidden xl:block">xl</p>
         </div>
-      </div>
+      </div> -->
 
 
     </div>

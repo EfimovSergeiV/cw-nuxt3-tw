@@ -48,8 +48,10 @@
 
             <div class="flex items-center justify-center">
               <div class="py-6 w-[345px]">
-                <img src="/images/blue-svar.webp" class="max-h-[4rem]" />
-                <p class="text-2xl font-semibold italic text-end px-4 text-gray-700 dark:text-gray-300"><span class="text-xs ml-4">интернет магазин</span> GLSVAR.RU</p>
+                <nuxt-link :to="{ name: 'index' }">
+                  <img src="/images/blue-svar.webp" class="max-h-[4rem]" />
+                  <p class="text-2xl font-semibold italic text-end px-4 text-gray-700 dark:text-gray-300"><span class="text-xs ml-4">интернет магазин</span> GLSVAR.RU</p>
+                </nuxt-link>
               </div>
             </div>
 
@@ -170,27 +172,26 @@
         </div>
 
 
-        <div class="">
-          
+        <div class="">          
           <div class="flex items-end h-full">
             <div class="grid grid-cols-1">
               <div class="hidden md:block">
                 <div class="grid grid-cols-1 gap-2 py-2">
                   <div class="flex justify-end gap-4">
-                    <p class=" font-semibold text-xl">+7 (495) 970 30 43</p>
-                    <p class=" font-semibold text-xl">zakaz@glsvar.ru</p>          
+                    <!-- <p class=" font-semibold text-xl">+7 (495) 970 30 43</p> -->
+                    <a :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ shopStore.shop.phone }}</a>
+                    <a href="mailto:zakaz@glsvar.ru" class="text-center text-sm md:text-base  text-gray-100 hover:text-white">zakaz@glsvar.ru</a>          
                   </div>
                 </div>
               </div>
-
-              <div class="bg-white dark:bg-gray-800 rounded-md border dark:border-gray-700 w-full">
-                <img src="/bnr/grovers.webp" class="rounded-md border-gray-600 dark:border-gray-200 w-full" />
+              <div class="w-full">
+                <TopSlider />
               </div> 
             </div>
           </div>
         </div>
+
       </div>
     </div>
-
   </div>
 </template>
