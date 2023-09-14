@@ -26,7 +26,7 @@
         <div class="">
           <div class="">
             
-            <div class="px-1 py-2">
+            <div class="px-2 py-2">
               
               <div class="columns-1 xl:columns-3 lg:columns-4">
                 <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
