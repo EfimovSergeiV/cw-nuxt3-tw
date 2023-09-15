@@ -32,7 +32,7 @@
 <template>
   <div class="">
     <div class="container mx-auto py-2 px-4 max-w-6xl lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 bg-white dark:bg-gray-800 border dark:border-gray-600 px-2 py-2 rounded-md">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 bg-white dark:bg-gray-800 border dark:border-gray-700 px-2 py-2 rounded-md">
         
         <div class="w-full">
           <div class="relative w-full group">
@@ -46,11 +46,11 @@
               placeholder="Поиск по каталогу"
               class="bg-gray-50 border border-gray-300 text-gray-700 font-semibold dark:text-gray-700 text-sm 
               uppercase rounded-lg focus:ring-gray-300/0 focus:border-gray-300 block 
-              w-full pl-12 p-2 dark:bg-white dark:border-gray-600 dark:placeholder-gray-500
-              ring-0 dark:focus:ring-gray-600/0 dark:focus:border-gray-600" >
+              w-full pl-12 p-2 dark:bg-white dark:border-gray-700 dark:placeholder-gray-500
+              ring-0 dark:focus:ring-gray-600/0 dark:focus:border-gray-700" >
             
               <div v-if="search.length > 1" class="absolute py-2 z-30 w-full invisible group-hover:visible ease-in-out transition-opacity duration-100 opacity-0 group-hover:opacity-100">
-              <div class="bg-white/90 dark:bg-gray-700/80 border border-gray-100 dark:border-gray-600 backdrop-blur-md rounded-md py-2 px-2 min-h-[80px]">
+              <div class="bg-white/90 dark:bg-gray-700/80 border border-gray-100 dark:border-gray-700 backdrop-blur-md rounded-md py-2 px-2 min-h-[80px]">
                 <div class="px-2 h-96 overflow-y-auto my-2">
                   <div v-if="search.length > 3 && products.length === 0" class="">
                     <p class="">Ничего не найдено</p>

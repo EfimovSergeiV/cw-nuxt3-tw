@@ -66,7 +66,7 @@
           <div id="" class="">
             <div class="flex flex-wrap gap-2 justify-end max-w-[700px]">
               <div v-for="inserted in products.meta.inserted" :key="inserted.id" class="">
-                <div class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-600 transition-all shadow-md">
+                <div class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
                   
                   <div class="flex items-center justify-center py-1 px-4">
                     <nuxt-link :to="{ name: 'prods', query: { ct: inserted.id}}" class="text-[10px] md:text-xs">{{ inserted.name }}</nuxt-link>
@@ -107,9 +107,9 @@
 
    
     <div class="">
-      <div class="mx-auto px-4 max-w-6xl lg:px-8">
+      <div class="container mx-auto px-4 max-w-6xl lg:px-8">
 
-        <div id="products" class="">
+        <div v-if="products.results.length > 0" id="products" class="">
           <div class="grid grid-cols-1 gap-y-4 gap-x-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
             
             <transition-group name="fade">
@@ -119,6 +119,15 @@
             </transition-group>
 
           </div>
+        </div>
+        <div class="" v-else>
+
+          <div class="bg-white dark:bg-gray-800 min-h-[50vh] rounded-md border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center justify-center py-12">
+              <p class=""> Ничего не найдено</p>
+            </div>
+          </div>
+          
         </div>
 
       </div>

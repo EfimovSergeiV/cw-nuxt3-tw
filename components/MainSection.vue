@@ -77,7 +77,7 @@
             <nuxt-link :to="slide.link">
               <img
                 :src="slide.image"
-                class="rounded-md w-full border dark:border-gray-600"
+                class="rounded-md w-full border dark:border-gray-700"
               />             
             </nuxt-link>
           </SwiperSlide>

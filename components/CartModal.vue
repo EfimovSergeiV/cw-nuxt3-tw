@@ -31,7 +31,7 @@
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="">
 
-              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-700">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
                   Товар добавлен в корзину
                 </h3>
@@ -47,7 +47,7 @@
                 <div class="overflow-x-auto w-full">
                   <div class="">
 
-                    <div class="grid gap-2 px-2 py-2 border-b border-gray-300 dark:border-gray-600">
+                    <div class="grid gap-2 px-2 py-2 border-b border-gray-300 dark:border-gray-700">
                       <div class="flex text-gray-600 dark:text-gray-100">
                         <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
                         <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
@@ -60,7 +60,7 @@
 
                     <div class="grid gap-2 text-gray-700 dark:text-gray-300">
                       <transition-group tag="div" name="left-emergence">
-                        <div v-for="product in productsStore.cart" :key="product.id" class="my-4 border-t border-gray-300 dark:border-gray-600">
+                        <div v-for="product in productsStore.cart" :key="product.id" class="my-4 border-t border-gray-300 dark:border-gray-700">
                           <div class="flex items-center gap-2">
                             <div class="flex justify-center items-center w-24 bg-white rounded-md">
                               <img :src="product.preview_image" :alt="product.name" width="235px" height="177px" class="rounded-md w-20 py-2" />
@@ -90,10 +90,10 @@
               </div>
 
 
-              <div class="grid grid-cols-1 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+              <div class="grid grid-cols-1 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-700">
                 <div class="">
                   <div class="flex items-center mb-4">
-                    <input id="default-checkbox" type="checkbox" v-model="productsStore.cartAlertBlock" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <input id="default-checkbox" type="checkbox" v-model="productsStore.cartAlertBlock" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-700">
                     <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer">Не показывать больше</label>
                   </div>
                 </div>

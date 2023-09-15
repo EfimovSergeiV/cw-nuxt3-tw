@@ -48,7 +48,7 @@
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="">
 
-              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-700">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
                   Запросить стоимость товара
                 </h3>
@@ -94,7 +94,7 @@
                   <div class="text-gray-800 dark:text-gray-200">
                     <p class="text-xs my-1">Характеристики:</p>
                     <div class="columns-1 lg:columns-2 gap-4">
-                      <div v-for="param in productsStore.requestPrice.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-600 dark:hover:border-gray-500">
+                      <div v-for="param in productsStore.requestPrice.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-500">
                         <div class="flex justify-between">
                           <div class=""><small>{{ param.name }} :</small></div>
                           <div class="text-right"><small>{{ param.value }}</small></div>                
@@ -108,16 +108,16 @@
               </div>
 
 
-              <div class="grid grid-cols-1 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+              <div class="grid grid-cols-1 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-700">
                 
                 <div class="grid grid-cols-2 gap-4">
                   <div class="">
                     <p class="text-xs text-gray-700 dark:text-gray-300 my-1">Ваш город</p>
-                    <input v-model="clientStore.client.city" type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-600 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ваш номер телефона или email">
+                    <input v-model="clientStore.client.city" type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-700 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ваш номер телефона или email">
                   </div>
                   <div class="">
                     <p class="text-xs text-gray-700 dark:text-gray-300 my-1">Как с вами связаться?</p>
-                    <input v-model="clientStore.client.contact" type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-600 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ваш номер телефона или email">
+                    <input v-model="clientStore.client.contact" type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-700 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ваш номер телефона или email">
                   </div>
                 </div>
 

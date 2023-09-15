@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="bg-white dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-700 hover:dark:border-gray-600 transition-all rounded-md px-2">
+  <div class="bg-white dark:bg-gray-800 border border-gray-200 hover:border-gray-300 dark:border-gray-700 hover:dark:border-gray-700 transition-all rounded-md px-2">
     <div class="py-2">
 
       <nuxt-link :to="{ name: 'product-id', params: { id: props.product.id } }">

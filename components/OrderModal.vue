@@ -16,7 +16,7 @@
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="">
 
-              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-700">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
                   Ваш заказ успешно принят
                 </h3>

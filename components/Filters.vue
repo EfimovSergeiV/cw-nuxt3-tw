@@ -85,7 +85,7 @@
                     class="w-4 h-4 
                       rounded text-gray-700 focus:ring-0 
                       focus:ring-gray-300 ring-offset-gray-300 bg-gray-700 border-gray-300
-                      dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600
+                      dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-700
                     " >
                   <label :for="brand.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ brand.brand }}</label>
                 
@@ -117,7 +117,7 @@
                       class="w-4 h-4 
                         rounded text-gray-700 focus:ring-0 
                         focus:ring-gray-300 ring-offset-gray-300 bg-gray-700 border-gray-300
-                        dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                        dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-700"
                         >
                     <label :for="ops.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ ops.ops }}</label>
 

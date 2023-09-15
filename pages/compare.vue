@@ -75,7 +75,7 @@
 
           </div>
 
-          <div id="comp-leer" v-else class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-600 min-h-[70vh]">
+          <div id="comp-leer" v-else class="bg-white dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700 min-h-[70vh]">
             <div class="flex gap-4 items-center justify-center h-full">
 
               <div class="flex items-center gap-8 my-8">

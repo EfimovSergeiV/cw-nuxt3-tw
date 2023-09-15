@@ -83,7 +83,7 @@
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="">
 
-              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-700">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
                   Выбрать город <span class="text-gray-700 dark:text-gray-300"> {{` - ` + selectedCity }}</span>
                 </h3>
@@ -103,7 +103,7 @@
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                       <p class="text-gray-700 dark:text-gray-400 mdi mdi-map-marker-radius"></p>
                     </div>
-                    <input v-model="searchTerm" type="search" id="search-city" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Москва">
+                    <input v-model="searchTerm" type="search" id="search-city" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Москва">
                   </div> 
                 </div>
 
@@ -113,7 +113,7 @@
                   <button 
                     v-for="(city, pk) in ['Москва','Санкт-Петербург','Псков','Смоленск','Петрозаводск','Великие луки',]" :key="pk"
                     @click="selectedCity = city"
-                    class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-600 transition-all shadow-md">
+                    class="bg-white dark:bg-gray-800 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
                     <div class="flex items-center justify-center py-1 px-4">
                       <p  class="text-[10px] md:text-xs text-gray-700 dark:text-gray-300">{{ city }}</p>
                     </div>
@@ -127,7 +127,7 @@
                       <button 
                         v-for="(city, pk) in searchCountries" :key="pk"
                         @click="selectedCity = city; searchTerm = city"
-                        class="bg-white dark:bg-gray-800 rounded-full border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-600 transition-all shadow-md">
+                        class="bg-white dark:bg-gray-800 rounded-full border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-700 transition-all shadow-md">
                         <div class="flex items-center justify-center py-1.5 px-6">
                           <p  class="text-[10px] md:text-xs text-gray-700 dark:text-gray-300">{{ city }}</p>
                         </div>
@@ -142,7 +142,7 @@
               </div>
 
 
-              <div class="grid grid-cols-1 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+              <div class="grid grid-cols-1 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-700">
                 
 
                 <div class="flex justify-center gap-2 w-full md:justify-end px-2">

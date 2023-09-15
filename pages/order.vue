@@ -40,7 +40,7 @@
 
     <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
       
-      <div class="bg-white dark:bg-gray-800 rounded-md border dark:border-gray-600 px-4 py-4 min-h-[65vh]">
+      <div class="bg-white dark:bg-gray-800 rounded-md border dark:border-gray-700 px-4 py-4 min-h-[65vh]">
         <div v-if="orderinfo">
           <div class=" py-6">
             <p class="my-2">Номер заказа: <span class="font-semibold ml-2">{{ orderinfo.order_number }}</span></p>
@@ -55,7 +55,7 @@
             <p class="text-sm">Позиции заказа:</p>
             <div class="grid grid-cols-1 gap-2 py-4">
 
-              <div v-for="product in orderinfo.client_product" :key="product.id" class="bg-white dark:bg-gray-700 px-2 py-2 border border-gray-200 dark:border-gray-600 rounded-md flex items-center gap-6">
+              <div v-for="product in orderinfo.client_product" :key="product.id" class="bg-white dark:bg-gray-700 px-2 py-2 border border-gray-200 dark:border-gray-700 rounded-md flex items-center gap-6">
                 <img :src="product.preview_image" class="h-14 rounded-md" />
                 <p class="text-sm">{{ product.vcode }}</p>
                 <nuxt-link :to="{ name: 'product-id', params: { id: product.product_id } }">{{ product.name }}</nuxt-link>

@@ -35,7 +35,7 @@
 
                     <div class="py-2 ">
                       
-                      <div class="bg-gray-100/90 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-md py-2 px-2">
+                      <div class="bg-gray-100/90 dark:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-md py-2 px-2">
                         <div class="py-2">
                           <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class=" text-gray-700 dark:text-gray-100 text-base transition-all">{{ ct.name }}</nuxt-link>              
                         </div>

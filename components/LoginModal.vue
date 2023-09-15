@@ -34,7 +34,7 @@
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="">
 
-              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+              <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-700">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-white">
                   Авторизация
                 </h3>
@@ -50,13 +50,13 @@
                   <div class="">
                     <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Логин</label>
                     <div>
-                      <input v-model="username" type="text" id="username" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                      <input v-model="username" type="text" id="username" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
                     </div> 
                   </div>
                   <div class="">
                     <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700 dark:text-gray-400">Пароль</label>
                     <div>
-                      <input v-model="password" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
+                      <input v-model="password" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="">
                     </div>
 
                     <div class="flex items-center justify-end py-2">
@@ -67,7 +67,7 @@
                         class="w-4 h-4 
                           rounded text-gray-700 focus:ring-0 
                           focus:ring-gray-300 ring-offset-gray-300 bg-gray-700 border-gray-300
-                          dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600
+                          dark:focus:ring-gray-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-700
                         " >
                       <label for="show-pwd" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Показать пароль</label>
 
