@@ -1,13 +1,21 @@
 <script setup>
-  useHead({
-    titleTemplate: '%s'
-  })
+
 
   const config = useRuntimeConfig()
   const route = useRoute()
 
   // const { data: product } = await useFetch(`${ config.public.baseURL }c/prod/${route.params.id}`)
   const { data: product } = await useFetch(`https://api.glsvar.ru/c/prod/${route.params.id}`)
+
+  useSeoMeta({
+    title: `${ product.value.name } - ${ product.value.brand.brand }`,
+    ogTitle: `${ product.value.name }`,
+    description: `${ product.description }`,
+    ogDescription: `${ product.description }`,
+    ogImage: `${ product.preview_image }`,
+    twitterCard: `${ product.preview_image }`,
+  })
+
 
   let relCT = ''
   for ( let i in product.value.related ) {
