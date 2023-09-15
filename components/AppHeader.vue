@@ -180,7 +180,7 @@
                   <div class="flex justify-end gap-4">
                     <a v-if="clientStore.client.adress" :href="`tel:${clientStore.client.adress.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ clientStore.client.adress.phone }}</a>
                     <a v-else :href="`tel:${shopStore.shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-center text-sm md:text-base font-semibold text-gray-100 hover:text-white transition-all"> {{ shopStore.shop.phone }}</a>
-                    <a href="mailto:zakaz@glsvar.ru" class="text-center text-sm md:text-base  text-gray-100 hover:text-white">zakaz@glsvar.ru</a>          
+                    <a href="mailto:zakaz@glsvar.ru" target="_blank" class="text-center text-sm md:text-base  text-gray-100 hover:text-white">zakaz@glsvar.ru</a>          
                   </div>
                 </div>
               </div>
