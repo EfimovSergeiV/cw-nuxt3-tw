@@ -9,13 +9,13 @@
 
   useSeoMeta({
     title: `${ product.value.name } - ${ product.value.brand.brand }`,
+    description: `${ product.value.description }`,
+    keywords: `${ product.value.name }, ${ product.value.brand.brand }, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
     ogTitle: `${ product.value.name }`,
-    description: `${ product.description }`,
-    ogDescription: `${ product.description }`,
-    ogImage: `${ product.preview_image }`,
-    twitterCard: `${ product.preview_image }`,
+    ogDescription: `${ product.value.description }`,
+    ogImage: `${ product.value.preview_image }`,
+    twitterCard: `${ product.value.preview_image }`,
   })
-
 
   let relCT = ''
   for ( let i in product.value.related ) {
@@ -33,6 +33,7 @@
 
 <template>
   <div class="">
+    <p class="text-xs">{{ product }}</p>
 
     <AppHeader />
     <AppNavbar />
