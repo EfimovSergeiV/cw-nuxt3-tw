@@ -14,10 +14,6 @@
 <template>
     <div class="container mx-auto px-4 py-2 max-w-6xl lg:px-8">
 
-      <!-- <div class="my-4 p-2 bg-white rounded-md border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">
-        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300">{{ title }}</p>
-      </div> -->
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
         <div class="border dark:border-gray-700 rounded-md shadow-md">
@@ -53,32 +49,6 @@
 
         
         <div class="">
-
-          <!-- <div id="esab-slider">
-
-            <hooper
-              :wheel-control="false"
-              :infinite-scroll="true"
-              :play-speed="12000"
-              :auto-play="true"
-              style="height: 100%"
-            >
-              <slide v-for="banner in esabbanners" :key="banner.id">
-                <nuxt-link :to="banner.path">
-                  <img
-                    :src="banner.image"
-                    :alt="banner.image"
-                    width="800px"
-                    height="400px"
-                    />
-                </nuxt-link>
-              </slide>
-
-              <hooper-navigation slot="hooper-addons"></hooper-navigation>
-              <hooper-pagination slot="hooper-addons"></hooper-pagination>
-            </hooper>
-
-          </div> -->
 
           <div class="">
             <Swiper
@@ -132,7 +102,6 @@
         </div>
         <div class=" md:p-4">
           <div class="">
-            <!-- <p class="text-sm lg:text-base text-gray-900 dark:text-gray-200 font-medium">{{ text }}</p> -->
             <p class="bg-clip-text text-gray-700 dark:text-gray-300 text-xs lg:text-base">
             {{ text }}
             </p>

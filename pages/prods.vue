@@ -62,10 +62,6 @@
     <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
       <div class="">
-        <!-- <div id="cat-title" class="flex items-center justify-end mb-2">
-          <p class="text-2xl">{{ products.meta.title }}</p>
-        </div> -->
- 
         <div v-if="products.meta.inserted" class="flex items-center justify-end">
           <div id="" class="">
             <div class="flex flex-wrap gap-2 justify-end max-w-[700px]">

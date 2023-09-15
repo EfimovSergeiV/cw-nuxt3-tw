@@ -64,12 +64,7 @@
               
             </div>
           </div>
-          
-          <!-- <p class="my-2">{{ orderinfo.client_product }} руб.</p>
 
-          <p class="my-2">{{ route.hash.slice(1,) }}</p>
-          <p class="my-2">{{ pendingorder }}</p>
-          <p class="my-2">{{ errorder }}</p> -->
         </div>
 
         <div v-else>

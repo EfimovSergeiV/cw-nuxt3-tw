@@ -37,64 +37,9 @@
                 
                 <div v-for="product in productsStore.comp.slice(0, 4)" :key="product.id" class="">
                   <ProductSmall :product="product" />
-
-                  <!-- <div class="bg-white border-gray-200 border rounded-md dark:border-gray-700 dark:bg-gray-800 h-full">
-
-                    <div class="">
-
-                      <div class="bg-white flex items-center justify-center m-1 rounded-md relative">
-                        <div class="">
-                          <img :src="product.preview_image" />
-                        </div>
-                        <div class="absolute top-0 right-0">
-                          <div class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-700 hover:dark:text-gray-900">
-                            <p @click="delToComparison(product)" class="mdi mdi-24px mdi-window-close"></p>
-                          </div>
-                        </div>
-                        
-                      </div>
-
-                      <div class="flex items-center justify-center h-28">
-                        <nuxt-link :to="{ name: 'product-id', params: { id: product.id } }" class="text-sm text-center">{{ product.name }}</nuxt-link>
-                      </div>
-
-                      <div class="flex items-center justify-center gap-2 px-2">
-                        <div class="my-2">
-                          <button @click="requestPriceProduct(product)" v-if="product.only_price === 0" class="">
-                            <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                              <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-                                <p class="text-white text-base w-32 md:w-52 py-2.5">Запросить</p>
-                              </div>
-                            </div>
-                          </button>
-                          <CartBtn v-else cls="px-10 py-1.5" :product="product" />
-                        </div>
-                      </div>
-                      
-                    </div>
-
-
-                  </div> -->
-
                 </div>
               </transition-group>
             </div>
-
-
-            <!-- <div class="grid grid-cols-2 lg:grid-cols-4">
-              <div v-for="prod in productsStore.comp.slice(0, 4)" :key="prod.id" class="my-4">
-
-                <div class="flex gap-2 justify-center items-center">
-                  <div v-if="prod.only_price > 0" class="flex items-center justify-center gap-2">
-                    <p class="text-xl">{{ prod.only_price.toLocaleString() }}</p>
-                    <p class="">руб.</p>
-                  </div>
-                  <div v-else class="">
-                    <p class="text-sm">стоимость по запросу</p>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
 
             <div class="bg-white rounded-md dark:bg-gray-800 border border-gray-700 my-4">
@@ -155,12 +100,6 @@
 
 
       </div>
-
-
-
-      <!-- <p class="text-xs">
-        {{ productsStore.comp }}
-      </p> -->
 
 
       

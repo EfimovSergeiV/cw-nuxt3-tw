@@ -150,34 +150,7 @@
               </div>
 
             </div>
-
-
-            <!-- <div class="grid grid-cols-3 gap-4">
-              <div v-for="shop in shops" :key="shop.id" class="bg-gray-700 rounded-md px-2 py-2">
-                <div class="">
-                  <p class="text-sm">{{ shop.adress }}</p>
-                </div>             
-                
-                <div class="py-1">
-                  <p class="text-base">{{ shop.phone }}</p>
-                </div>
-                
-                <div class="">
-                  <p class="text-xs">{{ shop.wday }}</p>
-                  <p class="text-xs">{{ shop.wend }}</p>                
-                </div>
-
-                <div class="py-1">
-                  <p class="text-xs text-center">Показать на карте</p>
-                </div>
-              </div>            
-            </div>             -->
           </div>
-
-
-
-
-
 
           
           <div class="py-4">

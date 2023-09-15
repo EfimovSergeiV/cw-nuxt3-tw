@@ -108,3 +108,39 @@ npm install @mdi/font
 }
 </style>
 ```
+
+```typescript
+<div class="">
+  <Swiper
+    class="rounded-md relative"
+    style=""
+    :modules="[SwiperAutoplay, SwiperEffectCreative]"
+    :slides-per-view="1"
+    :loop="true"
+    :effect="'creative'"
+    :autoplay="{
+      delay: 10000,
+      disableOnInteraction: true
+    }"
+    :creative-effect="{
+      prev: {
+        shadow: false,
+        translate: ['-20%', 0, -1]
+      },
+      next: {
+        translate: ['100%', 0, 0]
+      }
+    }"
+  >
+    <SwiperSlide v-for="slide in images" :key="slide.id" class="">
+      <img
+        :src="slide.url"
+        class="rounded-md border dark:border-gray-700 shadow-md "
+      />             
+    </SwiperSlide>
+    <div class="absolute bottom-0 right-0 z-50 p-3">
+      <SwiperControls />
+    </div>
+  </Swiper>
+</div>
+```

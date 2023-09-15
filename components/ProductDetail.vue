@@ -167,40 +167,5 @@
       </div>
     </div>
 
-    <!-- <transition name="fade">
-      fixed inset-0 overflow-y-hidden overscroll-y-none w-full h-full top-0 left-0 my-10
-      <div v-if="largeImage" class="fixed w-full h-full overscroll-y-none top-0 left-0 bg-gray-500/50 backdrop-blur-sm z-40">
-        <div class="flex min-h-full bg-gray-500/50 justify-center text-center items-center">
-          <div class="relative rounded-md">
-            <div class="overflow-y-auto h-screen">
-              <div class="flex min-h-full justify-center text-center items-center">
-                <div class="bg-white p-2 rounded-md border border-gray-200 dark:border-gray-600">
-                  <div class="w-[380px] h-[300] md:w-[640px] md:h-[480px] relative">
-                    <div class="flex justify-end items-center absolute z-50 right-0">
-                      <p @click="largeImage = false" class="mdi mdi-24px mdi-close text-gray-700 hover:text-gray-900 cursor-pointer"></p>
-                    </div>
-                    <hooper
-                      :wheel-control="false"
-                      :infinite-scroll="true"
-                      :play-speed="12000"
-                      :auto-play="true"
-                      style="height: 100%"
-                    >
-                      <slide v-for="image in props.product.prod_img" :key="image.id" class="rounded-md">
-                        <div @click="largeImage = false" class="flex items-center justify-center">
-                          <img :src="image.image" :alt="image.image" class="rounded-md cursor-zoom-out p-6" fluid/>
-                        </div>
-                      </slide>
-                      <hooper-navigation slot="hooper-addons"></hooper-navigation>
-                      <hooper-pagination slot="hooper-addons"></hooper-pagination>
-                    </hooper>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition> -->
   </div>
 </template>

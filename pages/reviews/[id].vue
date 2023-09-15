@@ -32,26 +32,6 @@
     <AppNavbar />
     <div class="mx-auto px-4 max-w-6xl lg:px-8">
 
-      <!-- <div class="flex justify-end items-center">
-        <p class="text-2xl">{{ review.name }}</p>
-      </div> -->
-
-      <!-- <nav class="flex px-5 py-3 mt-1 mb-4 text-gray-700 border border-gray-200 rounded-md bg-white dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
-        <ol class="inline-flex items-center space-x-1">
-          <li class="">
-            <nuxt-link :to="{ name: 'index' }" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><span class="mdi mdi-home px-1"></span> Главная</nuxt-link>
-          </li>
-          <li class="">
-            <nuxt-link :to="{ name: 'reviews' }" class="text-sm font-medium text-gray-700 dark:text-gray-300"><span class="mdi mdi-chevron-right px-1"></span> Обзоры на оборудование</nuxt-link>
-          </li>
-          <li class="">
-            <p class="text-sm font-medium text-gray-700 dark:text-gray-300"><span class="mdi mdi-chevron-right px-1"></span> {{ review.name }}</p>
-          </li>
-        </ol>
-      </nav> -->
-
-
-
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div class="h-96 border border-gray-300 dark:border-gray-700 shadow-md rounded-md bg-white dark:bg-gray-900">
           <iframe

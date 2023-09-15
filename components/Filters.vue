@@ -109,9 +109,6 @@
                 <div class="flex flex-wrap">
                   <div class="flex items-center mr-4 p-1" v-for="ops in prop.prop_ops" :key="ops.id">
                     
-                    <!-- <input @change="changeForm(prop.prop_alias, ops.opskey )" :value="ops.opskey" v-model="filte[prop.prop_alias]" :id="ops.opskey" :value="ops.opskey" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-md border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"> -->
-
- 
                     <input 
                       :id="ops.id" 
                       v-model="filters[prop.prop_alias]" 

@@ -78,13 +78,6 @@
                 </button>
               </div>
 
-<!-- 
-    const username = ref(null)
-  const email = ref(null)
-  const first_name = ref(null)
-  const last_name = ref(null)
-  const password = ref(null)
- -->
               <div class="px-4 py-8 min-h-[20rem]">
                 <div class="grid grid-cols-2 gap-4 items-end">
                   <div class="">
@@ -147,24 +140,6 @@
                 </div>
 
               </div>
-
-
-              <!-- <div class="grid grid-cols-1 items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-
-                <div class="flex justify-center gap-2 w-full md:justify-end px-2">
-                  
-
-                  <button @click="sendRequest">
-                    <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                      <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-                        <p class="px-5 py-2.5">Запросить стоимость</p>
-                      </div>
-                    </div>
-                  </button>
-                                    
-                  <button @click="productsStore.clearRequestPrice" data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Закрыть окно</button>
-                </div>
-              </div> -->
 
 
             </div>

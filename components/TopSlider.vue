@@ -75,7 +75,5 @@
       
     </Swiper>
 
-    <!-- <p class="text-xs text-gray-700">{{ widebanners }}</p> -->
-
   </div>
 </template>

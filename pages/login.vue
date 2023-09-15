@@ -31,26 +31,6 @@ definePageMeta({
         <div class="">
 
           <div class="py-2">
-            <!-- <div class="">
-              <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Логин</label>
-              <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <p class="mdi mdi-form-textbox"></p>
-                </div>
-                <input v-model="username" type="text" id="user" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="UserName">
-              </div>
-            </div> -->
-
-            <!-- <div class="">
-              <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Пароль</label>
-              <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <p class="mdi mdi-form-textbox-password"></p>
-                </div>
-                <input v-model="password" type="password" id="pass" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="* * * * * * * *">
-              </div>
-            </div> -->
-
 
             <div class="relative py-2">
               <input type="text" id="login" v-model="username" class="block px-2.5 py-1 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />

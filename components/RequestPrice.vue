@@ -83,10 +83,6 @@
                       <div class="text-gray-800 dark:text-gray-200">
                         <div class="" v-if="productsStore.requestPrice.description.length > 300">
                           <p class="text-sm">{{ productsStore.requestPrice.description.slice(0, 300) }}...</p>
-                          <!-- <div class="flex justify-end">
-                            <nuxt-link class=" text-xs border-b" :to="{ name: 'product-id', params: { id: productsStore.requestPrice.id } }">перейти к товару</nuxt-link>
-                          </div> -->
-                          
                         </div>
                         <div class="" v-else>
                           <p class="text-sm">{{ productsStore.requestPrice.description }}</p> 
