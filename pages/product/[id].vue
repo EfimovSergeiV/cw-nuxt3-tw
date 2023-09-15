@@ -32,7 +32,7 @@
             "offers": {
               '@type': 'Offer',
               "url": 'https://glsvar.ru/product/' + product.value.id,
-              "priceCurrency": 'RUB.',
+              "priceCurrency": 'RUB',
               "price": product.value.only_price,
               "itemCondition": 'https://schema.org/UsedCondition',
               "availability": 'https://schema.org/InStock',
