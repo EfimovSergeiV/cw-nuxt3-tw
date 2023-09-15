@@ -1,8 +1,4 @@
 <script setup>
-  useHead({
-    titleTemplate: '%s - сварочное оборудование и всё для сварки Псков, Москва, Спб'
-  })
-
   const config = useRuntimeConfig()
   // const colorMode = useColorMode()
   // const route = useRoute()
@@ -15,7 +11,19 @@
   const { data: mpromobs } = await useFetch(`${ config.public.baseURL }c/mpromob/`)
   const { data: recommends } = await useFetch(`${ config.public.baseURL }c/recommend/`)
   const { data: randomreviews } = await useFetch(`${ config.public.baseURL }c/random-reviews/`)
-  // console.log(route.params.id)
+  const descriptionData = 'С 2009 года Главный сварщик – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.'
+  
+  useSeoMeta({
+    title: `Сеть магазинов Главный Сварщик - О нас - Адреса магазинов`,
+    description: `${ descriptionData.value }`,
+    keywords: `Главный сварщик, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
+    ogLocale: 'ru_RU',
+    ogTitle: `Сеть магазинов Главный Сварщик`,
+    ogDescription: `${ descriptionData.value }`,
+    ogImage: `https://api.glsvar.ru/files/og-image.png`,
+    twitterCard: `https://api.glsvar.ru/files/og-image.png`,
+  })
+
 </script>
 
 <template>
