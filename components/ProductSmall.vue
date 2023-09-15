@@ -14,7 +14,7 @@
         </div>
         <div class="">
           <div class="flex items-center justify-center bg-white w-[80px] h-[60px] rounded-md">
-            <img :src="product.preview_image" width="70" />
+            <img :src="product.preview_image" width="70" :alt="product.name" />
           </div>
         </div>
       </div>                  

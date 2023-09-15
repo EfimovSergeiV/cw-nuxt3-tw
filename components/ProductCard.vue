@@ -12,7 +12,7 @@
         <div class="flex md:grid md:grid-cols-1 gap-4">
           <div class="bg-white rounded-md flex items-center justify-center">
             <div class="w-28 md:w-48 p-1">
-              <img :src="props.product.preview_image" class="rounded-md w-28 md:w-48"/>
+              <img :src="props.product.preview_image" :alt="props.product.name" class="rounded-md w-28 md:w-48"/>
             </div>          
           </div>
           <div class="flex items-center md:justify-center md:min-h-[80px]">

@@ -28,7 +28,7 @@
               </div>
               <div class="flex items-center justify-center w-full">
                 <div class="bg-white p-4">
-                  <img :src="props.product.preview_image" />
+                  <img :src="props.product.preview_image" :alt="props.product.name" />
                 </div>
               </div>
             </div>
