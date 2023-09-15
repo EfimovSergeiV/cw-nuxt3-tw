@@ -1,8 +1,4 @@
 <script setup>
-  useHead({
-    titleTemplate: '%s - Магазины'
-  })
-
   const config = useRuntimeConfig()
   const shopStore = useShopStore()
   const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
@@ -24,6 +20,18 @@
     "Петрозаводск" : "https://yandex.ru/map-widget/v1/?um=constructor%3A7a6886838355b4c4aab4597dd2ee3dcd40eb7c6cd2bab5638666af5f1606c267&amp;source=constructor",
   }
 
+  const descriptionData = 'С 2009 года Главный сварщик – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.'
+
+  useSeoMeta({
+    title: `Сеть магазинов Главный Сварщик - О нас - Адреса магазинов`,
+    description: `${ descriptionData.value }`,
+    keywords: `Главный сварщик, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
+    ogLocale: 'ru_RU',
+    ogTitle: `Сеть магазинов Главный Сварщик`,
+    ogDescription: `${ descriptionData.value }`,
+    ogImage: `https://api.glsvar.ru/files/og-image.png`,
+    twitterCard: `https://api.glsvar.ru/files/og-image.png`,
+  })
 
 </script>
 
@@ -134,9 +142,7 @@
             <div class="grid grid-cols-2 gap-4">
               <div class="flex items-center">
 
-                <p class="text-sm text-center">
-                  С 2009 года Главный сварщик – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
-                </p>  
+                <p class="text-sm text-center">{{ descriptionData }}</p>  
 
               </div>
               <div class="">

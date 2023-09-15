@@ -12,6 +12,17 @@
   const { data: products } = await useFetch(`${ config.public.baseURL }c/prods/`, { params: route.query })
   const { data: breadcrumbs } = await useFetch(`${ config.public.baseURL }c/breadcrumb/`, { params: route.query })
 
+  useSeoMeta({
+    title: `${ products.value.meta.title }`,
+    description: `${ products.value.meta.title }, большой выбор, купить по низким ценам. Гарантия качества, доставка по всей России.`,
+    keywords: `${ products.value.meta.title }, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
+    ogLocale: 'ru_RU',
+    ogTitle: `${ products.value.meta.title }`,
+    ogDescription: `${ products.value.meta.title }, большой выбор, купить по низким ценам. Гарантия качества, доставка по всей России.`,
+    ogImage: `https://api.glsvar.ru/files/og-image.png`,
+    twitterCard: `https://api.glsvar.ru/files/og-image.png`,
+  })
+
   /// Корзина кнопки, лайки, сравнение
 
   const scrollToTop = () => {
@@ -43,9 +54,9 @@
 
 <template>
   <div>
+
     <AppHeader />
     <AppNavbar />
-
     <BreadCrumbs id="breadcrumbs" :breadcrumbs="breadcrumbs" />
 
     <div class="mx-auto px-4 max-w-6xl lg:px-8">
