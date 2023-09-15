@@ -7,15 +7,53 @@
   // const { data: product } = await useFetch(`${ config.public.baseURL }c/prod/${route.params.id}`)
   const { data: product } = await useFetch(`https://api.glsvar.ru/c/prod/${route.params.id}`)
 
+  useHead({
+    script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+        "type": "application/ld+json",
+        "textContent": {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "id": product.value.vcode,
+            "name": product.value.name,
+            "image": product.value.preview_image,
+            "description": product.value.description,
+            "mpn": product.value.vcode,
+            "brand": {
+              "@type": 'Brand',
+              "name": product.value.brand.brand,
+            },
+            "aggregateRating": {
+              '@type': 'AggregateRating',
+              "ratingValue": product.value.rating,
+              "reviewCount": '5',
+            },
+            "offers": {
+              '@type': 'Offer',
+              "url": 'https://glsvar.ru/product/' + product.value.id,
+              "priceCurrency": 'руб.',
+              "price": product.value.only_price,
+              "itemCondition": 'https://schema.org/UsedCondition',
+              "availability": 'https://schema.org/InStock',
+            },
+          }
+      })
+    }],
+  })
+
   useSeoMeta({
     title: `${ product.value.name } - ${ product.value.brand.brand }`,
-    description: `${ product.value.description }`,
+    description: `${ product.value.description.slice(0, 157) }`,
     keywords: `${ product.value.name }, ${ product.value.brand.brand }, сварочное оборудование, оборудование для сварки, купить электроды, купить проволоку, купить источник, купить сварочный инвертор`,
+    ogLocale: 'ru_RU',
     ogTitle: `${ product.value.name }`,
-    ogDescription: `${ product.value.description }`,
+    ogDescription: `${ product.value.description.slice(0, 157) }`,
     ogImage: `${ product.value.preview_image }`,
     twitterCard: `${ product.value.preview_image }`,
   })
+
+  
 
   let relCT = ''
   for ( let i in product.value.related ) {
@@ -33,7 +71,6 @@
 
 <template>
   <div class="">
-    <p class="text-xs">{{ product }}</p>
 
     <AppHeader />
     <AppNavbar />
