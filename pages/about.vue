@@ -1,6 +1,7 @@
 <script setup>
   const config = useRuntimeConfig()
   const shopStore = useShopStore()
+  const clientStore = useClientStore()
   const { data: shops } = await useFetch(`${ config.public.baseURL }c/shops/`)
   const images = [
     { "id": 1, "url": "/shops/1.webp"},
@@ -140,20 +141,45 @@
           <div class="py-4">
 
             <div class="grid grid-cols-2 gap-4">
-              <div class="flex items-center">
+              <div class="grid grid-cols-1 content-between gap-4">
 
-                <p class="text-sm text-center">{{ descriptionData }}</p>  
+                <div class="grid grid-cols-3 gap-2">
+                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
+                    <p class="">Москва</p>
+                  </button>
+                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
+                    <p class="">Санкт-Петербург</p>
+                  </button>
+                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
+                    <p class="">Псков</p>
+                  </button>
+                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
+                    <p class="">Смоленск</p>
+                  </button>
+                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
+                    <p class="">Петрозаводск</p>
+                  </button>
+                  <button class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2">
+                    <p class="">Великие Луки</p>
+                  </button>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2 px-2">
+                  <p class="text-sm text-center">{{ descriptionData }}</p>  
+                </div>
 
               </div>
               <div class="">
-                <iframe :src="mapURLs[shopStore.city]" width="100%" height="260" frameborder="0" loading="lazy" class="rounded-md shadow-md shadow-black/50"></iframe>
+                <iframe :src="mapURLs[clientStore.client.city]" width="100%" height="260" frameborder="0" loading="lazy" class="rounded-md shadow-md shadow-black/50"></iframe>
               </div>
 
             </div>
           </div>
 
+          <p class="text-xs">{{ clientStore.client.adress }}</p>
+
           
-          <div class="py-4">
+          <div class="bg-white dark:bg-gray-700 rounded-md shadow-md shadow-black/50 flex items-center justify-center border border-gray-200 dark:border-gray-600 py-2 px-4">
             <p class="text-sm">
               Здесь вы найдете бренды известных производителей, таких как  EWM, ESAB, Fubag, Aurora, Grovers, Cebora и многих других. Поддайтесь очарованию нашего профессионального и широкого ассортимента изделий: от сварочных аппаратов для инверторных, MIG/MAG, TIG или плазменных процессов, до многочисленных дополнительных материалов и до кислородно-топливной технологии. Каждый гарантированно найдет то, что ищет. Главный сварщик предлагает вам сварочную технику как для новичков, так и профессиональное оборудование. Мы также уделяем первостепенное внимание области безопасности труда сварщиков: будь то защита тела, защита ног, защита рук, защита головы, защита глаз и лица, защита рабочего места или защитные шторы для сварки - просто выберите подходящее оборудование для ваших нужд и стань настоящим героем сварки!
             </p>
